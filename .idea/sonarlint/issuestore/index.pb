@@ -27,3 +27,6 @@ e
 5src/main/java/com/mirai/service/auth/AuthService.java,f/1/f1c906c51a3303609881f3843ce3f9fa62f88577
 {
 Ksrc/main/java/com/mirai/exception/customException/ApplicationErrorCode.java,f/f/ffee4409b2678e2ef984a0a737edb2b398114e97
+:
+
+src/images,f/6/f6d8a00c870a039282eb7934feaaf4117878e5df
