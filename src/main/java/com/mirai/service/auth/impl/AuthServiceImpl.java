@@ -16,34 +16,5 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class AuthServiceImpl implements AuthService {
 
-    private final UserRepository userRepository;
 
-    @Override
-    public ResponseEntity<LoginResponse> login(LoginRequest loginRequest)
-            throws NoSuchAlgorithmException, InvalidKeySpecException {
-
-        Users users = userRepository.findByEmail(loginRequest.getUsername());
-        if (users == null) {
-            throw new RuntimeException("User name not found");
-        }
-
-        LoginResponse loginResponse = null;
-        if (!users.getEmail().isEmpty()) {
-
-            String password = hashedPassword(loginRequest.getPassword(), users.getPasswordSalt());
-            if (password.equals(users.getPasswordHash())) {
-
-                //                loginResponse = handleLoginToken(userDetails.getId(), userDetails.getEmail());
-            } else {
-                throw new RuntimeException("Password not valid");
-            }
-        }
-
-        return null;
-    }
-
-    private String hashedPassword(String password, String passwordSalt)
-            throws NoSuchAlgorithmException, InvalidKeySpecException {
-        return EncryptionUtils.generateHash(password, passwordSalt);
-    }
 }

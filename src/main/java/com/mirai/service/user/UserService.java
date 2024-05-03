@@ -1,4 +1,4 @@
-package com.mirai.service;
+package com.mirai.service.user;
 
 import com.mirai.models.request.UserRequest;
 import com.mirai.models.response.UserResponse;

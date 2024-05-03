@@ -2,7 +2,7 @@ package com.mirai.controllers;
 
 import com.mirai.models.request.UserRequest;
 import com.mirai.models.response.UserResponse;
-import com.mirai.service.UserService;
+import com.mirai.service.user.UserService;
 import com.mirai.utils.ExcelExporter;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

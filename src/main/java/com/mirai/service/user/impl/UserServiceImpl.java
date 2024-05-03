@@ -1,4 +1,4 @@
-package com.mirai.service.impl;
+package com.mirai.service.user.impl;
 
 import com.mirai.constants.PolicyEnum;
 import com.mirai.constants.RoleEnum;
@@ -6,7 +6,7 @@ import com.mirai.data.entities.Users;
 import com.mirai.data.repos.UserRepository;
 import com.mirai.models.request.UserRequest;
 import com.mirai.models.response.UserResponse;
-import com.mirai.service.UserService;
+import com.mirai.service.user.UserService;
 import com.mirai.service.email.EmailService;
 import java.time.LocalDate;
 import java.util.ArrayList;

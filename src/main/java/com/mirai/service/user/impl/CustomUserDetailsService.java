@@ -1,4 +1,4 @@
-package com.mirai.service.impl;
+package com.mirai.service.user.impl;
 
 import com.mirai.data.entities.UserAuth;
 import com.mirai.data.repos.UserAuthRepository;

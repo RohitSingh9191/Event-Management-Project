@@ -1,4 +1,4 @@
-package com.mirai.service;
+package com.mirai.service.user;
 
 import com.mirai.data.entities.UserAuth;
 import java.util.List;

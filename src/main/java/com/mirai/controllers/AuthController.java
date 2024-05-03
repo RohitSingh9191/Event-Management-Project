@@ -5,7 +5,7 @@ import com.mirai.data.entities.UserAuth;
 import com.mirai.models.request.JWTRequest;
 import com.mirai.models.request.UserAuthRequest;
 import com.mirai.models.response.JWTResponse;
-import com.mirai.service.UserInterface;
+import com.mirai.service.user.UserInterface;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

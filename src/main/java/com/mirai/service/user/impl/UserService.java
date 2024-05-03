@@ -1,18 +1,15 @@
-package com.mirai.service.impl;
+package com.mirai.service.user.impl;
 
 import com.mirai.data.entities.UserAuth;
 import com.mirai.data.repos.UserAuthRepository;
 import com.mirai.models.request.UserAuthRequest;
-import com.mirai.service.UserInterface;
+import com.mirai.service.user.UserInterface;
 
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.xml.crypto.Data;
 
 @Service
 public class UserService implements UserInterface {

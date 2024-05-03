@@ -7,7 +7,4 @@ import java.security.spec.InvalidKeySpecException;
 import org.springframework.http.ResponseEntity;
 
 public interface AuthService {
-
-    ResponseEntity<LoginResponse> login(LoginRequest loginRequest)
-            throws NoSuchAlgorithmException, InvalidKeySpecException;
 }
