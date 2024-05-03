@@ -3,6 +3,7 @@ package com.mirai.controllers;
 import com.mirai.Security.JwtHelper;
 import com.mirai.data.entities.UserAuth;
 import com.mirai.models.request.JWTRequest;
+import com.mirai.models.request.UserAuthRequest;
 import com.mirai.models.response.JWTResponse;
 import com.mirai.service.UserInterface;
 import lombok.AllArgsConstructor;
@@ -19,8 +20,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @CrossOrigin
-@RequestMapping("/v1/auth") // Fixed typo in the mapping URL
-@Slf4j // Automatically generates logger field for this class
+@Slf4j
+@RequestMapping("/v1/auth")
 public class AuthController {
 
     private UserDetailsService userDetailsService;
@@ -77,7 +78,7 @@ public class AuthController {
      * @return Created UserAuth object.
      */
     @PostMapping("/createUser")
-    public UserAuth createUser(@RequestBody UserAuth user) {
+    public UserAuth createUser(@RequestBody UserAuthRequest user) {
         return userInterface.createUser(user);
     }
 }

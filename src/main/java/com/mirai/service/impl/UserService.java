@@ -2,12 +2,17 @@ package com.mirai.service.impl;
 
 import com.mirai.data.entities.UserAuth;
 import com.mirai.data.repos.UserAuthRepository;
+import com.mirai.models.request.UserAuthRequest;
 import com.mirai.service.UserInterface;
+
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.xml.crypto.Data;
 
 @Service
 public class UserService implements UserInterface {
@@ -23,9 +28,13 @@ public class UserService implements UserInterface {
     }
 
     @Override
-    public UserAuth createUser(UserAuth user) {
-        user.setUserid(UUID.randomUUID().toString());
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userRepository.save(user);
+    public UserAuth createUser(UserAuthRequest user) {
+        UserAuth userAuth = new UserAuth();
+        userAuth.setName(user.getName());
+        userAuth.setEmail(user.getEmail());
+        userAuth.setUserid(UUID.randomUUID().toString());
+        userAuth.setPassword(passwordEncoder.encode(user.getPassword()));
+        userAuth.setAbout(user.getAbout());
+        return userRepository.save(userAuth);
     }
 }
