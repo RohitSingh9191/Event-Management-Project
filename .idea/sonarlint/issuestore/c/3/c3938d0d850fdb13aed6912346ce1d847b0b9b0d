@@ -1,0 +1,9 @@
+
+`	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(ÿ¹ÞŒúÿÿÿÿ
+a
+java:S2184"FCast one of the operands of this multiplication operation to a "long".(ˆà’ýûÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ô­€ü
+I
+java:S1874*".Remove this use of "parser"; it is deprecated.(¯éºæýÿÿÿÿ
+P
+java:S1874*"5Remove this use of "setSigningKey"; it is deprecated.(¯éºæýÿÿÿÿ
