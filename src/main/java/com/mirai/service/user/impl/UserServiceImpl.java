@@ -142,9 +142,8 @@ public class UserServiceImpl implements UserService {
 
     private void mailService(Users user) {
         try {
-            String toMail = env.getProperty("toMail");
+            String toMail = user.getEmail();
             String toCC = env.getProperty("toCC");
-
             emailService.sentMessageToEmail(user, toMail, toCC);
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,14 +1,0 @@
-
-i
-java:S5411J"(Use a primitive boolean expression here.(™•Â´ùÿÿÿÿJ$4d887d14-f3dc-4030-ab95-930bc403077c
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ô­€üJ$e6ec0530-80c3-4bf1-8cf1-5e6c20459178
-x
-java:S2387"7"logger" is the name of a field in "GenericFilterBean".(Ÿõ•ËÿÿÿÿÿJ$e5695f0e-f7a7-4822-be2e-c6a9b6f57bfc
-~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$9a992eff-df97-481e-9ba6-b5d2de1fcb71
-~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞJ$8f84570a-4216-4e36-9330-7b195bf42cbd
-{
-java:S3416":Update this logger to use "JwtAuthenticationFilter.class".(Ÿõ•ËÿÿÿÿÿJ$8d77c414-f6c1-45f1-bdfb-62f9842500a1
-Ž
-java:S3776!"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(³æÒñJ$e358e2c1-a347-4de4-8104-aa66e1aa599e
