@@ -1,7 +1,7 @@
 package com.mirai.data.entities;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -43,12 +43,9 @@ public class Users {
     @Column(name = "IsPolicyAccept")
     private Boolean IsPolicyAccept;
 
-    @Column(name = "PasswordHash")
-    private String passwordHash;
+    @Column(name = "CreatedAt")
+    private Date createdAt;
 
-    @Column(name = "PasswordSalt")
-    private String passwordSalt;
-
-    @Column(name = "date")
-    private LocalDate date;
+    @Column(name = "ModifiedAt")
+    private Date modifiedAt;
 }

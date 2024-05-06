@@ -1,4 +1,4 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔøÊJ$995c2f4a-7619-4b52-b8ef-105db94c0054
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔøÊJ$6f639454-cef8-4c05-b11a-3e5b58fbcb9c
 }
-java:S3066'"<Lower the visibility of this setter or remove it altogether.(ÃÔóşûÿÿÿÿJ$64910768-a479-45ae-a8d0-555f09d8e0a8
+java:S3066)"<Lower the visibility of this setter or remove it altogether.(ÃÔóşûÿÿÿÿJ$1058bde6-922d-4720-b0c6-3a27ce1cb896
