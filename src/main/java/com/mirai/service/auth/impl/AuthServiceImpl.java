@@ -1,10 +1,10 @@
 package com.mirai.service.auth.impl;
 
-import com.mirai.Security.JwtHelper;
 import com.mirai.exception.customException.ApplicationErrorCode;
-import com.mirai.exception.customException.MeraiException;
+import com.mirai.exception.customException.MiraiException;
 import com.mirai.models.request.JWTRequest;
 import com.mirai.models.response.JWTResponse;
+import com.mirai.security.JwtHelper;
 import com.mirai.service.auth.AuthService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -45,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
         try {
             manager.authenticate(authentication);
         } catch (BadCredentialsException e) {
-            throw new MeraiException(ApplicationErrorCode.USERNAME_NOT_VALID);
+            throw new MiraiException(ApplicationErrorCode.USERNAME_NOT_VALID);
         }
     }
 }

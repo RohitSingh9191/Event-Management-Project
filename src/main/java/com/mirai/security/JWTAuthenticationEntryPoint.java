@@ -1,4 +1,4 @@
-package com.mirai.Security;
+package com.mirai.security;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

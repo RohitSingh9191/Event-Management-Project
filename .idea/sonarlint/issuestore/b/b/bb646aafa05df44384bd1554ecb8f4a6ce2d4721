@@ -1,4 +1,4 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔøÊJ$6dbcd8db-c889-4d45-b9a6-d35072ccf3b5
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔøÊJ$9b2299a0-ec5f-4e47-842f-bb0d99796c74
 g
-java:S1948"+Make "errorCode" transient or serializable.(±·şÕJ$c167dfd0-afb6-4179-a7ba-a5a05e92c959
+java:S1948"+Make "errorCode" transient or serializable.(±·şÕJ$22df1874-f95c-480e-9ea0-2db6e26d85fa

@@ -1,7 +1,9 @@
 package com.mirai.controllers;
 
+import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
 import com.mirai.models.response.UserResponse;
+import com.mirai.models.response.UserResponseList;
 import com.mirai.service.user.UserService;
 import com.mirai.utils.ExcelExporter;
 import java.io.ByteArrayInputStream;
@@ -42,8 +44,8 @@ public class UserController {
 
     @CrossOrigin
     @GetMapping()
-    public ResponseEntity<List<UserResponse>> getAll() {
-        List<UserResponse> userResponseList = userService.getAll();
+    public ResponseEntity<UserResponseList> getAllUser(@ModelAttribute UserFilters userFilters) {
+        UserResponseList userResponseList = userService.getAllUsers(userFilters);
         return new ResponseEntity<>(userResponseList, HttpStatus.OK);
     }
 

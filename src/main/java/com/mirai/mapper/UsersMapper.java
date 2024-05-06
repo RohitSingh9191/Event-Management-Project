@@ -19,6 +19,7 @@ public class UsersMapper {
                 .phone(user.getPhone())
                 .linkedInProfile(user.getLinkedInProfile())
                 .type(user.getType())
+                .isPolicyAccept(user.getIsPolicyAccept())
                 .build();
     }
 
@@ -31,7 +32,7 @@ public class UsersMapper {
                 .designation(userRequest.getDesignation())
                 .linkedInProfile(userRequest.getLinkedInProfile())
                 .type(userRequest.getType())
-                .IsPolicyAccept(policy)
+                .isPolicyAccept(policy)
                 .modifiedAt(new Date())
                 .createdAt(new Date())
                 .build();

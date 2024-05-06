@@ -1,9 +1,9 @@
 package com.mirai.exception.customException;
 
-public class MeraiException extends RuntimeException {
+public class MiraiException extends RuntimeException {
     private final ErrorCode errorCode;
 
-    public MeraiException(ErrorCode errorCode) {
+    public MiraiException(ErrorCode errorCode) {
         super(errorCode.getErrorMessage());
         this.errorCode = errorCode;
     }

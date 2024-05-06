@@ -1,0 +1,16 @@
+
+c
+java:S1192l"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8× êô1
+j
+java:S1192z"HDefine a constant instead of duplicating this literal "company" 4 times.(ã’¥³øÿÿÿÿ8× êô1
+o
+java:S1192‡"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8× êô1
+h
+java:S1192^"FDefine a constant instead of duplicating this literal "email" 4 times.(Ü˜ĞÑùÿÿÿÿ8× êô1
+W
+java:S1118
+":Add a private constructor to hide the implicit public one.(ñ‰¼ú8å êô1
+n
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 60 to the 15 allowed.(õıíc8è êô1
+ã
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 132 to 64, Complexity from 47 to 14, Nesting Level from 3 to 2, Number of Variables from 54 to 6.(õıíc8— êô1

@@ -1,7 +1,7 @@
 package com.mirai.config;
 
-import com.mirai.Security.JWTAuthenticationEntryPoint;
-import com.mirai.Security.JwtAuthenticationFilter;
+import com.mirai.security.JWTAuthenticationEntryPoint;
+import com.mirai.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

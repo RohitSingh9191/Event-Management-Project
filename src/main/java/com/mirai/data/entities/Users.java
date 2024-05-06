@@ -41,7 +41,7 @@ public class Users {
     private String type;
 
     @Column(name = "IsPolicyAccept")
-    private Boolean IsPolicyAccept;
+    private Boolean isPolicyAccept;
 
     @Column(name = "CreatedAt")
     private Date createdAt;

@@ -1,4 +1,4 @@
-package com.mirai.Security;
+package com.mirai.security;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;

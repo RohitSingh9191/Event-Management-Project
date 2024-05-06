@@ -1,4 +1,4 @@
-package com.mirai.Security;
+package com.mirai.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
