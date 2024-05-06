@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 public enum ApplicationErrorCode implements ErrorCode {
     EMAIL_ALREADY_EXISTS(100001, "EMAIL_ALREADY_EXISTS", "Email id already exists", HttpStatus.CONFLICT),
-    USERNAME_NOT_VALID(100002, "USERNAME_NOT_VALID", "username not valid", HttpStatus.BAD_REQUEST),
-    INVALID_EMAIL(100002, "INVALID_EMAIL", "Invalid Email", HttpStatus.BAD_REQUEST),
+    USERNAME_NOT_VALID(100002, "USERNAME_NOT_VALID", "username or password not valid", HttpStatus.BAD_REQUEST),
+    INVALID_EMAIL(100003, "INVALID_EMAIL", "Invalid Email", HttpStatus.BAD_REQUEST),
     ;
 
     private final int errorId;

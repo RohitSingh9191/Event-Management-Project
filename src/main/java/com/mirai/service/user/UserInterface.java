@@ -1,9 +1,8 @@
 package com.mirai.service.user;
 
 import com.mirai.data.entities.UserAuth;
-import java.util.List;
-
 import com.mirai.models.request.UserAuthRequest;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service

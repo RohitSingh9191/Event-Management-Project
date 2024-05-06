@@ -1,18 +1,3 @@
 
-\
-java:S1128":Remove this unused import 'com.mirai.data.entities.Users'.(ëŒÎ¦şÿÿÿÿ8–ÙËğó1
-]
-java:S1128"@Remove this unused import 'com.mirai.data.repos.UserRepository'.(Ù†ı¢8—ÙËğó1
-_
-java:S1128"BRemove this unused import 'com.mirai.models.request.LoginRequest'.(ã‘š¡8—ÙËğó1
-a
-java:S1128"DRemove this unused import 'com.mirai.models.response.LoginResponse'.(ı§…œ8˜ÙËğó1
-Y
-java:S1128"<Remove this unused import 'com.mirai.utils.EncryptionUtils'.(Ù÷ƒ‡8™ÙËğó1
-e
-java:S1128	"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ8™ÙËğó1
-i
-java:S1128
-"GRemove this unused import 'java.security.spec.InvalidKeySpecException'.(ëóÅëüÿÿÿÿ8šÙËğó1
-f
-java:S1128"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8šÙËğó1
+¨
+java:S1488!"`Immediately return this expression instead of assigning it to the temporary variable "response".(³Çªşÿÿÿÿÿ8ÅÌñáô1J$557d0a7d-770f-474e-90f3-4b9926087d25

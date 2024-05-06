@@ -1,9 +1,9 @@
 
-`	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(ÿ¹ÞŒúÿÿÿÿ
-a
-java:S2184"FCast one of the operands of this multiplication operation to a "long".(ˆà’ýûÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ô­€ü
-I
-java:S1874*".Remove this use of "parser"; it is deprecated.(¯éºæýÿÿÿÿ
-P
-java:S1874*"5Remove this use of "setSigningKey"; it is deprecated.(¯éºæýÿÿÿÿ
+†	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(ÿ¹ÞŒúÿÿÿÿJ$734fb496-6651-4768-924a-d5b9d9b5d7e1
+‡
+java:S2184"FCast one of the operands of this multiplication operation to a "long".(ˆà’ýûÿÿÿÿJ$9e8360a9-e44e-4d1b-9256-e78df7cbe1ed
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ô­€üJ$8dd6e9ef-c997-4235-9f08-b619d6ae1f9f
+o
+java:S1874*".Remove this use of "parser"; it is deprecated.(¯éºæýÿÿÿÿJ$80f53445-06db-4010-8143-4c0ac9fcfe7b
+v
+java:S1874*"5Remove this use of "setSigningKey"; it is deprecated.(¯éºæýÿÿÿÿJ$8d4d3f60-b958-4fab-a6c1-40282a5f88b0

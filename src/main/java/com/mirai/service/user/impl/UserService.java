@@ -4,7 +4,6 @@ import com.mirai.data.entities.UserAuth;
 import com.mirai.data.repos.UserAuthRepository;
 import com.mirai.models.request.UserAuthRequest;
 import com.mirai.service.user.UserInterface;
-
 import java.util.List;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
