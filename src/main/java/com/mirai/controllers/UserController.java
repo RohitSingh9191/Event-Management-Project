@@ -42,10 +42,17 @@ public class UserController {
         return new ResponseEntity<>(addUserResponse, HttpStatus.CREATED);
     }
 
-    @CrossOrigin
+    /**
+     * Endpoint for retrieving all users based on specified filters.
+     *
+     * @param userFilters The filters to apply for retrieving users.
+     * @return ResponseEntity containing the list of users matching the filters.
+     */
     @GetMapping()
     public ResponseEntity<UserResponseList> getAllUser(@ModelAttribute UserFilters userFilters) {
+        log.info("Fetching all users with filters: '{}'", userFilters);
         UserResponseList userResponseList = userService.getAllUsers(userFilters);
+        log.info("Users matching the filters: '{}'", userFilters);
         return new ResponseEntity<>(userResponseList, HttpStatus.OK);
     }
 
