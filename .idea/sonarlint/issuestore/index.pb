@@ -74,3 +74,13 @@ p
 -.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
 S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+g
+7src/main/java/com/mirai/service/user/UserInterface.java,5/e/5e56b3baf9ed3f381ab976dd589aa91065610792
+^
+.src/main/java/com/mirai/mapper/AuthMapper.java,3/e/3e0a049a5eb3942ccf5622d6125b58737700f9bc
+i
+9src/main/java/com/mirai/models/response/AuthResponse.java,1/f/1fece296567d47a39219e8dc6e88a4b179d798ca
+m
+=src/main/java/com/mirai/security/JwtAuthenticationFilter.java,2/e/2e7f1b9e0ee7566a62fd4a84e1821f5f8ac362d0
+_
+/src/main/java/com/mirai/security/JwtHelper.java,8/f/8f0875443820b51483a104608f8965349c4cbab2

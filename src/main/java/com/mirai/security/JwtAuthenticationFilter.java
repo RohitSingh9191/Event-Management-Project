@@ -70,6 +70,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             // fetch user detail from username
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+            System.out.println("User details ==== " + userDetails);
             Boolean validateToken = this.jwtHelper.validateToken(token, userDetails);
             if (validateToken) {
 

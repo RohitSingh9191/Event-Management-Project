@@ -1,11 +1,10 @@
 package com.mirai.controllers;
 
-import com.mirai.data.entities.UserAuth;
 import com.mirai.models.request.JWTRequest;
 import com.mirai.models.request.UserAuthRequest;
+import com.mirai.models.response.AuthResponse;
 import com.mirai.models.response.JWTResponse;
 import com.mirai.service.auth.AuthService;
-import com.mirai.service.user.UserInterface;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/v1/auth")
 public class AuthController {
 
-    private UserInterface userInterface;
     private final AuthService authService;
 
     /**
@@ -30,7 +28,9 @@ public class AuthController {
      */
     @PostMapping("/login")
     public ResponseEntity<JWTResponse> login(@RequestBody JWTRequest request) {
+        log.info("Login attempt for user with email: '{}'", request.getEmail());
         JWTResponse response = authService.adminlogin(request);
+        log.info("Login successful for user with email: '{}'", request.getEmail());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
@@ -44,12 +44,16 @@ public class AuthController {
     }
 
     /**
-     * Endpoint for creating a new user.
-     * @param user UserAuth object containing user details.
-     * @return Created UserAuth object.
+     * Creates a new user with the provided user authentication request.
+     *
+     * @param user The user authentication request containing user details.
+     * @return ResponseEntity containing the authentication response.
      */
     @PostMapping("/createUser")
-    public UserAuth createUser(@RequestBody UserAuthRequest user) {
-        return userInterface.createUser(user);
+    public ResponseEntity<AuthResponse> createUser(@RequestBody UserAuthRequest user) {
+        log.info("Received request to create user: {}", user);
+        AuthResponse authResponse = authService.createUser(user);
+        log.info("Created user successfully. Response: {}", authResponse);
+        return new ResponseEntity<>(authResponse, HttpStatus.CREATED);
     }
 }

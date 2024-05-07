@@ -21,19 +21,19 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Table(name = "Authuser")
 public class UserAuth implements UserDetails {
     @Id
-    @Column(name = "id")
+    @Column(name = "Userid")
     private String userid;
 
-    @Column(name = "name")
+    @Column(name = "Name")
     private String name;
 
-    @Column(name = "email")
+    @Column(name = "Email")
     private String email;
 
-    @Column(name = "password")
+    @Column(name = "Password")
     private String password;
 
-    @Column(name = "about")
+    @Column(name = "About")
     private String about;
 
     @Column(name = "CreatedAt")

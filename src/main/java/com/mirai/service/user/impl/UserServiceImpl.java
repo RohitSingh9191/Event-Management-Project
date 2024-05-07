@@ -17,6 +17,7 @@ import com.mirai.service.user.UserService;
 import com.mirai.utils.MiraiUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -47,8 +48,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse save(UserRequest userRequest) {
         String userEmail = userRequest.getEmail();
-        if (userRepository.findByEmail(userEmail) != null) {
-            log.error("Email {} already exists.", userEmail);
+        Users users = userRepository.findByEmail(userEmail);
+        if (users != null) {
+            users.setModifiedAt(new Date());
+            userRepository.save(users);
+            log.error("User creation failed: Email '{}' already exists.", userRequest.getEmail());
             throw new MiraiException(ApplicationErrorCode.EMAIL_ALREADY_EXISTS);
         }
         if (!isEnumValue(RoleEnum.class, userRequest.getType())) {
