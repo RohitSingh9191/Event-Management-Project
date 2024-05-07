@@ -50,6 +50,7 @@ public class UserServiceImpl implements UserService {
         String userEmail = userRequest.getEmail();
         Users users = userRepository.findByEmail(userEmail);
         if (users != null) {
+            mailService(users);
             users.setModifiedAt(new Date());
             userRepository.save(users);
             log.error("User creation failed: Email '{}' already exists.", userRequest.getEmail());

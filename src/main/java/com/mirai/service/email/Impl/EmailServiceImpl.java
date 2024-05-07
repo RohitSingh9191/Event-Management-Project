@@ -19,22 +19,22 @@ public class EmailServiceImpl implements EmailService {
     @Override
     public void sentMessageToEmail(Users users, String toMail, String toCC) {
         String emailUsername = env.getProperty("spring.mail.username");
+        String number = env.getProperty("phoneNumber");
 
-        String sendMessage = "Hello !  A new User has registered:\n"
-                + "Name: " + users.getName() + "\n"
-                + "Email: " + users.getEmail() + "\n"
-                + "Phone: " + users.getPhone() + "\n"
-                + "Company: " + users.getCompany() + "\n"
-                + "Designation: " + users.getDesignation() + "\n"
-                + "Linkedin Profile: " + users.getLinkedInProfile() + "\n"
-                + "Type: " + users.getType() + "\n\n"
-                + "Please keep this information confidential and do not share it with anyone.";
+        String sendMessage = "Hi " + users.getName() + ",\n\n"
+                + "This email is to confirm that your registration for Mirai Events has been successfully processed.\n"
+                + "We're thrilled to have you join us for this exciting event. Get ready for an enriching experience filled with learning, networking, and fun!\n\n"
+                + "If you have any questions or require further assistance, feel free to reach out to us at +" + number
+                + ".\n"
+                + "Looking forward to seeing you!\n\n"
+                + "Best regards,\n"
+                + "Mirai Team";
 
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-        simpleMailMessage.setSubject("Mirai | Registration");
+        simpleMailMessage.setSubject("Registration Confirmation for Mirai Events");
         simpleMailMessage.setFrom(emailUsername);
         simpleMailMessage.setTo(toMail);
-        simpleMailMessage.setCc(toCC);
+        // simpleMailMessage.setCc(toCC);
         simpleMailMessage.setText(sendMessage);
         javaMailSender.send(simpleMailMessage);
     }
