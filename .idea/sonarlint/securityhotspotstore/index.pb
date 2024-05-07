@@ -84,3 +84,5 @@ m
 =src/main/java/com/mirai/security/JwtAuthenticationFilter.java,2/e/2e7f1b9e0ee7566a62fd4a84e1821f5f8ac362d0
 _
 /src/main/java/com/mirai/security/JwtHelper.java,8/f/8f0875443820b51483a104608f8965349c4cbab2
+q
+Asrc/main/java/com/mirai/security/JWTAuthenticationEntryPoint.java,f/8/f8a295b747671d10c81df7a09c9883241e0a3883
