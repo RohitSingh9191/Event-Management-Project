@@ -1,5 +1,0 @@
-# Created at 2024-03-14T15:38:13.311
-Boot Manifest-JAR contains absolute paths in classpath 'D:\MindIT_Projects\SpringBoot_Live\mirai\mirai\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-

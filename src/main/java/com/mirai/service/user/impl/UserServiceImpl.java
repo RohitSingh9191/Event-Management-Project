@@ -51,6 +51,7 @@ public class UserServiceImpl implements UserService {
         Users users = userRepository.findByEmail(userEmail);
         if (users != null) {
             mailService(users);
+            mailSendToAdmin(users);
             users.setModifiedAt(new Date());
             userRepository.save(users);
             log.error("User creation failed: Email '{}' already exists.", userRequest.getEmail());
@@ -63,6 +64,7 @@ public class UserServiceImpl implements UserService {
         Boolean policy = convertPolicyStringToBoolean(userRequest.getIsPolicyAcepted());
         Users user = UsersMapper.mapUserRequestToUser(userRequest, policy);
         mailService(user);
+        mailSendToAdmin(users);
         userRepository.save(user);
         log.info("User saved successfully: {}", user);
         return UsersMapper.mapUserToUserResponse(user);
@@ -148,8 +150,18 @@ public class UserServiceImpl implements UserService {
     private void mailService(Users user) {
         try {
             String toMail = user.getEmail();
-            String toCC = env.getProperty("toCC");
+            String toCC = env.getProperty("miraiEmail");
             emailService.sentMessageToEmail(user, toMail, toCC);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void mailSendToAdmin(Users user) {
+        try {
+            String toMail = env.getProperty("miraiEmail");
+            String toCC = env.getProperty("toCCAdmin");
+            emailService.sentMessageToAdmin(user, toMail, toCC);
         } catch (Exception e) {
             e.printStackTrace();
         }

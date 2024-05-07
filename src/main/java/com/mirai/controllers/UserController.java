@@ -34,7 +34,7 @@ public class UserController {
      * @param userRequest The request body containing user details.
      * @return ResponseEntity containing the response body with saved user details.
      */
-    @PostMapping()
+    @PostMapping("/save")
     public ResponseEntity<UserResponse> save(@RequestBody UserRequest userRequest) {
         log.info("Received request to save user: {}", userRequest);
         UserResponse addUserResponse = userService.save(userRequest);

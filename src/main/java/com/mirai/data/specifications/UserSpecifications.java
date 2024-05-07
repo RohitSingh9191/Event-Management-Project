@@ -58,10 +58,18 @@ public class UserSpecifications {
             spec = spec.and(UserSpecifications.withPolicyType(policyType));
         }
 
-        String sortBy = userFilters.getSortBy();
-        String orderBy = userFilters.getOrderBy();
-        if (sortBy.isEmpty()) sortBy = "name";
-        if (orderBy.isEmpty()) orderBy = "asc";
+        String sortBy = null;
+        String orderBy =null;
+        if(userFilters.getSortBy()!=null){
+            sortBy = userFilters.getSortBy();
+            if (sortBy.isEmpty() ) sortBy = "name";
+        }
+
+        if (userFilters.getOrderBy()!=null){
+            orderBy = userFilters.getOrderBy();
+            if (orderBy.isEmpty()) orderBy = "asc";
+
+        }
 
         if (sortBy != null && sortBy.equalsIgnoreCase("name")) {
             if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {

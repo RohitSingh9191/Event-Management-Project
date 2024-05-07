@@ -34,7 +34,29 @@ public class EmailServiceImpl implements EmailService {
         simpleMailMessage.setSubject("Registration Confirmation for Mirai Events");
         simpleMailMessage.setFrom(emailUsername);
         simpleMailMessage.setTo(toMail);
-        // simpleMailMessage.setCc(toCC);
+        simpleMailMessage.setCc(toCC);
+        simpleMailMessage.setText(sendMessage);
+        javaMailSender.send(simpleMailMessage);
+    }
+
+    @Override
+    public void sentMessageToAdmin(Users users, String toMail, String toCC) {
+        String emailUsername = env.getProperty("spring.mail.username");
+        String sendMessage = "Hello !  A new User has registered:\n"
+                + "Name: " + users.getName() + "\n"
+                + "Email: " + users.getEmail() + "\n"
+                + "Phone: " + users.getPhone() + "\n"
+                + "Company: " + users.getCompany() + "\n"
+                + "Designation: " + users.getDesignation() + "\n"
+                + "Linkedin Profile: " + users.getLinkedInProfile() + "\n"
+                + "Type: " + users.getType() + "\n\n"
+                + "Please keep this information confidential and do not share it with anyone.";
+
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        simpleMailMessage.setSubject("Mirai | Registration");
+        simpleMailMessage.setFrom(emailUsername);
+        simpleMailMessage.setTo(toMail);
+        simpleMailMessage.setCc(toCC);
         simpleMailMessage.setText(sendMessage);
         javaMailSender.send(simpleMailMessage);
     }
