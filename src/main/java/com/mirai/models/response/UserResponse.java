@@ -19,4 +19,5 @@ public class UserResponse {
     private String linkedInProfile;
     private String type;
     private Boolean isPolicyAccept;
+    private String status;
 }

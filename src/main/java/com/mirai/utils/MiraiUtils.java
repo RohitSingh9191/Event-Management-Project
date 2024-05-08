@@ -1,5 +1,6 @@
 package com.mirai.utils;
 
+import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
@@ -54,8 +55,7 @@ public class MiraiUtils {
     public static byte[] generateQRCodeImage(String text, int width, int height) throws WriterException, IOException {
         log.info("Generating QR code image for text: {}", text);
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
-        BitMatrix bitMatrix = qrCodeWriter.encode(text, com.google.zxing.BarcodeFormat.QR_CODE, width, height);
-
+        BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         MatrixToImageWriter.writeToStream(bitMatrix, "PNG", outputStream);
         log.info("QR code image generated successfully");

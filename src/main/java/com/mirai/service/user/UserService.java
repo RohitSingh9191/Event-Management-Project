@@ -17,4 +17,6 @@ public interface UserService {
     UserResponseList getAllUsers(UserFilters userFilters);
 
     String confirmUser(Integer id) throws WriterException, IOException;
+
+    UserResponse getUserProfile(Integer id);
 }

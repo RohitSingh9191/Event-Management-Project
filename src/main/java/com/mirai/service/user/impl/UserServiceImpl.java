@@ -1,6 +1,7 @@
 package com.mirai.service.user.impl;
 
 import com.google.zxing.WriterException;
+import com.mirai.constants.ConfirmationStatus;
 import com.mirai.constants.PolicyEnum;
 import com.mirai.constants.RoleEnum;
 import com.mirai.data.entities.Users;
@@ -139,26 +140,46 @@ public class UserServiceImpl implements UserService {
         log.info("User filters validated successfully");
     }
 
+    /**
+     * Retrieves all users from the database.
+     *
+     * @return A list of UserResponse objects representing all users.
+     */
     @Override
     public List<UserResponse> getAll() {
+        log.info("Retrieving all users from the database");
         List<Users> userList = userRepository.findAll();
         List<UserResponse> userResponseList = new ArrayList<>();
         for (Users user : userList) {
             userResponseList.add(UsersMapper.mapUserToUserResponse(user));
         }
+        log.info("Retrieved {} users from the database", userResponseList.size());
         return userResponseList;
     }
 
+    /**
+     * Sends a message to the user's email address.
+     *
+     * @param user The user to whom the message will be sent.
+     */
     private void mailService(Users user) {
+        log.info("Sending email to user: {}", user.getEmail());
         try {
             String toMail = user.getEmail();
             String toCC = env.getProperty("miraiEmail");
             emailService.sentMessageToEmail(user, toMail, toCC);
+            log.info("Email sent successfully to user: {}", user.getEmail());
         } catch (Exception e) {
+            log.error("Error occurred while sending email to user: {}", user.getEmail(), e);
             e.printStackTrace();
         }
     }
 
+    /**
+     * Sends a message to the Mirai admin email address.
+     *
+     * @param user The user for whom the message is intended.
+     */
     private void mailSendToAdmin(Users user) {
         try {
             String toMail = env.getProperty("miraiEmail");
@@ -201,11 +222,31 @@ public class UserServiceImpl implements UserService {
         log.info("Confirming user with ID: {}", id);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        user.setStatus(ConfirmationStatus.CONFIRMED.name());
+        user.setModifiedAt(new Date());
         String link = "https://api.mirai.events/mirai/v1/user/" + id;
         byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 300, 300);
         emailService.sendEmailWithQRCode(
                 user.getEmail(), "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
+        userRepository.save(user);
         log.info("Confirmation email sent successfully to {}", user.getEmail());
         return "Email send successfully at " + user.getEmail();
+    }
+
+    /**
+     * Retrieves the profile of a user by their ID.
+     *
+     * @param id The ID of the user whose profile is to be retrieved.
+     * @return The UserResponse object containing the user profile.
+     * @throws MiraiException if the user with the given ID is not found.
+     */
+    @Override
+    public UserResponse getUserProfile(Integer id) {
+        log.info("Fetching profile for user with ID: {}", id);
+        Users user =
+                userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        UserResponse userResponse = UsersMapper.mapUserToUserResponse(user);
+        log.info("Profile fetched successfully for user with ID: {}", id);
+        return userResponse;
     }
 }

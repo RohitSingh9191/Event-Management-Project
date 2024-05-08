@@ -84,3 +84,5 @@ q
 Asrc/main/java/com/mirai/security/JWTAuthenticationEntryPoint.java,f/8/f8a295b747671d10c81df7a09c9883241e0a3883
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+i
+9src/main/java/com/mirai/constants/ConfirmationStatus.java,a/5/a51a5456eaa96d8fbedb4ad208a2425c3fd7c60a

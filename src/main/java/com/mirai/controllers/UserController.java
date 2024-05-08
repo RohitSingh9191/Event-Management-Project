@@ -85,4 +85,18 @@ public class UserController {
         log.info("User with ID {} confirmed successfully.", id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    /**
+     * Retrieves the profile of a user by their ID.
+     *
+     * @param id The ID of the user whose profile is to be retrieved.
+     * @return ResponseEntity containing the user profile.
+     */
+    @GetMapping("/{id}")
+    public ResponseEntity<UserResponse> userProfile(@PathVariable("id") Integer id) {
+        log.info("Fetching profile for user with ID: {}", id);
+        UserResponse response = userService.getUserProfile(id);
+        log.info("Profile fetched successfully for user with ID: {}", id);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

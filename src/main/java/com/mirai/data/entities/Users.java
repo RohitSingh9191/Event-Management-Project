@@ -43,6 +43,9 @@ public class Users {
     @Column(name = "IsPolicyAccept")
     private Boolean isPolicyAccept;
 
+    @Column(name = "Status")
+    private String status;
+
     @Column(name = "CreatedAt")
     private Date createdAt;
 
