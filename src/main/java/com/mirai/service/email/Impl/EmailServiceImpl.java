@@ -2,10 +2,13 @@ package com.mirai.service.email.Impl;
 
 import com.mirai.data.entities.Users;
 import com.mirai.service.email.EmailService;
+import jakarta.mail.internet.MimeMessage;
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -59,5 +62,23 @@ public class EmailServiceImpl implements EmailService {
         simpleMailMessage.setCc(toCC);
         simpleMailMessage.setText(sendMessage);
         javaMailSender.send(simpleMailMessage);
+    }
+
+    public void sendEmailWithQRCode(String to, String subject, String text, byte[] qrCodeImage) {
+        try {
+            MimeMessage message = javaMailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+
+            helper.setTo(to);
+            helper.setSubject(subject);
+            helper.setText(text);
+
+            ByteArrayResource qrCodeResource = new ByteArrayResource(qrCodeImage);
+            helper.addAttachment("user-qr-code.png", qrCodeResource);
+
+            javaMailSender.send(message);
+        } catch (jakarta.mail.MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

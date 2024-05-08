@@ -49,8 +49,8 @@ public class AuthController {
      * @param user The user authentication request containing user details.
      * @return ResponseEntity containing the authentication response.
      */
-    @PostMapping("/createUser")
-    public ResponseEntity<AuthResponse> createUser(@RequestBody UserAuthRequest user) {
+    @PostMapping("/admin")
+    public ResponseEntity<AuthResponse> addAdmin(@RequestBody UserAuthRequest user) {
         log.info("Received request to create user: {}", user);
         AuthResponse authResponse = authService.createUser(user);
         log.info("Created user successfully. Response: {}", authResponse);

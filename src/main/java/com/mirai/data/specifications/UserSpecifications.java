@@ -59,16 +59,15 @@ public class UserSpecifications {
         }
 
         String sortBy = null;
-        String orderBy =null;
-        if(userFilters.getSortBy()!=null){
+        String orderBy = null;
+        if (userFilters.getSortBy() != null) {
             sortBy = userFilters.getSortBy();
-            if (sortBy.isEmpty() ) sortBy = "name";
+            if (sortBy.isEmpty()) sortBy = "name";
         }
 
-        if (userFilters.getOrderBy()!=null){
+        if (userFilters.getOrderBy() != null) {
             orderBy = userFilters.getOrderBy();
             if (orderBy.isEmpty()) orderBy = "asc";
-
         }
 
         if (sortBy != null && sortBy.equalsIgnoreCase("name")) {

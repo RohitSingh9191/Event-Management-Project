@@ -7,4 +7,6 @@ public interface EmailService {
     void sentMessageToEmail(Users users, String toMail, String toCC);
 
     void sentMessageToAdmin(Users users, String toMail, String toCC);
+
+    void sendEmailWithQRCode(String to, String subject, String text, byte[] qrCodeImage);
 }

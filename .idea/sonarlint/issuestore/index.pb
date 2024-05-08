@@ -62,8 +62,6 @@ f
 6src/main/java/com/mirai/data/repos/UserRepository.java,4/0/401bf72a869d75463e21032d887b7e80919b58cf
 m
 =src/main/java/com/mirai/models/response/UserResponseList.java,8/d/8d45528a392e5ced9a564a72b7e49e117faa63ca
-j
-:src/main/java/com/mirai/service/user/impl/UserService.java,0/a/0a4baecc2e39db01ce96531ea2960dd815c2edf7
 g
 7src/main/java/com/mirai/service/email/EmailService.java,b/7/b7dee40f2432ebb3890e85b6d86b1cfad3c56495
 p
@@ -74,8 +72,6 @@ p
 -.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
 S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
-g
-7src/main/java/com/mirai/service/user/UserInterface.java,5/e/5e56b3baf9ed3f381ab976dd589aa91065610792
 ^
 .src/main/java/com/mirai/mapper/AuthMapper.java,3/e/3e0a049a5eb3942ccf5622d6125b58737700f9bc
 i

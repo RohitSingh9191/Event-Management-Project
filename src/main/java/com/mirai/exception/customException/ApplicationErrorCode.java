@@ -15,6 +15,7 @@ public enum ApplicationErrorCode implements ErrorCode {
             "LIMIT_OFFSET_NOT_VALID",
             "Limit and offset must be greater than or equal to zero",
             HttpStatus.BAD_REQUEST),
+    USER_NOT_EXIST(100002, "USER_NOT_EXIST", "user not exist", HttpStatus.BAD_REQUEST),
     ;
 
     private final int errorId;

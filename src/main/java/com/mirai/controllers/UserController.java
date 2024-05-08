@@ -1,5 +1,6 @@
 package com.mirai.controllers;
 
+import com.google.zxing.WriterException;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
 import com.mirai.models.response.UserResponse;
@@ -67,5 +68,21 @@ public class UserController {
                 .headers(headers)
                 .contentType(MediaType.parseMediaType("application/vnd.ms-excel"))
                 .body(new InputStreamResource(excelStream));
+    }
+
+    /**
+     * Confirm user with the given ID.
+     *
+     * @param id The ID of the user to confirm.
+     * @return ResponseEntity containing the confirmation response.
+     * @throws IOException    If an I/O error occurs while confirming the user.
+     * @throws WriterException If an error occurs while generating the QR code.
+     */
+    @GetMapping("/confirm/{id}")
+    public ResponseEntity userConfirm(@PathVariable("id") Integer id) throws IOException, WriterException {
+        log.info("Confirming user with ID: {}", id);
+        String response = userService.confirmUser(id);
+        log.info("User with ID {} confirmed successfully.", id);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

@@ -1,5 +1,6 @@
 package com.mirai.service.user.impl;
 
+import com.google.zxing.WriterException;
 import com.mirai.constants.PolicyEnum;
 import com.mirai.constants.RoleEnum;
 import com.mirai.data.entities.Users;
@@ -15,6 +16,7 @@ import com.mirai.models.response.UserResponseList;
 import com.mirai.service.email.EmailService;
 import com.mirai.service.user.UserService;
 import com.mirai.utils.MiraiUtils;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -184,5 +186,26 @@ public class UserServiceImpl implements UserService {
         } else {
             throw new MiraiException(ApplicationErrorCode.INVALID_POLICY_TYPE);
         }
+    }
+
+    /**
+     * Confirms a user by sending a confirmation email with a QR code.
+     *
+     * @param id The ID of the user to confirm.
+     * @return A message indicating that the email has been sent successfully.
+     * @throws WriterException If an error occurs while generating the QR code.
+     * @throws IOException     If an I/O error occurs while sending the email.
+     */
+    @Override
+    public String confirmUser(Integer id) throws WriterException, IOException {
+        log.info("Confirming user with ID: {}", id);
+        Users user =
+                userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        String link = "https://api.mirai.events/mirai/v1/user/" + id;
+        byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 300, 300);
+        emailService.sendEmailWithQRCode(
+                user.getEmail(), "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
+        log.info("Confirmation email sent successfully to {}", user.getEmail());
+        return "Email send successfully at " + user.getEmail();
     }
 }
