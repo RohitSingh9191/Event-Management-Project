@@ -95,7 +95,7 @@ public class EmailServiceImpl implements EmailService {
             helper.setText(htmlContent, true);
 
             ByteArrayResource qrCodeResource = new ByteArrayResource(qrCodeImage);
-            helper.addInline("qrCode", qrCodeResource, "image/png");
+            helper.addAttachment("qrCode", qrCodeResource, "image/png");
 
             javaMailSender.send(message);
         } catch (MessagingException e) {
