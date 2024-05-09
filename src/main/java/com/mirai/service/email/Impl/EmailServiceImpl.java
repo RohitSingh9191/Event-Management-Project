@@ -2,6 +2,7 @@ package com.mirai.service.email.Impl;
 
 import com.mirai.data.entities.Users;
 import com.mirai.service.email.EmailService;
+import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;
@@ -25,13 +26,14 @@ public class EmailServiceImpl implements EmailService {
         String number = env.getProperty("phoneNumber");
 
         String sendMessage = "Hi " + users.getName() + ",\n\n"
-                + "This email is to confirm that your registration for Mirai Events has been successfully processed.\n"
-                + "We're thrilled to have you join us for this exciting event. Get ready for an enriching experience filled with learning, networking, and fun!\n\n"
-                + "If you have any questions or require further assistance, feel free to reach out to us at +" + number
+                + "We have received your registration for MIRAI™, the exclusive CXO conclave focused on transforming businesses using Artificial Intelligence.\n\n"
+                + "As this is an exclusive invite only event, our team is carefully reviewing your profile and will soon confirm your participation via email.\n\n"
+                + "In the meanwhile, if you have any questions or require further assistance, please feel free to reach out to us at +91 "
+                + number
                 + ".\n"
                 + "Looking forward to seeing you!\n\n"
                 + "Best regards,\n"
-                + "Mirai Team";
+                + "Team MIRAI";
 
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setSubject("Registration Confirmation for Mirai Events");
@@ -64,20 +66,39 @@ public class EmailServiceImpl implements EmailService {
         javaMailSender.send(simpleMailMessage);
     }
 
-    public void sendEmailWithQRCode(String to, String subject, String text, byte[] qrCodeImage) {
+    public void sendEmailWithQRCode(Users users, String subject, String text, byte[] qrCodeImage) {
+        String number = env.getProperty("phoneNumber");
         try {
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
-            helper.setTo(to);
+            helper.setTo(users.getEmail());
             helper.setSubject(subject);
-            helper.setText(text);
+
+            // Your message content
+            String content = "Hi " + users.getName() + ",<br><br>"
+                    + "We have reviewed and confirmed your participation for MIRAI™, the exclusive CXO conclave focused on transforming businesses using Artificial Intelligence.<br><br>"
+                    + "We're thrilled to have you join us for this exciting event. Get ready for an enriching experience filled with learning, networking, and fun! Please find below the event details for your reference:<br><br>"
+                    + "<b>·</b> Date: 5th July 2024</span><br>"
+                    + "<b>·</b> Time: 10 am – 6 pm<br>"
+                    + "<b>·</b> Venue: The Lalit, Central Delhi<br>"
+                    + "<b>·</b> Event Topic: Unlocking Tomorrow - Transforming Businesses using Generative AI, ML and Deep Learning<br>"
+                    + "<b>·</b> Included: Tea, Lunch & Open networking opportunities<br>"
+                    + "<b>·</b> Event website: <a href=\"https://mirai.events/\">https://mirai.events/</a><br>"
+                    + "<b>·</b> Reporting time: 09:30 am<br><br>"
+                    + "At the registration desk you will need to show the QR code attached to this email.<br><br>"
+                    + "If you have any questions or require further assistance, please feel free to reach out to us at +91 "
+                    + number + ".<br><br>"
+                    + "See you there!<br><br>";
+
+            String htmlContent = "<html><body><p>" + content + "</p><img src=\"cid:qrCode\"></body></html>";
+            helper.setText(htmlContent, true);
 
             ByteArrayResource qrCodeResource = new ByteArrayResource(qrCodeImage);
-            helper.addAttachment("user-qr-code.png", qrCodeResource);
+            helper.addInline("qrCode", qrCodeResource, "image/png");
 
             javaMailSender.send(message);
-        } catch (jakarta.mail.MessagingException e) {
+        } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
     }

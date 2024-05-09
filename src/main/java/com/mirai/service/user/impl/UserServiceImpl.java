@@ -227,7 +227,7 @@ public class UserServiceImpl implements UserService {
         String link = "https://api.mirai.events/mirai/v1/user/" + id;
         byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 300, 300);
         emailService.sendEmailWithQRCode(
-                user.getEmail(), "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
+                user, "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
         userRepository.save(user);
         log.info("Confirmation email sent successfully to {}", user.getEmail());
         return "Email send successfully at " + user.getEmail();
