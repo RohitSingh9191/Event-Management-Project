@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -20,4 +22,5 @@ public class UserResponse {
     private String type;
     private Boolean isPolicyAccept;
     private String status;
+    private Date date;
 }

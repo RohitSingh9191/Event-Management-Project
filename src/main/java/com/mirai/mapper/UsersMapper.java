@@ -23,6 +23,7 @@ public class UsersMapper {
                 .type(user.getType())
                 .isPolicyAccept(user.getIsPolicyAccept())
                 .status(user.getStatus())
+                .date(user.getModifiedAt())
                 .build();
     }
 

@@ -19,6 +19,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @AllArgsConstructor
@@ -114,4 +115,10 @@ public class UserController {
         log.info("User with ID {} checked in successfully", id);
         return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
     }
+
+    @PostMapping("/image/{id}")
+    public ResponseEntity<UserResponse> addUserImage(@PathVariable("id") Integer id,@RequestParam("image") MultipartFile image) {
+        return new ResponseEntity<>(null, HttpStatus.CREATED);
+    }
+
 }

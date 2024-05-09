@@ -287,4 +287,6 @@ public class UserServiceImpl implements UserService {
         log.info("User with ID {} checked in successfully", id);
         return userResponse;
     }
+
+
 }
