@@ -86,3 +86,9 @@ Asrc/main/java/com/mirai/security/JWTAuthenticationEntryPoint.java,f/8/f8a295b7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 i
 9src/main/java/com/mirai/constants/ConfirmationStatus.java,a/5/a51a5456eaa96d8fbedb4ad208a2425c3fd7c60a
+b
+2src/main/java/com/mirai/data/entities/Checkin.java,b/1/b19ba7e4bf063690318d4f6ac2789124d94e31bc
+p
+@src/main/java/com/mirai/models/response/UserCheckinResponse.java,f/c/fc8709ea5801e1a6376de660b10918b9131af19c
+i
+9src/main/java/com/mirai/data/repos/CheckinRepository.java,1/e/1eb5bd48d36334f65813f6231c261dd35958d393

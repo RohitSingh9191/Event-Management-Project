@@ -19,4 +19,6 @@ public interface UserService {
     String confirmUser(Integer id, String status) throws WriterException, IOException;
 
     UserResponse getUserProfile(Integer id);
+
+    UserResponse userCheckin(Integer id);
 }

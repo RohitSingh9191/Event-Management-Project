@@ -4,7 +4,9 @@ import com.google.zxing.WriterException;
 import com.mirai.constants.ConfirmationStatus;
 import com.mirai.constants.PolicyEnum;
 import com.mirai.constants.RoleEnum;
+import com.mirai.data.entities.Checkin;
 import com.mirai.data.entities.Users;
+import com.mirai.data.repos.CheckinRepository;
 import com.mirai.data.repos.UserRepository;
 import com.mirai.data.specifications.UserSpecifications;
 import com.mirai.exception.customException.ApplicationErrorCode;
@@ -36,6 +38,8 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+
+    private final CheckinRepository checkinRepository;
 
     private final EmailService emailService;
 
@@ -262,6 +266,25 @@ public class UserServiceImpl implements UserService {
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         UserResponse userResponse = UsersMapper.mapUserToUserResponse(user);
         log.info("Profile fetched successfully for user with ID: {}", id);
+        return userResponse;
+    }
+
+    /**
+     * Checks in a user with the specified ID.
+     *
+     * @param id The ID of the user to check in.
+     * @return UserResponse representing the checked-in user.
+     * @throws MiraiException If the user with the specified ID does not exist.
+     */
+    @Override
+    public UserResponse userCheckin(Integer id) {
+        log.info("Checking in user with ID: {}", id);
+        Users user =
+                userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        Checkin checkin = UsersMapper.mapToUserCheckin(user);
+        checkinRepository.save(checkin);
+        UserResponse userResponse = UsersMapper.mapUserToUserResponse(user);
+        log.info("User with ID {} checked in successfully", id);
         return userResponse;
     }
 }

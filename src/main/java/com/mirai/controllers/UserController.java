@@ -100,4 +100,18 @@ public class UserController {
         log.info("Profile fetched successfully for user with ID: {}", id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    /**
+     * Handles the user check-in process.
+     *
+     * @param id The ID of the user to check in.
+     * @return ResponseEntity containing the UserResponse and HttpStatus.CREATED.
+     */
+    @PostMapping("/checkin/{id}")
+    public ResponseEntity<UserResponse> userCheckin(@PathVariable("id") Integer id) {
+        log.info("Received request to check in user with ID: {}", id);
+        UserResponse userResponse = userService.userCheckin(id);
+        log.info("User with ID {} checked in successfully", id);
+        return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
+    }
 }

@@ -1,6 +1,7 @@
 package com.mirai.mapper;
 
 import com.mirai.constants.ConfirmationStatus;
+import com.mirai.data.entities.Checkin;
 import com.mirai.data.entities.Users;
 import com.mirai.models.request.UserRequest;
 import com.mirai.models.response.UserResponse;
@@ -38,6 +39,14 @@ public class UsersMapper {
                 .status(ConfirmationStatus.PENDING.name())
                 .modifiedAt(new Date())
                 .createdAt(new Date())
+                .build();
+    }
+
+    public static Checkin mapToUserCheckin(Users user) {
+        return Checkin.builder()
+                .userId(user.getId())
+                .checkinTime(new Date())
+                .status("CHECKED_IN")
                 .build();
     }
 }
