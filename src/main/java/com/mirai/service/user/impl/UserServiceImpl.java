@@ -218,19 +218,34 @@ public class UserServiceImpl implements UserService {
      * @throws IOException     If an I/O error occurs while sending the email.
      */
     @Override
-    public String confirmUser(Integer id) throws WriterException, IOException {
+    public String confirmUser(Integer id, String status) throws WriterException, IOException {
         log.info("Confirming user with ID: {}", id);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
-        user.setStatus(ConfirmationStatus.CONFIRMED.name());
+        checkValidationOfStatus(status);
+        if (ConfirmationStatus.REJECTED.name().equalsIgnoreCase(status)) {
+            user.setStatus(ConfirmationStatus.REJECTED.name());
+            emailService.sendRejectionEmail(user);
+            log.info("Rejection email sent successfully to {}", user.getEmail());
+        } else {
+            user.setStatus(ConfirmationStatus.CONFIRMED.name());
+            String link = "https://api.mirai.events/mirai/v1/user/" + id;
+            byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 300, 300);
+            emailService.sendEmailWithQRCode(
+                    user, "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
+            log.info("Confirmation email sent successfully to {}", user.getEmail());
+        }
         user.setModifiedAt(new Date());
-        String link = "https://api.mirai.events/mirai/v1/user/" + id;
-        byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 300, 300);
-        emailService.sendEmailWithQRCode(
-                user, "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
         userRepository.save(user);
-        log.info("Confirmation email sent successfully to {}", user.getEmail());
         return "Email send successfully at " + user.getEmail();
+    }
+
+    private void checkValidationOfStatus(String status) {
+        if (!Arrays.stream(ConfirmationStatus.values())
+                .anyMatch(enumConstant -> enumConstant.name().equalsIgnoreCase(status))) {
+            log.info("Invalid company type: {}", status);
+            throw new MiraiException(ApplicationErrorCode.INVALID_STATUS);
+        }
     }
 
     /**

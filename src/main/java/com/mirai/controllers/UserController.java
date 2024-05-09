@@ -78,10 +78,11 @@ public class UserController {
      * @throws IOException    If an I/O error occurs while confirming the user.
      * @throws WriterException If an error occurs while generating the QR code.
      */
-    @GetMapping("/confirm/{id}")
-    public ResponseEntity userConfirm(@PathVariable("id") Integer id) throws IOException, WriterException {
+    @GetMapping("/{id}/{status}")
+    public ResponseEntity userConfirm(@PathVariable("id") Integer id, @PathVariable("status") String status)
+            throws IOException, WriterException {
         log.info("Confirming user with ID: {}", id);
-        String response = userService.confirmUser(id);
+        String response = userService.confirmUser(id, status);
         log.info("User with ID {} confirmed successfully.", id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

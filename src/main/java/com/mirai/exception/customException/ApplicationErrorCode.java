@@ -10,6 +10,8 @@ public enum ApplicationErrorCode implements ErrorCode {
     INVALID_EMAIL(100003, "INVALID_EMAIL", "Invalid Email", HttpStatus.BAD_REQUEST),
     INVALID_ROLE_TYPE(100004, "INVALID_ROLE_TYPE", "Role does not match", HttpStatus.BAD_REQUEST),
     INVALID_POLICY_TYPE(100005, "INVALID_POLICY_TYPE", "Policy does not match", HttpStatus.BAD_REQUEST),
+    INVALID_STATUS(100004, "INVALID_STATUS", "Status does not match", HttpStatus.BAD_REQUEST),
+
     LIMIT_OFFSET_NOT_VALID(
             1000016,
             "LIMIT_OFFSET_NOT_VALID",

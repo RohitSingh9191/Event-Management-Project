@@ -102,4 +102,24 @@ public class EmailServiceImpl implements EmailService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void sendRejectionEmail(Users users) {
+        String emailUsername = env.getProperty("spring.mail.username");
+        String toMail = users.getEmail();
+        String toCC = env.getProperty("toCCAdmin");
+        String sendMessage = "Hi " + users.getName() + ",\n\n"
+                + "Thank you for showing your interest in attending MIRAI™, the exclusive CXO conclave focused on transforming businesses using Artificial Intelligence.\n\n"
+                + "We sincerely appreciate your effort to register. However, we regret to inform you that we are unable to proceed with your registration at this time. As this is an exclusive CXO event, your designation at this time does not meet our criteria.\n\n"
+                + "We genuinely value your association and hope for future opportunities to collaborate.\n\n"
+                + "Best regards,\n"
+                + "Team MIRAI";
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        simpleMailMessage.setSubject("Registration Status Update");
+        simpleMailMessage.setFrom(emailUsername);
+        simpleMailMessage.setTo(toMail);
+        simpleMailMessage.setCc(toCC);
+        simpleMailMessage.setText(sendMessage);
+        javaMailSender.send(simpleMailMessage);
+    }
 }
