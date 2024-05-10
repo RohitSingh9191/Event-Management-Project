@@ -1,0 +1,16 @@
+
+‰
+java:S1192s"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8®×‘ö1J$11d9209a-cb7c-4859-bd7f-1bab10cff45b
+‘
+java:S1192"HDefine a constant instead of duplicating this literal "company" 4 times.(ã’¥³øÿÿÿÿ8±×‘ö1J$f442a287-6e6e-462f-972b-17dc11b9f321
+•
+java:S1192"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8³×‘ö1J$c5a7d14f-d9b4-4c97-b8f3-98b8fb641aac
+
+java:S1192e"FDefine a constant instead of duplicating this literal "email" 4 times.(Ü˜ĞÑùÿÿÿÿ8µ×‘ö1J$cc245343-02f4-4320-b15b-aa98c4515c43
+}
+java:S1118
+":Add a private constructor to hide the implicit public one.(ñ‰¼ú8ê×‘ö1J$2622104e-c72b-4c27-84bf-5b12680fcfb0
+”
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 64 to the 15 allowed.(õıíc8ö×‘ö1J$be5bee30-a2ba-414e-ac23-a9720ae5b5c5
+‰
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 138 to 64, Complexity from 49 to 14, Nesting Level from 3 to 2, Number of Variables from 54 to 6.(õıíc8‡Ù‘ö1J$f557d0d5-5014-4f96-b98a-3ef98bcd2966

@@ -9,3 +9,5 @@ i
 9src/main/java/com/mirai/constants/ConfirmationStatus.java,a/5/a51a5456eaa96d8fbedb4ad208a2425c3fd7c60a
 >
 src/.gitignore,9/3/93cbdd0973c9a7b59e5cef90a94300ab95fd66e5
+s
+Csrc/main/java/com/mirai/data/specifications/UserSpecifications.java,b/4/b4cb154f8175ef6e7c7394138d6fe2472b059439

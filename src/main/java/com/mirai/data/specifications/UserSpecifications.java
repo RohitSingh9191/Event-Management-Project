@@ -179,7 +179,10 @@ public class UserSpecifications {
 
     private static Specification<Users> withName(String name) {
         log.info("Filtering users by name: {}", name);
-        return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("name"), name);
+        return (root, query, criteriaBuilder) -> {
+            String namePattern = "%" + name.toLowerCase() + "%"; // Convert search term to lowercase
+            return criteriaBuilder.like(criteriaBuilder.lower(root.get("name")), namePattern);
+        };
     }
 
     private static Specification<Users> withEmail(String email) {
@@ -189,7 +192,13 @@ public class UserSpecifications {
 
     private static Specification<Users> withPhone(String phone) {
         log.info("Filtering users by phone: {}", phone);
-        return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("phone"), phone);
+        String formattedPhone = phone.replaceAll("[^\\d]", "");
+        return (root, query, criteriaBuilder) -> {
+            if (formattedPhone.isEmpty()) {
+                return null; // Return null if phone number is empty after formatting
+            }
+            return criteriaBuilder.equal(root.get("phone"), formattedPhone);
+        };
     }
 
     private static Specification<Users> withCompany(String company) {
