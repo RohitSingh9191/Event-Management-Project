@@ -58,13 +58,13 @@ public class UserController {
         return new ResponseEntity<>(userResponseList, HttpStatus.OK);
     }
 
-    @GetMapping("/excel")
+    @GetMapping("/export")
     @CrossOrigin
     public ResponseEntity<Resource> exportToExcel() throws IOException {
         List<UserResponse> tasks = userService.getAll();
         ByteArrayInputStream excelStream = ExcelExporter.exportToExcel(tasks);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "attachment; filename=tasks.xls");
+        headers.add("Content-Disposition", "attachment; filename=user_list.xls");
         return ResponseEntity.ok()
                 .headers(headers)
                 .contentType(MediaType.parseMediaType("application/vnd.ms-excel"))
