@@ -1,16 +1,18 @@
 
-‰
-java:S1192s"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8®×‘ö1J$11d9209a-cb7c-4859-bd7f-1bab10cff45b
+
+java:S1192@"KDefine a constant instead of duplicating this literal "modifiedAt" 4 times.(Áâ8ôª°“ö1J$07b3bcc4-3b86-480f-9e91-24223db22fcb
+Š
+java:S1192„"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8õª°“ö1J$f50adb80-2b12-4092-8f1d-32a9fdce14ae
 ‘
-java:S1192"HDefine a constant instead of duplicating this literal "company" 4 times.(ã’¥³øÿÿÿÿ8±×‘ö1J$f442a287-6e6e-462f-972b-17dc11b9f321
+java:S1192’"HDefine a constant instead of duplicating this literal "company" 4 times.(ã’¥³øÿÿÿÿ8õª°“ö1J$4168059c-bc8f-4197-a548-1feac9813b10
 •
-java:S1192"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8³×‘ö1J$c5a7d14f-d9b4-4c97-b8f3-98b8fb641aac
+java:S1192Ÿ"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8õª°“ö1J$a3937cca-d2fe-4ed7-94d7-9d76f711bba3
 
-java:S1192e"FDefine a constant instead of duplicating this literal "email" 4 times.(Ü˜ĞÑùÿÿÿÿ8µ×‘ö1J$cc245343-02f4-4320-b15b-aa98c4515c43
+java:S1192v"FDefine a constant instead of duplicating this literal "email" 4 times.(Ü˜ĞÑùÿÿÿÿ8õª°“ö1J$546545b1-ef13-4dc0-850a-42923d070359
 }
 java:S1118
-":Add a private constructor to hide the implicit public one.(ñ‰¼ú8ê×‘ö1J$2622104e-c72b-4c27-84bf-5b12680fcfb0
+":Add a private constructor to hide the implicit public one.(ñ‰¼ú8ˆ«°“ö1J$981ec97c-c171-4c5e-9354-28a8538d5c23
 ”
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 64 to the 15 allowed.(õıíc8ö×‘ö1J$be5bee30-a2ba-414e-ac23-a9720ae5b5c5
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 69 to the 15 allowed.(õıíc8‹«°“ö1J$6c4586e4-64cd-483b-a5f9-0f2bb49cb6f7
 ‰
-java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 138 to 64, Complexity from 49 to 14, Nesting Level from 3 to 2, Number of Variables from 54 to 6.(õıíc8‡Ù‘ö1J$f557d0d5-5014-4f96-b98a-3ef98bcd2966
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 153 to 64, Complexity from 52 to 14, Nesting Level from 3 to 2, Number of Variables from 60 to 6.(õıíc8¯«°“ö1J$4acf23f0-e306-4b5b-9369-1ffdd883b9c1

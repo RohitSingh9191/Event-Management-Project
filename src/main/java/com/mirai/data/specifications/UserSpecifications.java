@@ -60,14 +60,31 @@ public class UserSpecifications {
 
         String sortBy = null;
         String orderBy = null;
-        if (userFilters.getSortBy() != null) {
+        if (userFilters.getSortBy() == null || userFilters.getSortBy().isEmpty()) {
+            sortBy = "modifiedAt";
+        } else {
             sortBy = userFilters.getSortBy();
-            if (sortBy.isEmpty()) sortBy = "name";
         }
 
-        if (userFilters.getOrderBy() != null) {
+        if (userFilters.getOrderBy() == null || userFilters.getOrderBy().isEmpty()) {
+            orderBy = "desc";
+
+        } else {
             orderBy = userFilters.getOrderBy();
-            if (orderBy.isEmpty()) orderBy = "asc";
+        }
+
+        if (sortBy != null && sortBy.equalsIgnoreCase("modifiedAt")) {
+            if (orderBy.equalsIgnoreCase("desc")) {
+                spec = spec.and((root, query, criteriaBuilder) -> {
+                    query.orderBy(criteriaBuilder.desc(root.get("modifiedAt")));
+                    return criteriaBuilder.conjunction();
+                });
+            } else {
+                spec = spec.and((root, query, criteriaBuilder) -> {
+                    query.orderBy(criteriaBuilder.asc(root.get("modifiedAt")));
+                    return criteriaBuilder.conjunction();
+                });
+            }
         }
 
         if (sortBy != null && sortBy.equalsIgnoreCase("name")) {
