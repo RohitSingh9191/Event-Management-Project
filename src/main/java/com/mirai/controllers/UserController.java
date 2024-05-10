@@ -79,7 +79,7 @@ public class UserController {
      * @throws IOException    If an I/O error occurs while confirming the user.
      * @throws WriterException If an error occurs while generating the QR code.
      */
-    @GetMapping("/{id}/{status}")
+    @PostMapping("/{id}/{status}")
     public ResponseEntity userConfirm(@PathVariable("id") Integer id, @PathVariable("status") String status)
             throws IOException, WriterException {
         log.info("Confirming user with ID: {}", id);
@@ -117,8 +117,8 @@ public class UserController {
     }
 
     @PostMapping("/image/{id}")
-    public ResponseEntity<UserResponse> addUserImage(@PathVariable("id") Integer id,@RequestParam("image") MultipartFile image) {
+    public ResponseEntity<UserResponse> addUserImage(
+            @PathVariable("id") Integer id, @RequestParam("image") MultipartFile image) {
         return new ResponseEntity<>(null, HttpStatus.CREATED);
     }
-
 }
