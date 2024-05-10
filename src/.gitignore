@@ -1,12 +1,5 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
 ### IntelliJ IDEA ###
 .idea/
-.target/
-logs/
 *.iws
 *.iml
 *.ipr
@@ -19,3 +12,11 @@ logs/
 .settings
 .springBeans
 .sts4-cache
+
+# Ignore target directory
+target/
+
+# Exclude specific files from being ignored within target directory
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/

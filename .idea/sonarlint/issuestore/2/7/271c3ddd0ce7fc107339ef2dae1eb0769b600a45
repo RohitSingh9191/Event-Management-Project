@@ -1,5 +1,0 @@
-
-	java:S112f"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8³“αυ1J$b440ee7c-8a0b-4d9a-9915-2bf31e86edbb
-
-java:S1192"UDefine a constant instead of duplicating this literal "spring.mail.username" 3 times.(–Ό¦8΅³“αυ1J$d962ce91-661f-413d-b078-b46b3db16d86
-΅	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•Λ±ÿÿÿÿÿ8¤³“αυ1J$2d3d3a4a-4a55-4245-a2d8-31169dadbefa
