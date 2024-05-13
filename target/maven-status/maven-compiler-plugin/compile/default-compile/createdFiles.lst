@@ -23,11 +23,13 @@ com/mirai/exception/customException/MiraiExceptionHandler.class
 com/mirai/models/request/UserAuthRequest.class
 com/mirai/data/entities/Checkin$CheckinBuilder.class
 com/mirai/models/response/UserResponseList$UserResponseListBuilder.class
+com/mirai/models/response/UploadImageResponse.class
 com/mirai/data/entities/Checkin.class
 com/mirai/exception/customException/ErrorResponse.class
 com/mirai/service/amazonS3/impl/AmazonS3ServiceImpl.class
 com/mirai/data/entities/UserAuth$UserAuthBuilder.class
 com/mirai/controllers/AuthController.class
+com/mirai/models/response/UploadImageResponse$UploadImageResponseBuilder.class
 com/mirai/exception/GlobalExceptionHandler.class
 com/mirai/exception/customException/MiraiException.class
 com/mirai/config/securityConfig.class

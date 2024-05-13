@@ -113,8 +113,11 @@ public class UserServiceImpl implements UserService {
         for (Users user : usersList) {
             String url = null;
             if (user.getImage() != null) url = amazonS3Service.publicLinkOfImage(user.getImage());
-            UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
-            userResponseList.add(userResponse);
+
+            if(!user.getStatus().equalsIgnoreCase(ConfirmationStatus.INACTIVE.name())) {
+                UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
+                userResponseList.add(userResponse);
+            }
         }
         log.info("Mapped {} users to user response list", usersList.size());
         return UserResponseList.builder()
@@ -271,6 +274,7 @@ public class UserServiceImpl implements UserService {
         log.info("Fetching profile for user with ID: {}", id);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        if(user.getStatus().equalsIgnoreCase(ConfirmationStatus.INACTIVE.name()))throw new MiraiException(ApplicationErrorCode.USER_NOT_EXIST);
         String url = null;
         if (user.getImage() != null) url = amazonS3Service.publicLinkOfImage(user.getImage());
         UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
