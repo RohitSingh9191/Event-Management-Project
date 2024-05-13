@@ -1,6 +1,6 @@
 package com.mirai.constants;
 
-public enum ConfirmationStatus {
+public enum UserStatus {
     CONFIRMED,
     PENDING,
     REJECTED,

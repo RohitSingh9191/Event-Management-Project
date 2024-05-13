@@ -45,3 +45,5 @@ p
 0src/main/java/com/mirai/data/entities/Users.java,2/0/208aba1d53f41e6dc1a25280c111ac8a75735719
 n
 >src/main/java/com/mirai/models/request/UploadImageRequest.java,b/3/b3cd31c858d9db89772e1b7d7a53168eea27e5c0
+a
+1src/main/java/com/mirai/constants/UserStatus.java,3/8/389ebb1fe5918c9bac8431d6f802bd9f91c70be4

@@ -1,6 +1,7 @@
 package com.mirai.data.specifications;
 
 import com.mirai.constants.PolicyEnum;
+import com.mirai.constants.UserStatus;
 import com.mirai.data.entities.Users;
 import com.mirai.models.request.UserFilters;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,10 @@ import org.springframework.data.jpa.domain.Specification;
 public class UserSpecifications {
     public static Specification<Users> searchUsers(UserFilters userFilters) {
         Specification<Users> spec = Specification.where(null);
+
+        spec = spec.and((root, query, criteriaBuilder) -> criteriaBuilder.or(
+                criteriaBuilder.isNull(root.get("status")),
+                criteriaBuilder.notEqual(root.get("status"), UserStatus.INACTIVE.name())));
 
         String id = userFilters.getId();
         if (id != null && !id.isEmpty()) {

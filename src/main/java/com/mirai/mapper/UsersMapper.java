@@ -1,6 +1,6 @@
 package com.mirai.mapper;
 
-import com.mirai.constants.ConfirmationStatus;
+import com.mirai.constants.UserStatus;
 import com.mirai.data.entities.Checkin;
 import com.mirai.data.entities.Users;
 import com.mirai.models.request.UserRequest;
@@ -55,7 +55,7 @@ public class UsersMapper {
                 .linkedInProfile(userRequest.getLinkedInProfile())
                 .type(userRequest.getType())
                 .isPolicyAccept(policy)
-                .status(ConfirmationStatus.PENDING.name())
+                .status(UserStatus.PENDING.name())
                 .modifiedAt(new Date())
                 .createdAt(new Date())
                 .build();

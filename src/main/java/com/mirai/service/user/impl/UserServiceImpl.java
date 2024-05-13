@@ -1,9 +1,9 @@
 package com.mirai.service.user.impl;
 
 import com.google.zxing.WriterException;
-import com.mirai.constants.ConfirmationStatus;
 import com.mirai.constants.PolicyEnum;
 import com.mirai.constants.RoleEnum;
+import com.mirai.constants.UserStatus;
 import com.mirai.data.entities.Checkin;
 import com.mirai.data.entities.Users;
 import com.mirai.data.repos.CheckinRepository;
@@ -113,10 +113,8 @@ public class UserServiceImpl implements UserService {
         for (Users user : usersList) {
             String url = null;
             if (user.getImage() != null) url = amazonS3Service.publicLinkOfImage(user.getImage());
-            if (user.getStatus() == null || !user.getStatus().equalsIgnoreCase(ConfirmationStatus.INACTIVE.name())) {
-                UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
-                userResponseList.add(userResponse);
-            }
+            UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
+            userResponseList.add(userResponse);
         }
         log.info("Mapped {} users to user response list", usersList.size());
         return UserResponseList.builder()
@@ -223,42 +221,63 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * Confirms a user by sending a confirmation email with a QR code.
+     * Updates the status of a user with the given ID.
      *
-     * @param id The ID of the user to confirm.
-     * @return A message indicating that the email has been sent successfully.
-     * @throws WriterException If an error occurs while generating the QR code.
-     * @throws IOException     If an I/O error occurs while sending the email.
+     * @param id     The ID of the user to update.
+     * @param status The new status to set for the user.
+     * @return A response indicating the result of the update operation.
+     * @throws WriterException  If there is an error writing data.
+     * @throws IOException      If an I/O error occurs.
      */
     @Override
-    public String confirmUser(Integer id, String status) throws WriterException, IOException {
-        log.info("Confirming user with ID: {}", id);
+    public String updateUserStatus(Integer id, String status) throws WriterException, IOException {
+        log.info("Updating user status with ID: {}", id);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         checkValidationOfStatus(status);
-        if (ConfirmationStatus.REJECTED.name().equalsIgnoreCase(status)) {
-            user.setStatus(ConfirmationStatus.REJECTED.name());
+        String resp = updateUser(user, status);
+        return resp;
+    }
+
+    /**
+     * Updates the status of a user and performs additional actions based on the new status.
+     *
+     * @param user   The user whose status is being updated.
+     * @param status The new status to set for the user.
+     * @return A response message indicating the result of the update operation.
+     * @throws IOException     If an I/O error occurs.
+     * @throws WriterException If there is an error writing data.
+     */
+    private String updateUser(Users user, String status) throws IOException, WriterException {
+        Integer id = user.getId();
+        String resp = null;
+        if (UserStatus.REJECTED.name().equalsIgnoreCase(status)) {
+            user.setStatus(UserStatus.REJECTED.name());
             emailService.sendRejectionEmail(user);
+            resp = "Email send successfully at " + user.getEmail();
             log.info("Rejection email sent successfully to {}", user.getEmail());
-        } else if (ConfirmationStatus.INACTIVE.name().equalsIgnoreCase(status)) {
-            user.setStatus(ConfirmationStatus.INACTIVE.name());
-            userRepository.save(user);
-            return "User deleted by id " + id;
+        } else if (UserStatus.INACTIVE.name().equalsIgnoreCase(status)) {
+            user.setStatus(UserStatus.INACTIVE.name());
+            resp = "User deleted by id " + id;
+        } else if (UserStatus.PENDING.name().equalsIgnoreCase(status)) {
+            user.setStatus(UserStatus.PENDING.name());
+            resp = "User status update to " + "Pending with id " + id;
         } else {
-            user.setStatus(ConfirmationStatus.CONFIRMED.name());
+            user.setStatus(UserStatus.CONFIRMED.name());
             String link = "https://api.mirai.events/mirai/v1/user/" + id;
             byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 300, 300);
             emailService.sendEmailWithQRCode(
                     user, "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
             log.info("Confirmation email sent successfully to {}", user.getEmail());
+            resp = "Email send successfully at " + user.getEmail();
         }
         user.setModifiedAt(new Date());
         userRepository.save(user);
-        return "Email send successfully at " + user.getEmail();
+        return resp;
     }
 
     private void checkValidationOfStatus(String status) {
-        if (!Arrays.stream(ConfirmationStatus.values())
+        if (!Arrays.stream(UserStatus.values())
                 .anyMatch(enumConstant -> enumConstant.name().equalsIgnoreCase(status))) {
             log.info("Invalid company type: {}", status);
             throw new MiraiException(ApplicationErrorCode.INVALID_STATUS);
@@ -277,7 +296,7 @@ public class UserServiceImpl implements UserService {
         log.info("Fetching profile for user with ID: {}", id);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
-        if (user.getStatus().equalsIgnoreCase(ConfirmationStatus.INACTIVE.name()))
+        if (user.getStatus().equalsIgnoreCase(UserStatus.INACTIVE.name()))
             throw new MiraiException(ApplicationErrorCode.USER_NOT_EXIST);
         String url = null;
         if (user.getImage() != null) url = amazonS3Service.publicLinkOfImage(user.getImage());
