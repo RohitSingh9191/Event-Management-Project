@@ -22,4 +22,5 @@ public class UserResponse {
     private Boolean isPolicyAccept;
     private String status;
     private Date date;
+    private String imageUrl;
 }

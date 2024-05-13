@@ -10,4 +10,6 @@ public interface AmazonS3Service {
 
     UploadImageResponse uploadPhoto(MultipartFile image, String fileName)
             throws IOException, AmazonServiceException, SdkClientException;
+
+    String publicLinkOfImage(String fileName);
 }

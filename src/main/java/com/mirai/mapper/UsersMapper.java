@@ -28,6 +28,23 @@ public class UsersMapper {
                 .build();
     }
 
+    public static UserResponse mapUserToGetAllUserResponse(Users user, String imageUrl) {
+        return UserResponse.builder()
+                .id(user.getId())
+                .name(user.getName())
+                .email(user.getEmail())
+                .company(user.getCompany())
+                .designation(user.getDesignation())
+                .phone(user.getPhone())
+                .linkedInProfile(user.getLinkedInProfile())
+                .type(user.getType())
+                .isPolicyAccept(user.getIsPolicyAccept())
+                .status(user.getStatus())
+                .date(user.getModifiedAt())
+                .imageUrl(imageUrl)
+                .build();
+    }
+
     public static Users mapUserRequestToUser(UserRequest userRequest, Boolean policy) {
         return Users.builder()
                 .email(userRequest.getEmail())
