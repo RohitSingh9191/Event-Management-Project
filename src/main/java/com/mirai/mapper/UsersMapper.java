@@ -39,7 +39,7 @@ public class UsersMapper {
                 .linkedInProfile(user.getLinkedInProfile())
                 .type(user.getType())
                 .isPolicyAccept(user.getIsPolicyAccept())
-                .status(user.getStatus())
+                .status(user.getStatus() != null ? user.getStatus() : null)
                 .date(user.getModifiedAt())
                 .imageUrl(imageUrl)
                 .build();

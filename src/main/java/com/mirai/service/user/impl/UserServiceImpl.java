@@ -113,8 +113,7 @@ public class UserServiceImpl implements UserService {
         for (Users user : usersList) {
             String url = null;
             if (user.getImage() != null) url = amazonS3Service.publicLinkOfImage(user.getImage());
-
-            if(!user.getStatus().equalsIgnoreCase(ConfirmationStatus.INACTIVE.name())) {
+            if (user.getStatus() == null || !user.getStatus().equalsIgnoreCase(ConfirmationStatus.INACTIVE.name())) {
                 UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
                 userResponseList.add(userResponse);
             }
@@ -241,6 +240,10 @@ public class UserServiceImpl implements UserService {
             user.setStatus(ConfirmationStatus.REJECTED.name());
             emailService.sendRejectionEmail(user);
             log.info("Rejection email sent successfully to {}", user.getEmail());
+        } else if (ConfirmationStatus.INACTIVE.name().equalsIgnoreCase(status)) {
+            user.setStatus(ConfirmationStatus.INACTIVE.name());
+            userRepository.save(user);
+            return "User deleted by id " + id;
         } else {
             user.setStatus(ConfirmationStatus.CONFIRMED.name());
             String link = "https://api.mirai.events/mirai/v1/user/" + id;
@@ -274,7 +277,8 @@ public class UserServiceImpl implements UserService {
         log.info("Fetching profile for user with ID: {}", id);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
-        if(user.getStatus().equalsIgnoreCase(ConfirmationStatus.INACTIVE.name()))throw new MiraiException(ApplicationErrorCode.USER_NOT_EXIST);
+        if (user.getStatus().equalsIgnoreCase(ConfirmationStatus.INACTIVE.name()))
+            throw new MiraiException(ApplicationErrorCode.USER_NOT_EXIST);
         String url = null;
         if (user.getImage() != null) url = amazonS3Service.publicLinkOfImage(user.getImage());
         UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);

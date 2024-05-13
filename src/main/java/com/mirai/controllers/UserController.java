@@ -81,7 +81,7 @@ public class UserController {
      * @throws WriterException If an error occurs while generating the QR code.
      */
     @PostMapping("/{id}/{status}")
-    public ResponseEntity userConfirm(@PathVariable("id") Integer id, @PathVariable("status") String status)
+    public ResponseEntity userStatusUpdate(@PathVariable("id") Integer id, @PathVariable("status") String status)
             throws IOException, WriterException {
         log.info("Confirming user with ID: {}", id);
         String response = userService.confirmUser(id, status);
