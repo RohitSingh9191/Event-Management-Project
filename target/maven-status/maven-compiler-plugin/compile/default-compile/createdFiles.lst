@@ -16,6 +16,7 @@ com/mirai/constants/RoleEnum.class
 com/mirai/models/request/LoginRequest.class
 com/mirai/service/email/Impl/EmailServiceImpl.class
 com/mirai/models/response/JWTResponse$JWTResponseBuilder.class
+com/mirai/service/amazonS3/AmazonS3Service.class
 com/mirai/models/response/LoginResponse$LoginResponseBuilder.class
 com/mirai/models/request/LoginRequest$LoginRequestBuilder.class
 com/mirai/exception/customException/MiraiExceptionHandler.class
@@ -24,6 +25,7 @@ com/mirai/data/entities/Checkin$CheckinBuilder.class
 com/mirai/models/response/UserResponseList$UserResponseListBuilder.class
 com/mirai/data/entities/Checkin.class
 com/mirai/exception/customException/ErrorResponse.class
+com/mirai/service/amazonS3/impl/AmazonS3ServiceImpl.class
 com/mirai/data/entities/UserAuth$UserAuthBuilder.class
 com/mirai/controllers/AuthController.class
 com/mirai/exception/GlobalExceptionHandler.class

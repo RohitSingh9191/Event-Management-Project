@@ -14,8 +14,10 @@ import com.mirai.exception.customException.MiraiException;
 import com.mirai.mapper.UsersMapper;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
+import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import com.mirai.models.response.UserResponseList;
+import com.mirai.service.amazonS3.AmazonS3Service;
 import com.mirai.service.email.EmailService;
 import com.mirai.service.user.UserService;
 import com.mirai.utils.MiraiUtils;
@@ -31,6 +33,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @AllArgsConstructor
 @Service
@@ -42,6 +45,8 @@ public class UserServiceImpl implements UserService {
     private final CheckinRepository checkinRepository;
 
     private final EmailService emailService;
+
+    private final AmazonS3Service amazonS3Service;
 
     private final Environment env;
 
@@ -286,5 +291,27 @@ public class UserServiceImpl implements UserService {
         UserResponse userResponse = UsersMapper.mapUserToUserResponse(user);
         log.info("User with ID {} checked in successfully", id);
         return userResponse;
+    }
+
+    /**
+     * Uploads a photo for the user with the specified ID.
+     *
+     * @param id    The ID of the user.
+     * @param image The image to upload.
+     * @return UploadImageResponse containing information about the uploaded image.
+     * @throws IOException If an I/O exception occurs during the upload process.
+     */
+    @Override
+    public UploadImageResponse uploadPhoto(Integer id, MultipartFile image) throws IOException {
+        log.info("Starting photo upload process for user with ID: {}", id);
+        if (image == null || image.isEmpty()) throw new MiraiException(ApplicationErrorCode.IMAGE_NOT_FOUND);
+        Users user =
+                userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        String fileName = String.valueOf(id);
+        UploadImageResponse response = amazonS3Service.uploadPhoto(image, fileName);
+        user.setImage(response.getFileName());
+        userRepository.save(user);
+        log.info("Uploaded photo for user with ID {}: {}", id, response);
+        return response;
     }
 }

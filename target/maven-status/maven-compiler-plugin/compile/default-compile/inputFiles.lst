@@ -31,6 +31,7 @@
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/exception/customException/ApplicationErrorCode.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/request/LoginRequest.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/config/appConfig.java
+/home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/amazonS3/impl/AmazonS3ServiceImpl.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/utils/ExcelExporter.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/controllers/AuthController.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/response/LoginResponse.java
@@ -40,6 +41,7 @@
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/auth/AuthService.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/response/UserResponse.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/response/UserResponseList.java
+/home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/amazonS3/AmazonS3Service.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/data/repos/UserRepository.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/data/entities/Users.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/exception/customException/MiraiException.java

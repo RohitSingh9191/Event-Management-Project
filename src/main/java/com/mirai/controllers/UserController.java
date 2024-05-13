@@ -3,6 +3,7 @@ package com.mirai.controllers;
 import com.google.zxing.WriterException;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
+import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import com.mirai.models.response.UserResponseList;
 import com.mirai.service.user.UserService;
@@ -116,9 +117,20 @@ public class UserController {
         return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
     }
 
+    /**
+     * Uploads an image for a user with the specified ID.
+     *
+     * @param id    The ID of the user.
+     * @param image The image to upload.
+     * @return ResponseEntity containing the UploadImageResponse and HTTP status CREATED.
+     * @throws IOException If an I/O exception occurs during the upload process.
+     */
     @PostMapping("/image/{id}")
-    public ResponseEntity<UserResponse> addUserImage(
-            @PathVariable("id") Integer id, @RequestParam("image") MultipartFile image) {
-        return new ResponseEntity<>(null, HttpStatus.CREATED);
+    public ResponseEntity<UploadImageResponse> addUserImage(
+            @PathVariable("id") Integer id, @RequestParam("image") MultipartFile image) throws IOException {
+        log.info("Received request to upload image for user with ID: {}", id);
+        UploadImageResponse uploadImageResponse = userService.uploadPhoto(id, image);
+        log.info("Image upload response: {}", uploadImageResponse);
+        return new ResponseEntity<>(uploadImageResponse, HttpStatus.CREATED);
     }
 }

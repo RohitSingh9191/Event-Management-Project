@@ -4,6 +4,7 @@ import com.mirai.constants.ConfirmationStatus;
 import com.mirai.data.entities.Checkin;
 import com.mirai.data.entities.Users;
 import com.mirai.models.request.UserRequest;
+import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import java.util.Date;
 import lombok.NoArgsConstructor;
@@ -48,6 +49,14 @@ public class UsersMapper {
                 .userId(user.getId())
                 .checkinTime(new Date())
                 .status("CHECKED_IN")
+                .build();
+    }
+
+    public static UploadImageResponse mapToUploadPhotoResponse(String id, String url, String finalFileName) {
+        return UploadImageResponse.builder()
+                .id(id)
+                .fileName(finalFileName)
+                .imageUrl(url)
                 .build();
     }
 }
