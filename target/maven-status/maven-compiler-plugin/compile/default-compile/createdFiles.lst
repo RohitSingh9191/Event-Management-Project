@@ -9,6 +9,7 @@ com/mirai/models/response/AuthResponse$AuthResponseBuilder.class
 com/mirai/security/JwtAuthenticationFilter.class
 com/mirai/service/user/impl/CustomUserDetailsService.class
 com/mirai/models/response/JWTResponse.class
+com/mirai/models/request/UploadImageRequest$UploadImageRequestBuilder.class
 com/mirai/models/request/JWTRequest$JWTRequestBuilder.class
 com/mirai/exception/customException/ApplicationErrorCode.class
 com/mirai/exception/customException/ErrorCode.class
@@ -33,6 +34,7 @@ com/mirai/models/response/UploadImageResponse$UploadImageResponseBuilder.class
 com/mirai/exception/GlobalExceptionHandler.class
 com/mirai/exception/customException/MiraiException.class
 com/mirai/config/securityConfig.class
+com/mirai/models/request/UploadImageRequest.class
 com/mirai/data/repos/UserRepository.class
 com/mirai/security/JwtHelper.class
 com/mirai/data/entities/UserAuth.class
@@ -51,11 +53,11 @@ com/mirai/mapper/AuthMapper.class
 com/mirai/models/request/UserFilters.class
 com/mirai/models/request/JWTRequest.class
 com/mirai/data/repos/CheckinRepository.class
-com/mirai/constants/ConfirmationStatus.class
 com/mirai/models/response/UserResponse$UserResponseBuilder.class
 com/mirai/service/user/impl/UserServiceImpl.class
 com/mirai/data/entities/Users$UsersBuilder.class
 com/mirai/data/repos/UserAuthRepository.class
+com/mirai/constants/UserStatus.class
 com/mirai/security/JWTAuthenticationEntryPoint.class
 com/mirai/MiraiApplication.class
 com/mirai/service/auth/impl/AuthServiceImpl.class

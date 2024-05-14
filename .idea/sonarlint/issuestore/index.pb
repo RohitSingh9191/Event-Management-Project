@@ -5,8 +5,6 @@ i
 9src/main/java/com/mirai/models/response/UserResponse.java,0/6/0633d3d6712bba39cab667db938fb14b7925b398
 `
 0src/main/java/com/mirai/utils/ExcelExporter.java,2/6/26981a25b19ebba7e62ef65b290de93057ab2288
-i
-9src/main/java/com/mirai/constants/ConfirmationStatus.java,a/5/a51a5456eaa96d8fbedb4ad208a2425c3fd7c60a
 >
 src/.gitignore,9/3/93cbdd0973c9a7b59e5cef90a94300ab95fd66e5
 s
@@ -31,12 +29,6 @@ p
 @src/main/java/com/mirai/service/email/Impl/EmailServiceImpl.java,2/7/271c3ddd0ce7fc107339ef2dae1eb0769b600a45
 ]
 -src/main/java/com/mirai/utils/MiraiUtils.java,1/6/1632979cf056881a752774967132ba486b93173c
-m
-=src/main/java/com/mirai/service/amazonS3/AmazonS3Service.java,1/7/17c8ab677c91d7b959e838732bac65ab59d2d2dc
-v
-Fsrc/main/java/com/mirai/service/amazonS3/impl/AmazonS3ServiceImpl.java,f/f/ff306595a61cf9f0cd535b141cff34d5c9923a12
-p
-@src/main/java/com/mirai/models/response/UploadPhotoResponse.java,0/4/042561138a519222900272d57d5ef0a55ced921d
 _
 /src/main/java/com/mirai/mapper/UsersMapper.java,4/b/4b8d0613e8e2f02c7adb627a80032f579c6d7acd
 p
@@ -47,3 +39,13 @@ n
 >src/main/java/com/mirai/models/request/UploadImageRequest.java,b/3/b3cd31c858d9db89772e1b7d7a53168eea27e5c0
 a
 1src/main/java/com/mirai/constants/UserStatus.java,3/8/389ebb1fe5918c9bac8431d6f802bd9f91c70be4
+z
+Jsrc/main/java/com/mirai/service/amazonBucket/impl/AmazonS3ServiceImpl.java,b/0/b09d391056774c535fd72cf926070aa43caf3dcc
+m
+=src/main/java/com/mirai/service/whatsApp/WhatsAppService.java,5/1/5150fce04678be7c19c7245594b1496b7513380e
+v
+Fsrc/main/java/com/mirai/service/whatsApp/impl/WhatsAppServiceImpl.java,6/f/6f285aeff8d97628814a690b4fa87f6fecc29c3f
+q
+Asrc/main/java/com/mirai/service/amazonBucket/AmazonS3Service.java,4/9/492d04705288773ddf946fa92c994c3def0bd096
+w
+Gsrc/main/java/com/mirai/service/user/impl/CustomUserDetailsService.java,8/4/84c10059e98460f3ff3f20a45db0ba1e6eebade3

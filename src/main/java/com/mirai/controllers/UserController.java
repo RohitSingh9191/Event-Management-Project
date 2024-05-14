@@ -7,6 +7,7 @@ import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import com.mirai.models.response.UserResponseList;
 import com.mirai.service.user.UserService;
+import com.mirai.service.whatsApp.WhatsAppService;
 import com.mirai.utils.ExcelExporter;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -30,6 +31,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class UserController {
 
     private final UserService userService;
+
+    private final WhatsAppService whatsAppService;
 
     /**
      * Saves user details.
@@ -132,5 +135,10 @@ public class UserController {
         UploadImageResponse uploadImageResponse = userService.uploadPhoto(id, image);
         log.info("Image upload response: {}", uploadImageResponse);
         return new ResponseEntity<>(uploadImageResponse, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/msg/wp")
+    public void addUseswd() {
+        whatsAppService.sendQrWhatsAppMessage("+917880742825", "rohit", "https/jhsdgfhjgkdnfjkhfjnnbnbnnfjY IUFIUYIUR");
     }
 }

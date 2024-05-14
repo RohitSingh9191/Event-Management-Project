@@ -1,14 +1,14 @@
 
 
 java:S1192E"KDefine a constant instead of duplicating this literal "modifiedAt" 4 times.(Áâ8…ˆË–÷1J$429c7cdb-3aa5-4a44-83fe-08000f1095e2
-Š
-java:S1192‰"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8†ˆË–÷1J$f18c4dd9-5db0-4b5c-b71a-ff06b708ca79
 ‘
 java:S1192—"HDefine a constant instead of duplicating this literal "company" 4 times.(ã’¥³øÿÿÿÿ8†ˆË–÷1J$1b2858b2-78b4-4987-951e-8e3b9d5c7ecb
-•
-java:S1192¤"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8†ˆË–÷1J$ee0d335b-689c-4639-9fcf-fa09bb8b6eee
 
 java:S1192{"FDefine a constant instead of duplicating this literal "email" 4 times.(Ü˜ĞÑùÿÿÿÿ8†ˆË–÷1J$c185fd3b-5413-4605-bb78-fc5be408ac4b
+Š
+java:S1192‰"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8†ˆË–÷1J$f18c4dd9-5db0-4b5c-b71a-ff06b708ca79
+•
+java:S1192¤"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8†ˆË–÷1J$ee0d335b-689c-4639-9fcf-fa09bb8b6eee
 W
 java:S1118":Add a private constructor to hide the implicit public one.(ñ‰¼ú8²±Ù—÷1
 n

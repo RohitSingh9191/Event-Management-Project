@@ -17,9 +17,10 @@ import com.mirai.models.request.UserRequest;
 import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import com.mirai.models.response.UserResponseList;
-import com.mirai.service.amazonS3.AmazonS3Service;
+import com.mirai.service.amazonBucket.AmazonS3Service;
 import com.mirai.service.email.EmailService;
 import com.mirai.service.user.UserService;
+import com.mirai.service.whatsApp.WhatsAppService;
 import com.mirai.utils.MiraiUtils;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,6 +51,8 @@ public class UserServiceImpl implements UserService {
 
     private final Environment env;
 
+    private final WhatsAppService whatsAppService;
+
     /**
      * Saves user details.
      *
@@ -62,6 +65,8 @@ public class UserServiceImpl implements UserService {
         String userEmail = userRequest.getEmail();
         Users users = userRepository.findByEmail(userEmail);
         if (users != null) {
+            whatsAppService.sendWhatsAppMessage(
+                    "+91" + users.getPhone(), "registeruser", "register_user", "name", users.getName());
             mailService(users);
             mailSendToAdmin(users);
             users.setModifiedAt(new Date());
@@ -112,7 +117,8 @@ public class UserServiceImpl implements UserService {
         List<UserResponse> userResponseList = new ArrayList<>();
         for (Users user : usersList) {
             String url = null;
-            if (user.getImage() != null) url = amazonS3Service.publicLinkOfImage(user.getImage());
+            if (user.getImage() != null)
+                url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
             UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
             userResponseList.add(userResponse);
         }
@@ -201,21 +207,42 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    /**
+     * Checks if a given string value is a valid member of the specified enum class.
+     *
+     * @param enumClass The enum class to check against.
+     * @param value     The string value to check.
+     * @return True if the value is a valid member of the enum class, false otherwise.
+     */
     public boolean isEnumValue(Class<? extends Enum<?>> enumClass, String value) {
+        log.info("Checking if '" + value + "' is a valid member of enum class " + enumClass.getName());
         for (Enum<?> enumValue : enumClass.getEnumConstants()) {
             if (enumValue.name().equalsIgnoreCase(value)) {
+                log.info("'" + value + "' is a valid member of enum class " + enumClass.getName());
                 return true;
             }
         }
+        log.info("'" + value + "' is not a valid member of enum class " + enumClass.getName());
         return false;
     }
 
+    /**
+     * Converts a policy string to a boolean value.
+     *
+     * @param policyString The policy string to convert.
+     * @return True if the policy string is equivalent to ACCEPT, false if it is equivalent to REJECT.
+     * @throws MiraiException If the policy string is neither ACCEPT nor REJECT.
+     */
     private static Boolean convertPolicyStringToBoolean(String policyString) {
+        log.info("Converting policy string '" + policyString + "' to boolean value");
         if (PolicyEnum.ACCEPT.name().equalsIgnoreCase(policyString)) {
+            log.info("Policy string '" + policyString + "' is equivalent to REJECT, returning false");
             return true;
         } else if (PolicyEnum.REJECT.name().equalsIgnoreCase(policyString)) {
+            log.info("Policy string '" + policyString + "' is equivalent to REJECT, returning false");
             return false;
         } else {
+            log.error("Invalid policy string: '" + policyString + "'. Throwing MiraiException.");
             throw new MiraiException(ApplicationErrorCode.INVALID_POLICY_TYPE);
         }
     }
@@ -235,7 +262,7 @@ public class UserServiceImpl implements UserService {
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         checkValidationOfStatus(status);
-        String resp = updateUser(user, status);
+        String resp = updateUserStatus(user, status);
         return resp;
     }
 
@@ -248,11 +275,13 @@ public class UserServiceImpl implements UserService {
      * @throws IOException     If an I/O error occurs.
      * @throws WriterException If there is an error writing data.
      */
-    private String updateUser(Users user, String status) throws IOException, WriterException {
+    private String updateUserStatus(Users user, String status) throws IOException, WriterException {
         Integer id = user.getId();
         String resp = null;
         if (UserStatus.REJECTED.name().equalsIgnoreCase(status)) {
             user.setStatus(UserStatus.REJECTED.name());
+            whatsAppService.sendWhatsAppMessage(
+                    "+91" + user.getPhone(), "rejectuser", "reject_user", "name", user.getName());
             emailService.sendRejectionEmail(user);
             resp = "Email send successfully at " + user.getEmail();
             log.info("Rejection email sent successfully to {}", user.getEmail());
@@ -266,6 +295,8 @@ public class UserServiceImpl implements UserService {
             user.setStatus(UserStatus.CONFIRMED.name());
             String link = "https://api.mirai.events/mirai/v1/user/" + id;
             byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 300, 300);
+            String url = amazonS3Service.uploadQRCodeToS3(qrCodeImage, String.valueOf(id));
+            whatsAppService.sendQrWhatsAppMessage("91" + user.getPhone(), user.getName(), url);
             emailService.sendEmailWithQRCode(
                     user, "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
             log.info("Confirmation email sent successfully to {}", user.getEmail());
@@ -276,10 +307,18 @@ public class UserServiceImpl implements UserService {
         return resp;
     }
 
+    /**
+     * Checks the validation of a user status.
+     *
+     * @param status The user status to validate.
+     * @throws MiraiException If the user status is invalid.
+     */
     private void checkValidationOfStatus(String status) {
+        log.info("Checking validation of user status: {}", status);
         if (!Arrays.stream(UserStatus.values())
                 .anyMatch(enumConstant -> enumConstant.name().equalsIgnoreCase(status))) {
             log.info("Invalid company type: {}", status);
+            log.info("Invalid user status: {}", status);
             throw new MiraiException(ApplicationErrorCode.INVALID_STATUS);
         }
     }
@@ -299,7 +338,8 @@ public class UserServiceImpl implements UserService {
         if (user.getStatus().equalsIgnoreCase(UserStatus.INACTIVE.name()))
             throw new MiraiException(ApplicationErrorCode.USER_NOT_EXIST);
         String url = null;
-        if (user.getImage() != null) url = amazonS3Service.publicLinkOfImage(user.getImage());
+        if (user.getImage() != null)
+            url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
         UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
         log.info("Profile fetched successfully for user with ID: {}", id);
         return userResponse;
