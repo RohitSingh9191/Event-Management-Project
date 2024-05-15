@@ -139,6 +139,7 @@ public class UserController {
 
     @GetMapping("/msg/wp")
     public void addUseswd() {
-        whatsAppService.sendQrWhatsAppMessage("+917880742825", "rohit", "https/jhsdgfhjgkdnfjkhfjnnbnbnnfjY IUFIUYIUR");
+        whatsAppService.sendQrWhatsAppMessage(
+                "+917880742825", "rohit", "https://s3.ap-south-1.amazonaws.com/miraievents/qr/1.png");
     }
 }

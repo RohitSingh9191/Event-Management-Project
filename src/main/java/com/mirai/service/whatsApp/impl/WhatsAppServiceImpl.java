@@ -45,19 +45,18 @@ public class WhatsAppServiceImpl implements WhatsAppService {
 
         // Create request entity
         HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
-
+        System.out.println("Request URL: " + url);
+        System.out.println("Request Body: " + requestBody);
         // Send POST request
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, requestEntity, String.class);
         System.out.println("Response Status Code: " + responseEntity.getStatusCode());
         System.out.println("Response Body: " + responseEntity.getBody());
-        // Handle response
+
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
-            // Successful request
             String responseBody = responseEntity.getBody();
-            // Process the response if needed
+
         } else {
             // Handle error
-            // You can log or throw an exception based on the response status
         }
     }
 
@@ -81,8 +80,8 @@ public class WhatsAppServiceImpl implements WhatsAppService {
 
         // Create request body
         Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("template_name", "confirmuser"); // Ensure this matches the template name in your JSON data
-        requestBody.put("broadcast_name", "confirm_user"); // Ensure this matches the broadcast name in your JSON data
+        requestBody.put("template_name", "confirmuser");
+        requestBody.put("broadcast_name", "confirm_user");
         requestBody.put("parameters", parameters);
 
         // Set headers
@@ -105,14 +104,10 @@ public class WhatsAppServiceImpl implements WhatsAppService {
         System.out.println("Response Status Code: " + responseEntity.getStatusCode());
         System.out.println("Response Body: " + responseEntity.getBody());
 
-        // Handle response
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
-            // Successful request
             String responseBody = responseEntity.getBody();
-            // Process the response if needed
+
         } else {
-            // Handle error
-            // You can log or throw an exception based on the response status
         }
     }
 }
