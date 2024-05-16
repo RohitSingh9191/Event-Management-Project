@@ -3,6 +3,7 @@ package com.mirai.service.user;
 import com.google.zxing.WriterException;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
+import com.mirai.models.response.CheckinResponse;
 import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import com.mirai.models.response.UserResponseList;
@@ -22,7 +23,7 @@ public interface UserService {
 
     UserResponse getUserProfile(Integer id);
 
-    UserResponse userCheckin(Integer id);
+    CheckinResponse userCheckin(Integer id);
 
     UploadImageResponse uploadPhoto(Integer id, MultipartFile image) throws IOException;
 }

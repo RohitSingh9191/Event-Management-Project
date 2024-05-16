@@ -115,7 +115,7 @@ public class AmazonS3ServiceImpl implements AmazonS3Service {
         metaData.setContentType("image/png"); // Assuming QR code is PNG format
         metaData.setContentLength(qrCodeImage.length);
 
-        String finalFileName = id + ".png"; // Assuming PNG format for the QR code
+        String finalFileName = id + ".jpg"; // Assuming PNG format for the QR code
 
         // Convert byte array to InputStream
         ByteArrayInputStream inputStream = new ByteArrayInputStream(qrCodeImage);

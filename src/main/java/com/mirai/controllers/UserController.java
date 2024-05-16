@@ -3,9 +3,11 @@ package com.mirai.controllers;
 import com.google.zxing.WriterException;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
+import com.mirai.models.response.CheckinResponse;
 import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import com.mirai.models.response.UserResponseList;
+import com.mirai.service.compareFaces.impl.CompareFacesImp;
 import com.mirai.service.user.UserService;
 import com.mirai.service.whatsApp.WhatsAppService;
 import com.mirai.utils.ExcelExporter;
@@ -113,11 +115,11 @@ public class UserController {
      * @return ResponseEntity containing the UserResponse and HttpStatus.CREATED.
      */
     @PostMapping("/checkin/{id}")
-    public ResponseEntity<UserResponse> userCheckin(@PathVariable("id") Integer id) {
+    public ResponseEntity<CheckinResponse> userCheckin(@PathVariable("id") Integer id) {
         log.info("Received request to check in user with ID: {}", id);
-        UserResponse userResponse = userService.userCheckin(id);
+        CheckinResponse resp = userService.userCheckin(id);
         log.info("User with ID {} checked in successfully", id);
-        return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
+        return new ResponseEntity<>(resp, HttpStatus.CREATED);
     }
 
     /**
@@ -140,6 +142,13 @@ public class UserController {
     @GetMapping("/msg/wp")
     public void addUseswd() {
         whatsAppService.sendQrWhatsAppMessage(
-                "+917880742825", "rohit", "https://s3.ap-south-1.amazonaws.com/miraievents/qr/1.png");
+                "7880742825", "rohit", "https://s3.ap-south-1.amazonaws.com/miraievents/qr/1.png");
+    }
+
+    CompareFacesImp compareFacesImp;
+
+    @GetMapping("/face")
+    public void face() {
+        compareFacesImp.faceCompare();
     }
 }

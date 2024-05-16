@@ -30,7 +30,9 @@ public class WhatsAppServiceImpl implements WhatsAppService {
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("template_name", templateName);
         requestBody.put("broadcast_name", broadcastName);
+
         List<Map<String, String>> parameters = new ArrayList<>();
+
         Map<String, String> parameter = new HashMap<>();
         parameter.put("name", paramName);
         parameter.put("value", paramValue);
@@ -66,22 +68,23 @@ public class WhatsAppServiceImpl implements WhatsAppService {
         String url =
                 "https://live-mt-server.wati.io/315238/api/v1/sendTemplateMessage?whatsappNumber=" + whatsappNumber;
 
-        // Create parameters list
-        List<Map<String, String>> parameters = new ArrayList<>();
-        Map<String, String> nameParam = new HashMap<>();
-        nameParam.put("name", "name");
-        nameParam.put("value", userName);
-        parameters.add(nameParam);
-
-        Map<String, String> imageUrlParam = new HashMap<>();
-        imageUrlParam.put("name", "product_image_url");
-        imageUrlParam.put("value", imageUrl);
-        parameters.add(imageUrlParam);
-
         // Create request body
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("template_name", "confirmuser");
         requestBody.put("broadcast_name", "confirm_user");
+
+        List<Map<String, String>> parameters = new ArrayList<>();
+
+        Map<String, String> nameParameter = new HashMap<>();
+        nameParameter.put("name", "name");
+        nameParameter.put("value", userName);
+        parameters.add(nameParameter);
+
+        Map<String, String> productImageParameter = new HashMap<>();
+        productImageParameter.put("name", "product_image_url");
+        productImageParameter.put("value", imageUrl);
+        parameters.add(productImageParameter);
+
         requestBody.put("parameters", parameters);
 
         // Set headers
@@ -92,22 +95,81 @@ public class WhatsAppServiceImpl implements WhatsAppService {
 
         // Create request entity
         HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
-
-        // Print request for debugging
         System.out.println("Request URL: " + url);
         System.out.println("Request Body: " + requestBody);
-
         // Send POST request
-        ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, requestEntity, String.class);
+        try {
+            // Send POST request
+            ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, requestEntity, String.class);
 
-        // Log response for debugging
-        System.out.println("Response Status Code: " + responseEntity.getStatusCode());
-        System.out.println("Response Body: " + responseEntity.getBody());
+            System.out.println("Response Status Code: " + responseEntity.getStatusCode());
+            System.out.println("Response Body: " + responseEntity.getBody());
 
-        if (responseEntity.getStatusCode() == HttpStatus.OK) {
-            String responseBody = responseEntity.getBody();
-
-        } else {
+            if (responseEntity.getStatusCode() == HttpStatus.OK) {
+                String responseBody = responseEntity.getBody();
+                System.out.println("Message sent successfully: " + responseBody);
+            } else {
+                System.err.println("Failed to send message. HTTP Status: " + responseEntity.getStatusCode());
+            }
+        } catch (Exception e) {
+            System.err.println("Exception occurred while sending WhatsApp message: " + e.getMessage());
+            e.printStackTrace();
         }
     }
+
+    //    public void sendQrWhatsAppMessage(String whatsappNumber, String userName, String imageUrl) {
+    //        RestTemplate restTemplate = new RestTemplate();
+    //
+    //        String url = "https://live-mt-server.wati.io/315238/api/v1/sendTemplateMessage?whatsappNumber=" +
+    // whatsappNumber;
+    //
+    //        // Create parameters list
+    //        List<Map<String, String>> parameters = new ArrayList<>();
+    //        Map<String, String> nameParam = new HashMap<>();
+    //        nameParam.put("name", "name");
+    //        nameParam.put("value", userName);
+    //        parameters.add(nameParam);
+    //
+    //        Map<String, String> imageUrlParam = new HashMap<>();
+    //        imageUrlParam.put("name", "product_image_url");
+    //        imageUrlParam.put("value", imageUrl);
+    //        parameters.add(imageUrlParam);
+    //
+    //        // Create request body
+    //        Map<String, Object> requestBody = new HashMap<>();
+    //        requestBody.put("template_name", "confirmuser");
+    //        requestBody.put("broadcast_name", "confirm_user");
+    //        requestBody.put("parameters", parameters);
+    //
+    //        // Set headers
+    //        HttpHeaders headers = new HttpHeaders();
+    //        headers.setContentType(MediaType.APPLICATION_JSON);
+    //        String token = env.getProperty("wpToken");
+    //        headers.set("Authorization", "Bearer " + token);
+    //
+    //        // Create request entity
+    //        HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
+    //
+    //        System.out.println("Request URL: " + url);
+    //        System.out.println("Request Body: " + requestBody);
+    //
+    //        try {
+    //            // Send POST request
+    //            ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, requestEntity, String.class);
+    //
+    //            System.out.println("Response Status Code: " + responseEntity.getStatusCode());
+    //            System.out.println("Response Body: " + responseEntity.getBody());
+    //
+    //            if (responseEntity.getStatusCode() == HttpStatus.OK) {
+    //                String responseBody = responseEntity.getBody();
+    //                System.out.println("Message sent successfully: " + responseBody);
+    //            } else {
+    //                System.err.println("Failed to send message. HTTP Status: " + responseEntity.getStatusCode());
+    //            }
+    //        } catch (Exception e) {
+    //            System.err.println("Exception occurred while sending WhatsApp message: " + e.getMessage());
+    //            e.printStackTrace();
+    //        }
+    //    }
+
 }
