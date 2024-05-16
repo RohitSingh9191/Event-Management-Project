@@ -84,7 +84,7 @@ public class UserServiceImpl implements UserService {
         mailService(user);
         mailSendToAdmin(users);
         whatsAppService.sendWhatsAppMessage(
-                "+91" + users.getPhone(), "registeruser", "register_user", "name", users.getName());
+                "+91" + userRequest.getPhone(), "registeruser", "register_user", "name", userRequest.getName());
         userRepository.save(user);
         log.info("User saved successfully: {}", user);
         return UsersMapper.mapUserToUserResponse(user);
