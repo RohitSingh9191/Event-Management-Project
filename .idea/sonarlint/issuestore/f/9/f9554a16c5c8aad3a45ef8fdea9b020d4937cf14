@@ -1,15 +1,0 @@
-
-	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÄÃİ8™´ò®ø1J$4865dd50-28f4-49e4-8ec9-aa9b0492ff9f
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¬ªåÑùÿÿÿÿ8¾Œ›®ø1J$d6004265-46dd-4d32-90a9-d3bb65bf1b68
-£
-java:S1450 "`Remove the "rekognitionClient" field and declare it as a local variable in the relevant methods.(½õ‚”8¨ã¸¯ø1J$ca693909-aab7-4ab1-aa43-448b0804b8ff
-r	java:S106&"+Replace this use of System.out by a logger.(¬´Ê ùÿÿÿÿ8š°«®ø1J$8829213a-4418-47ae-8934-1aa0dffc511d
-•
-java:S6204?"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ŠÈß®ø1J$f7bf4951-a2f8-4507-9c4f-c53e11ed1981
-m	java:S106D"+Replace this use of System.out by a logger.(Çé—Ş8Èß®ø1J$fc0bb720-5a79-4813-a1bd-6f735255c632
-l	java:S106b"+Replace this use of System.out by a logger.(·ª‹b8™Èß®ø1J$f40436d5-8a91-4e37-b22f-de3748e04985
-r	java:S106h"+Replace this use of System.out by a logger.(ÕÊßØşÿÿÿÿ8›Èß®ø1J$6d174cfd-ec04-4013-9fe2-8983e50a4e3a
-z
-java:S1068"7Remove this unused "SOURCE_IMAGE_BUCKET" private field.(“ãíò8ÑÏÀ¯ø1J$07f4fdc5-90a8-47f4-ab3b-dde80a404614
-v
-java:S1068"4Remove this unused "SOURCE_IMAGE_KEY" private field.(õ¨.8ÑÏÀ¯ø1J$d8f0cd73-1507-4a0c-af56-d52cecdd0e67
