@@ -63,35 +63,60 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public UserResponse save(UserRequest userRequest) {
+        if (userRequest.getAdminWeb() != null && userRequest.getAdminWeb() == true) {
+            return userAddByAdmin(userRequest);
+        } else {
+            String userEmail = userRequest.getEmail();
+            Users users = userRepository.findByEmail(userEmail);
+            if (users != null) {
+                users.setModifiedAt(new Date());
+                Users savedUser = userRepository.save(users);
+                if (savedUser != null) {
+                    whatsAppService.sendWhatsAppMessage(
+                            "+91" + users.getPhone(), "registeruser", "register_user", "name", users.getName());
+                    mailService(users);
+                    mailSendToAdmin(users);
+                }
+                log.error("User creation failed: Email '{}' already exists.", userRequest.getEmail());
+                throw new MiraiException(ApplicationErrorCode.EMAIL_ALREADY_EXISTS);
+            }
+            if (!isEnumValue(RoleEnum.class, userRequest.getType())) {
+                log.error("Invalid role type: {}", userRequest.getType());
+                throw new MiraiException(ApplicationErrorCode.INVALID_ROLE_TYPE);
+            }
+            Boolean policy = convertPolicyStringToBoolean(userRequest.getIsPolicyAcepted());
+            Users user = UsersMapper.mapUserRequestToUser(userRequest, policy);
+            Users savedUser = userRepository.save(user);
+            if (savedUser != null) {
+                mailService(user);
+                mailSendToAdmin(users);
+                whatsAppService.sendWhatsAppMessage(
+                        "+91" + userRequest.getPhone(), "registeruser", "register_user", "name", userRequest.getName());
+            }
+            log.info("User saved successfully: {}", user);
+            return UsersMapper.mapUserToUserResponse(user);
+        }
+    }
+
+    /**
+     * Manually adds a new user based on the provided user request.
+     *
+     * @param userRequest The user request containing user details.
+     * @return UserResponse containing details of the newly added user.
+     * @throws MiraiException if the email already exists in the repository.
+     */
+    public UserResponse userAddByAdmin(UserRequest userRequest) {
         String userEmail = userRequest.getEmail();
+        log.info("Attempting to add user with email: {}", userEmail);
         Users users = userRepository.findByEmail(userEmail);
         if (users != null) {
-            users.setModifiedAt(new Date());
-            Users savedUser = userRepository.save(users);
-            if (savedUser != null) {
-                whatsAppService.sendWhatsAppMessage(
-                        "+91" + users.getPhone(), "registeruser", "register_user", "name", users.getName());
-                mailService(users);
-                mailSendToAdmin(users);
-            }
-            log.error("User creation failed: Email '{}' already exists.", userRequest.getEmail());
             throw new MiraiException(ApplicationErrorCode.EMAIL_ALREADY_EXISTS);
         }
-        if (!isEnumValue(RoleEnum.class, userRequest.getType())) {
-            log.error("Invalid role type: {}", userRequest.getType());
-            throw new MiraiException(ApplicationErrorCode.INVALID_ROLE_TYPE);
-        }
         Boolean policy = convertPolicyStringToBoolean(userRequest.getIsPolicyAcepted());
-        Users user = UsersMapper.mapUserRequestToUser(userRequest, policy);
-        Users savedUser = userRepository.save(user);
-        if (savedUser != null) {
-            mailService(user);
-            mailSendToAdmin(users);
-            whatsAppService.sendWhatsAppMessage(
-                    "+91" + userRequest.getPhone(), "registeruser", "register_user", "name", userRequest.getName());
-        }
-        log.info("User saved successfully: {}", user);
-        return UsersMapper.mapUserToUserResponse(user);
+        users = UsersMapper.mapUserRequestToUser(userRequest, policy);
+        users = userRepository.save(users);
+        log.info("UserResponse created for user with email: {}", userEmail);
+        return UsersMapper.mapUserToUserResponse(users);
     }
 
     /**

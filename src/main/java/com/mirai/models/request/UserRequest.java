@@ -21,4 +21,6 @@ public class UserRequest {
     private String type;
 
     private String isPolicyAcepted;
+
+    private Boolean adminWeb;
 }

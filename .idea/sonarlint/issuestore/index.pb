@@ -79,3 +79,5 @@ c
 3src/main/java/com/mirai/service/compareFaces/a.java,f/9/f9554a16c5c8aad3a45ef8fdea9b020d4937cf14
 g
 7src/main/java/com/mirai/models/request/UserFilters.java,7/d/7d8ceab5d89f6cb1ac439898bdcd12676a1345ae
+g
+7src/main/java/com/mirai/models/request/UserRequest.java,6/f/6f2b673e68f3a784aa7562ba32557bad04717538
