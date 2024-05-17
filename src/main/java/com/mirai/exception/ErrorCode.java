@@ -1,4 +1,4 @@
-package com.mirai.exception.customException;
+package com.mirai.exception;
 
 import org.springframework.http.HttpStatus;
 

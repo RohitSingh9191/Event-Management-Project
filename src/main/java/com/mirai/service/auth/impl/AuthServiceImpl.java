@@ -2,8 +2,8 @@ package com.mirai.service.auth.impl;
 
 import com.mirai.data.entities.UserAuth;
 import com.mirai.data.repos.UserAuthRepository;
-import com.mirai.exception.customException.ApplicationErrorCode;
-import com.mirai.exception.customException.MiraiException;
+import com.mirai.exception.ApplicationErrorCode;
+import com.mirai.exception.MiraiException;
 import com.mirai.mapper.AuthMapper;
 import com.mirai.models.request.JWTRequest;
 import com.mirai.models.request.UserAuthRequest;

@@ -9,8 +9,8 @@ import com.mirai.data.entities.Users;
 import com.mirai.data.repos.CheckinRepository;
 import com.mirai.data.repos.UserRepository;
 import com.mirai.data.specifications.UserSpecifications;
-import com.mirai.exception.customException.ApplicationErrorCode;
-import com.mirai.exception.customException.MiraiException;
+import com.mirai.exception.ApplicationErrorCode;
+import com.mirai.exception.MiraiException;
 import com.mirai.mapper.UsersMapper;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
@@ -66,12 +66,14 @@ public class UserServiceImpl implements UserService {
         String userEmail = userRequest.getEmail();
         Users users = userRepository.findByEmail(userEmail);
         if (users != null) {
-            whatsAppService.sendWhatsAppMessage(
-                    "+91" + users.getPhone(), "registeruser", "register_user", "name", users.getName());
-            mailService(users);
-            mailSendToAdmin(users);
             users.setModifiedAt(new Date());
-            userRepository.save(users);
+            Users savedUser = userRepository.save(users);
+            if (savedUser != null) {
+                whatsAppService.sendWhatsAppMessage(
+                        "+91" + users.getPhone(), "registeruser", "register_user", "name", users.getName());
+                mailService(users);
+                mailSendToAdmin(users);
+            }
             log.error("User creation failed: Email '{}' already exists.", userRequest.getEmail());
             throw new MiraiException(ApplicationErrorCode.EMAIL_ALREADY_EXISTS);
         }
@@ -81,30 +83,15 @@ public class UserServiceImpl implements UserService {
         }
         Boolean policy = convertPolicyStringToBoolean(userRequest.getIsPolicyAcepted());
         Users user = UsersMapper.mapUserRequestToUser(userRequest, policy);
-        mailService(user);
-        mailSendToAdmin(users);
-        whatsAppService.sendWhatsAppMessage(
-                "+91" + userRequest.getPhone(), "registeruser", "register_user", "name", userRequest.getName());
-        userRepository.save(user);
+        Users savedUser = userRepository.save(user);
+        if (savedUser != null) {
+            mailService(user);
+            mailSendToAdmin(users);
+            whatsAppService.sendWhatsAppMessage(
+                    "+91" + userRequest.getPhone(), "registeruser", "register_user", "name", userRequest.getName());
+        }
         log.info("User saved successfully: {}", user);
         return UsersMapper.mapUserToUserResponse(user);
-    }
-
-    /**
-     * Retrieves a list of users based on the provided filters.
-     *
-     * @param userFilters The filters to apply while fetching users.
-     * @return UserResponseList containing the list of users.
-     */
-    @Override
-    public UserResponseList getAllUsers(UserFilters userFilters) {
-        log.info("Fetching users based on filters: {}", userFilters);
-        checkValidationOfGetAllUsers(userFilters);
-        Pageable pageable = MiraiUtils.createPageable(userFilters.getLimit(), userFilters.getOffset());
-        Specification<Users> spec = UserSpecifications.searchUsers(userFilters);
-        Page<Users> usersPage = userRepository.findAll(spec, pageable);
-        log.info("Retrieved {} users based on filters: {}", usersPage.getNumberOfElements(), userFilters);
-        return setAllUserToUserListResponse(usersPage);
     }
 
     /**
@@ -158,6 +145,24 @@ public class UserServiceImpl implements UserService {
             throw new MiraiException(ApplicationErrorCode.INVALID_POLICY_TYPE);
         }
         log.info("User filters validated successfully");
+    }
+
+    /**
+     * Retrieves a list of users based on the provided filters.
+     *
+     * @param userFilters The filters to apply while fetching users.
+     * @param userFilters The filters to apply while fetching users.
+     * @return UserResponseList containing the list of users.
+     */
+    @Override
+    public UserResponseList getAllUsers(UserFilters userFilters) {
+        log.info("Fetching users based on filters: {}", userFilters);
+        checkValidationOfGetAllUsers(userFilters);
+        Pageable pageable = MiraiUtils.createPageable(userFilters.getLimit(), userFilters.getOffset());
+        Specification<Users> spec = UserSpecifications.searchUsers(userFilters);
+        Page<Users> usersPage = userRepository.findAll(spec, pageable);
+        log.info("Retrieved {} users based on filters: {}", usersPage.getNumberOfElements(), userFilters);
+        return setAllUserToUserListResponse(usersPage);
     }
 
     /**
@@ -363,7 +368,7 @@ public class UserServiceImpl implements UserService {
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         String resp = null;
         Checkin checkin = checkinRepository.findById(id).orElse(null);
-        CheckinResponse checkinResponse=new CheckinResponse();
+        CheckinResponse checkinResponse = new CheckinResponse();
 
         if (checkin != null && checkin.getStatus() != null) {
             resp = "User already checked in ";

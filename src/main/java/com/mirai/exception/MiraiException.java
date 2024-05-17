@@ -1,4 +1,4 @@
-package com.mirai.exception.customException;
+package com.mirai.exception;
 
 public class MiraiException extends RuntimeException {
     private final transient ErrorCode errorCode;
