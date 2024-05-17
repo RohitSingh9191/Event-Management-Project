@@ -1,0 +1,13 @@
+
+¥
+java:S1488ª"\Immediately return this expression instead of assigning it to the temporary variable "resp".(ƒ‰íÁüÿÿÿÿ8ªóŠ°ø1J$fa9ea948-3198-4f5d-ada9-61efa4ab86ea
+o
+java:S1125B"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8æù£°ø1J$ad762d2e-dd21-4cf1-97aa-4ccb4421e7b1
+l	java:S108œ")Either remove or fill this block of code.(ëû¦¢8ÜóŠ°ø1J$48529c51-2ffb-41d1-a1e2-0de8e62b9fb7
+ƒ
+java:S4034Ÿ":Replace this negation and "anyMatch()" with "noneMatch()".(ğí…¿ùÿÿÿÿ8İóŠ°ø1J$94a13575-a21e-4094-b65a-242bc1074d54
+k	java:S108¥")Either remove or fill this block of code.(§Î:8ßóŠ°ø1J$d72a31a8-3a62-43da-88d1-5603fa7d4f07
+ƒ
+java:S4034¨":Replace this negation and "anyMatch()" with "noneMatch()".(ŠªûÑıÿÿÿÿ8ßóŠ°ø1J$9a7f4124-acc5-43a6-9895-c3dadb54e9f8
+ƒ
+java:S4034à":Replace this negation and "anyMatch()" with "noneMatch()".(Ò³åøÿÿÿÿ8€ôŠ°ø1J$7d588b90-1c8f-40a0-b97f-449bf67d3066
