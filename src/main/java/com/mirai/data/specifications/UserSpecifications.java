@@ -62,6 +62,11 @@ public class UserSpecifications {
         if (policyType != null && !policyType.isEmpty()) {
             spec = spec.and(UserSpecifications.withPolicyType(policyType));
         }
+        // Status
+        String status = userFilters.getStatus();
+        if (status != null && !status.isEmpty()) {
+            spec = spec.and(UserSpecifications.withStatus(status.toUpperCase()));
+        }
 
         String sortBy = null;
         String orderBy = null;
@@ -191,6 +196,11 @@ public class UserSpecifications {
 
         log.info("Specification created successfully");
         return spec;
+    }
+
+    private static Specification<Users> withStatus(String status) {
+        log.info("Filtering users by email: {}", status);
+        return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("status"), status);
     }
 
     private static Specification<Users> withId(String id) {

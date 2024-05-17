@@ -1,17 +1,19 @@
 
 
-java:S1192E"KDefine a constant instead of duplicating this literal "modifiedAt" 4 times.(Áâ8…ˆË–÷1J$429c7cdb-3aa5-4a44-83fe-08000f1095e2
-‘
-java:S1192—"HDefine a constant instead of duplicating this literal "company" 4 times.(ã’¥³øÿÿÿÿ8†ˆË–÷1J$1b2858b2-78b4-4987-951e-8e3b9d5c7ecb
-
-java:S1192{"FDefine a constant instead of duplicating this literal "email" 4 times.(Ü˜ĞÑùÿÿÿÿ8†ˆË–÷1J$c185fd3b-5413-4605-bb78-fc5be408ac4b
+java:S1192J"KDefine a constant instead of duplicating this literal "modifiedAt" 4 times.(Áâ8É…®ø1J$25d0775f-85f4-4f7f-9134-a690b2933f14
 Š
-java:S1192‰"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8†ˆË–÷1J$f18c4dd9-5db0-4b5c-b71a-ff06b708ca79
+java:S1192"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8É…®ø1J$c0bb046b-1880-4f46-9ab4-1bd66c2a850b
+‘
+java:S1192œ"HDefine a constant instead of duplicating this literal "company" 4 times.(ã’¥³øÿÿÿÿ8É…®ø1J$8f4a017b-0b45-415e-8104-f68f5190c7f0
 •
-java:S1192¤"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8†ˆË–÷1J$ee0d335b-689c-4639-9fcf-fa09bb8b6eee
-W
-java:S1118":Add a private constructor to hide the implicit public one.(ñ‰¼ú8²±Ù—÷1
-n
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 69 to the 15 allowed.(õıíc8·±Ù—÷1
-ã
-java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 156 to 64, Complexity from 52 to 14, Nesting Level from 3 to 2, Number of Variables from 63 to 6.(õıíc8œ³Ù—÷1
+java:S1192©"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8Ê…®ø1J$40a485cf-758a-41a8-874a-ee91a095b9ed
+
+java:S1192€"FDefine a constant instead of duplicating this literal "email" 4 times.(Ü˜ĞÑùÿÿÿÿ8Ê…®ø1J$0ac6e863-6774-405e-b1be-e8dd1f32702e
+Š
+java:S1192"GDefine a constant instead of duplicating this literal "status" 3 times.(ˆ¡œ8ú§˜®ø1J$841d6cb4-4e21-4142-b014-3c0ba1e0edca
+}
+java:S1118":Add a private constructor to hide the implicit public one.(ñ‰¼ú8à…®ø1J$cd0e68ef-c0d8-4ae8-99b4-b7fc25566db0
+”
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 71 to the 15 allowed.(õıíc8å…®ø1J$041d3d23-b34e-43ce-9387-80584b95d856
+‰
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 160 to 64, Complexity from 54 to 14, Nesting Level from 3 to 2, Number of Variables from 64 to 6.(õıíc8—†®ø1J$efec6423-9b90-4eb6-bbdb-af22cbfc6e69

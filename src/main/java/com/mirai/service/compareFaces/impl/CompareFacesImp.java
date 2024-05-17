@@ -37,6 +37,7 @@ public class CompareFacesImp implements CompareFaces {
         AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard()
                 .withRegion(regions) // Specify the region here
                 .withCredentials(new AWSStaticCredentialsProvider(awsCreds)) // Specify credentials
+                .withCredentials(new AWSStaticCredentialsProvider(awsCreds)) // Specify credentials
                 .build();
 
         // Load source and target images and create input parameters

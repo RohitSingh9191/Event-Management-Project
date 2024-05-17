@@ -1,0 +1,8 @@
+
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(áò×“8Þ¯«®ø1
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¬ªåÑùÿÿÿÿ8¾Œ›®ø1J$1d4440c5-d78b-42e5-b228-45c4b27b95a0
+r	java:S1065"+Replace this use of System.out by a logger.(Á¹ÛÈýÿÿÿÿ8éŒ›®ø1J$4748e47f-8a20-4fde-ad5b-df601285f2cc
+m	java:S106A"+Replace this use of System.out by a logger.(Çé—Þ8ëŒ›®ø1J$15e8dfd0-6ecb-4e3c-a7d8-b0f145b73a22
+F	java:S106_"+Replace this use of System.out by a logger.(·ª‹b8š°«®ø1
+L	java:S106e"+Replace this use of System.out by a logger.(ÕÊßØþÿÿÿÿ8œ°«®ø1
+fsecrets:S6290#"FMake sure the access granted with this AWS access key ID is restricted(ƒúÊý8ï°«®ø1

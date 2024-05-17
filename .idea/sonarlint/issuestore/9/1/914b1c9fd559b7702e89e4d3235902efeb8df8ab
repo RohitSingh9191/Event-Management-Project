@@ -1,7 +1,7 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜÇîƒùÿÿÿÿ8á›‹ÿ÷1J$1906d8fe-51aa-4ffb-a3b3-2eb725af1e60
-r	java:S106."+Replace this use of System.out by a logger.(Ã¾™®şÿÿÿÿ8åÄá‡ø1J$a3ef14b8-63fd-44ec-a2fd-84f2d27b317f
-r	java:S1064"+Replace this use of System.out by a logger.(Ê¹Îşÿÿÿÿ8éÄá‡ø1J$ca4659fb-ffa4-4a9f-bb4d-ef38cbea273b
-r	java:S106H"+Replace this use of System.out by a logger.(äøóáøÿÿÿÿ8óÄá‡ø1J$b783cada-9c69-4ded-b2a0-caee1810a5f8
-m	java:S106N"+Replace this use of System.out by a logger.(ŒÄ¼8õÄá‡ø1J$205a5f75-9fce-4566-9e15-2caa37d1359f
-Œsecrets:S6290""FMake sure the access granted with this AWS access key ID is restricted(ƒúÊı8¾Åá‡ø1J$c20bee8b-a03c-4bb1-bed6-27800a875bd9
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜÇîƒùÿÿÿÿ8á›‹ÿ÷1J$ac562db0-cf70-4ae4-936c-b4dc5074ab6d
+r	java:S106/"+Replace this use of System.out by a logger.(Ã¾™®şÿÿÿÿ8åÄá‡ø1J$039e6593-578c-41a3-b264-ed3016dd7c29
+r	java:S1065"+Replace this use of System.out by a logger.(Ê¹Îşÿÿÿÿ8éÄá‡ø1J$fb3bb1d4-2ea1-4aeb-baf4-c41642a30f8d
+r	java:S106I"+Replace this use of System.out by a logger.(äøóáøÿÿÿÿ8óÄá‡ø1J$bead2b35-178d-42ab-b659-86e51352d51d
+m	java:S106O"+Replace this use of System.out by a logger.(ŒÄ¼8õÄá‡ø1J$afe5e7c6-933b-430e-a027-8245f66a127b
+Œsecrets:S6290""FMake sure the access granted with this AWS access key ID is restricted(ƒúÊı8¾Åá‡ø1J$b44e57d2-dd08-4b78-843e-6fc1ccda2121
