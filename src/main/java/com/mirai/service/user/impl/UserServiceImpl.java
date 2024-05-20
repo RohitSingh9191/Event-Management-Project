@@ -327,7 +327,7 @@ public class UserServiceImpl implements UserService {
         } else {
             user.setStatus(UserStatus.CONFIRMED.name());
             String link = "https://api.mirai.events/miraiapp/user/" + id;
-            byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 300, 300);
+            byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 200, 200);
             String url = amazonS3Service.uploadQRCodeToS3(qrCodeImage, String.valueOf(id));
             whatsAppService.sendQrWhatsAppMessage("91" + user.getPhone(), user.getName(), url);
             emailService.sendEmailWithQRCode(

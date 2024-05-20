@@ -7,11 +7,15 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.mirai.exception.ApplicationErrorCode;
 import com.mirai.exception.MiraiException;
+
+import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+
+import javax.imageio.ImageIO;
 
 @Slf4j
 public class MiraiUtils {
@@ -57,8 +61,24 @@ public class MiraiUtils {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        MatrixToImageWriter.writeToStream(bitMatrix, "PNG", outputStream);
+        MatrixToImageWriter.writeToStream(bitMatrix, "JPEG", outputStream);
         log.info("QR code image generated successfully");
         return outputStream.toByteArray();
     }
+
+//    public static byte[] generateQRCodeImage(String text, int width, int height) throws WriterException, IOException {
+//        log.info("Generating QR code image for text: {}", text);
+//        QRCodeWriter qrCodeWriter = new QRCodeWriter();
+//        BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
+//
+//        BufferedImage qrImage = MatrixToImageWriter.toBufferedImage(bitMatrix);
+//        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+//        try {
+//            ImageIO.write(qrImage, "PNG", outputStream);
+//            log.info("QR code image generated successfully");
+//        } catch (IOException e) {
+//            log.error("Could not generate QR code image", e);
+//        }
+//        return outputStream.toByteArray();
+//    }
 }

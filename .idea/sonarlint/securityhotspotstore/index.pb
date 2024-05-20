@@ -11,3 +11,7 @@ e
 5src/main/java/com/mirai/service/user/UserService.java,e/3/e3c41b187dd6f8b99b1a88bd1cb6e34798bf08ef
 n
 >src/main/java/com/mirai/service/user/impl/UserServiceImpl.java,a/1/a119175832eb179b60d6f18db5d9e1d6cb130916
+m
+=src/main/java/com/mirai/service/whatsApp/WhatsAppService.java,5/1/5150fce04678be7c19c7245594b1496b7513380e
+v
+Fsrc/main/java/com/mirai/service/whatsApp/impl/WhatsAppServiceImpl.java,6/f/6f285aeff8d97628814a690b4fa87f6fecc29c3f

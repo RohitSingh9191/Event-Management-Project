@@ -139,7 +139,7 @@ public class UserController {
         return new ResponseEntity<>(uploadImageResponse, HttpStatus.CREATED);
     }
 
-    @GetMapping("/msg/wp")
+    @PostMapping("/msg/wp")
     public void addUseswd() {
         whatsAppService.sendQrWhatsAppMessage(
                 "7880742825", "rohit", "https://s3.ap-south-1.amazonaws.com/miraievents/qr/1.png");
