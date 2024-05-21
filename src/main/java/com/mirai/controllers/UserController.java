@@ -7,7 +7,7 @@ import com.mirai.models.response.CheckinResponse;
 import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import com.mirai.models.response.UserResponseList;
-import com.mirai.service.compareFaces.impl.CompareFacesImp;
+import com.mirai.service.compareFaces.impl.CompareFaceToAllNewService;
 import com.mirai.service.user.UserService;
 import com.mirai.service.whatsApp.WhatsAppService;
 import com.mirai.utils.ExcelExporter;
@@ -145,10 +145,11 @@ public class UserController {
                 "7880742825", "rohit", "https://s3.ap-south-1.amazonaws.com/miraievents/qr/1.png");
     }
 
-    CompareFacesImp compareFacesImp;
+    CompareFaceToAllNewService compareFacesImp;
 
     @GetMapping("/face")
-    public void face() {
-        compareFacesImp.faceCompare();
+    public ResponseEntity<CheckinResponse> checkInByImage(@RequestParam("image") MultipartFile image) {
+        CheckinResponse checkinResponse = userService.checkInByImage(image);
+        return new ResponseEntity<>(checkinResponse, HttpStatus.OK);
     }
 }

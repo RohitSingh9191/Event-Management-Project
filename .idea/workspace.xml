@@ -5,19 +5,259 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dce1c62-063a-4fb2-89ac-95502e7efd48" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/6/1632979cf056881a752774967132ba486b93173c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/6/1632979cf056881a752774967132ba486b93173c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/CompareFacesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/impl/CompareFaceToAllNewService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/251eb4076ebc6577c4a60cba6f523475f4a97c30" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/251eb4076ebc6577c4a60cba6f523475f4a97c30" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/5150fce04678be7c19c7245594b1496b7513380e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/5150fce04678be7c19c7245594b1496b7513380e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37ff50a14e6c34f3c2f2e5e60460634d13a4a359" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37ff50a14e6c34f3c2f2e5e60460634d13a4a359" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b8d0613e8e2f02c7adb627a80032f579c6d7acd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b8d0613e8e2f02c7adb627a80032f579c6d7acd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f285aeff8d97628814a690b4fa87f6fecc29c3f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f285aeff8d97628814a690b4fa87f6fecc29c3f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/914b1c9fd559b7702e89e4d3235902efeb8df8ab" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/914b1c9fd559b7702e89e4d3235902efeb8df8ab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/92d7e9acd2829338f3df9a2624239010b1c9e456" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/92d7e9acd2829338f3df9a2624239010b1c9e456" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a119175832eb179b60d6f18db5d9e1d6cb130916" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a119175832eb179b60d6f18db5d9e1d6cb130916" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b09d391056774c535fd72cf926070aa43caf3dcc" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b09d391056774c535fd72cf926070aa43caf3dcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e486da6f90f2546bc318a0b884c9278a7c4602f8" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/4/e486da6f90f2546bc318a0b884c9278a7c4602f8" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/constants/RoleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/constants/RoleEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/CompareFaces.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/CompareFacesToAll.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/impl/CompareFaceToAllImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/impl/CompareFacesImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/impl/CompareFacesImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/impl/a.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/impl/p.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/impl/s.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/impl/source.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/compareFaces/impl/target.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/utils/MiraiUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/utils/MiraiUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/constants/PolicyEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/constants/RoleEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/constants/UserStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/compareFaces/CompareFaces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/compareFaces/CompareFacesToAll.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/compareFaces/impl/CompareFaceToAllImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/compareFaces/impl/CompareFacesImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/utils/EncryptionUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/utils/ExcelExporter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/utils/MiraiUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT.war.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/MiraiApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/config/appConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/config/securityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/constants/PolicyEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/constants/RoleEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/constants/UserStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/controllers/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/controllers/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/entities/Checkin$CheckinBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/entities/Checkin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/entities/UserAuth$UserAuthBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/entities/UserAuth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/entities/Users$UsersBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/entities/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/repos/CheckinRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/repos/UserAuthRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/repos/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/specifications/UserSpecifications.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/exception/ApplicationErrorCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/exception/CustomExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/exception/ErrorCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/exception/ErrorResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/exception/MiraiException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/exception/MiraiExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/mapper/AuthMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/mapper/UsersMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/JWTRequest$JWTRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/JWTRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/LoginRequest$LoginRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/LoginRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/UploadImageRequest$UploadImageRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/UploadImageRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/UserAuthRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/UserFilters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/UserRequest$UserRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/UserRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/AuthResponse$AuthResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/AuthResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/CheckinResponse$CheckinResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/CheckinResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/JWTResponse$JWTResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/JWTResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/LoginResponse$LoginResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/LoginResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/UploadImageResponse$UploadImageResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/UploadImageResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/UserResponse$UserResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/UserResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/UserResponseList$UserResponseListBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/response/UserResponseList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/security/JWTAuthenticationEntryPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/security/JwtAuthenticationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/security/JwtHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/amazonBucket/AmazonS3Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/amazonBucket/impl/AmazonS3ServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/auth/AuthService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/auth/impl/AuthServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/compareFaces/CompareFaces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/compareFaces/CompareFacesToAll.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/compareFaces/impl/CompareFaceToAllImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/compareFaces/impl/CompareFacesImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/email/EmailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/email/Impl/EmailServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/user/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/user/impl/CustomUserDetailsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/user/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/whatsApp/WhatsAppService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/whatsApp/impl/WhatsAppServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/utils/EncryptionUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/utils/ExcelExporter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/utils/MiraiUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/HdrHistogram-2.1.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/HikariCP-5.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/JavaEWAH-1.1.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/LatencyUtils-2.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/SparseBitSet-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/activation-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/angus-activation-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/annotations-13.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/antlr4-runtime-4.13.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/aspectjweaver-1.9.21.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/aws-java-sdk-core-1.11.1000.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/aws-java-sdk-kms-1.11.1000.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/aws-java-sdk-rekognition-1.12.473.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/aws-java-sdk-s3-1.11.1000.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/byte-buddy-1.14.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/classmate-1.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/commons-codec-1.16.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/commons-collections4-4.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/commons-io-2.15.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/commons-logging-1.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/commons-math3-3.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/concurrent-trees-2.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/core-3.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/durian-collect-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/durian-core-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/durian-swt.os-4.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-commons-annotations-6.0.6.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-core-6.4.4.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-validator-8.0.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/httpclient-4.5.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/httpcore-4.4.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/ion-java-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/istack-commons-runtime-4.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.15.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-core-2.15.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-databind-2.15.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-dataformat-cbor-2.15.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-datatype-jdk8-2.15.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-datatype-jsr310-2.15.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-module-parameter-names-2.15.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jai-imageio-core-1.4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.activation-api-2.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.annotation-api-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.inject-api-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.mail-2.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.persistence-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.transaction-api-2.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.validation-api-3.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.xml.bind-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jandex-3.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/javase-3.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/javax.inject-1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/javax.mail-1.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jaxb-core-4.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jaxb-runtime-4.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jboss-logging-3.5.3.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jcommander-1.78.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jjwt-api-0.11.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jjwt-impl-0.11.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jjwt-jackson-0.11.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jmespath-java-1.11.1000.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/joda-time-2.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/jul-to-slf4j-2.0.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/kotlin-stdlib-1.9.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/kotlin-stdlib-common-1.9.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/kotlin-stdlib-jdk7-1.9.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/kotlin-stdlib-jdk8-1.9.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/log4j-api-2.21.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/log4j-to-slf4j-2.21.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/logback-classic-1.4.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/logback-core-1.4.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/micrometer-commons-1.12.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/micrometer-core-1.12.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/micrometer-jakarta9-1.12.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/micrometer-observation-1.12.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/mysql-connector-j-8.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/okhttp-4.12.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/okio-3.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/okio-jvm-3.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/org.eclipse.jgit-6.5.0.202303070854-r.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/org.eclipse.osgi-3.18.200.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/plexus-build-api-0.0.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/plexus-resources-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/plexus-utils-3.4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/poi-5.2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-api-2.0.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/snakeyaml-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/solstice-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spotless-lib-2.37.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spotless-lib-extra-2.37.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spotless-maven-plugin-2.35.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-aop-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-aspects-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-beans-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-actuator-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-actuator-autoconfigure-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-autoconfigure-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-actuator-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-aop-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-data-jpa-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-jdbc-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-json-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-logging-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-mail-3.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-security-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-tomcat-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-validation-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-web-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-context-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-context-support-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-core-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-commons-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-jpa-3.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-expression-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-jcl-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-jdbc-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-orm-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-security-config-6.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-security-core-6.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-security-crypto-6.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-security-web-6.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-tx-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-web-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/spring-webmvc-6.1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/tomcat-embed-core-10.1.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/tomcat-embed-el-10.1.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/tomcat-embed-websocket-10.1.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/txw2-4.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/lib/xz-1.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.mirai.MiraiApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.mirai.MiraiApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mirai/MiraiApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,5 +356,37 @@
       <updated>1715929829622</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mirai/controllers/UserController.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mirai/service/user/impl/UserServiceImpl.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mirai/service/user/impl/UserServiceImpl.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

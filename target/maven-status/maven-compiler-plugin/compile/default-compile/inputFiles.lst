@@ -7,12 +7,12 @@
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/exception/ErrorResponse.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/exception/MiraiException.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/user/impl/UserServiceImpl.java
+/home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/compareFaces/impl/CompareFaceToAllNewService.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/data/specifications/UserSpecifications.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/security/JwtAuthenticationFilter.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/request/UserFilters.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/user/impl/CustomUserDetailsService.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/user/UserService.java
-/home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/compareFaces/CompareFaces.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/exception/CustomExceptionHandler.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/constants/PolicyEnum.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/request/UserAuthRequest.java
@@ -29,7 +29,6 @@
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/auth/impl/AuthServiceImpl.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/utils/MiraiUtils.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/response/AuthResponse.java
-/home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/compareFaces/CompareFacesToAll.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/email/EmailService.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/amazonBucket/AmazonS3Service.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/request/UploadImageRequest.java
@@ -46,12 +45,12 @@
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/data/entities/UserAuth.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/amazonBucket/impl/AmazonS3ServiceImpl.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/data/repos/UserAuthRepository.java
+/home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/compareFaces/CompareFacesService.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/response/UserResponse.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/response/UserResponseList.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/response/CheckinResponse.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/models/response/UploadImageResponse.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/exception/ErrorCode.java
-/home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/compareFaces/impl/CompareFaceToAllImpl.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/data/entities/Users.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/service/compareFaces/impl/CompareFacesImp.java
 /home/mindit-166/Desktop/miraiapi/src/main/java/com/mirai/MiraiApplication.java

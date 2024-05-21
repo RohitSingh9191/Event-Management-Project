@@ -1,0 +1,20 @@
+
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¢“¥‡úÿÿÿÿJ$5b7e5e3d-eea8-42da-badc-c4ec2ec655fc
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$65120f4b-414e-44d8-9536-d0196418984f
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$5ff47b80-8783-4110-879a-25e02cb08d1c
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$671af685-b2f6-4656-b703-18efe1aac74f
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$86530445-7e6b-45a5-8825-23f056aa9613
+–
+java:S3305"ZInject this field value directly into "securityFilterChain", the only method that uses it.(¸ßöúJ$fc38db2f-c53b-43a2-9fd0-bb47127441cd
+¡
+java:S3305"`Inject this field value directly into "daoAuthenticationProvider", the only method that uses it.(¿ì§’ıÿÿÿÿJ$ceef8657-19d6-4e14-a94a-d0e14f496aef
+–
+java:S3305"ZInject this field value directly into "securityFilterChain", the only method that uses it.(Ïæù½J$ebb1c33c-1cd9-4da0-9e24-8638d4f7fdc9
+¡
+java:S3305"`Inject this field value directly into "daoAuthenticationProvider", the only method that uses it.(ÙÍ•¯üÿÿÿÿJ$de50f866-9f22-4079-b03a-47b7be77b185
+z
+java:S1874""9Remove this use of "authorizeRequests"; it is deprecated.(¿Ğ±ûÿÿÿÿJ$7b7387fc-ac53-4107-aa95-dabe9bd22b86

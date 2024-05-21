@@ -1,0 +1,17 @@
+
+”	java:S117ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«»µ8”²Øù1J$6583a74e-08c4-473e-abe5-892d45f150ef
+™	java:S117å"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’–±Åúÿÿÿÿ8•²Øù1J$e1547f7e-30e0-4d9b-afe5-b3731c9b449e
+¢	java:S120¡"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜÇîƒùÿÿÿÿ8—²Øù1J$14a059dd-da94-4a72-bf15-64a232a2997e
+~	java:S125"<This block of commented-out lines of code should be removed.(šı˜ğ8Ï²Øù1J$54d01cab-3d23-4141-ab5f-771461ca3b8b
+s	java:S106Æ"+Replace this use of System.out by a logger.(¬´Ê ùÿÿÿÿ8Ö²Øù1J$23639389-a88e-474d-b28b-4bc1e2642ea7
+s	java:S106Ü"+Replace this use of System.out by a logger.(óÅ–øÿÿÿÿ8Ø²Øù1J$57128a4f-83d6-4c27-9f50-b01031e690e0
+s	java:S106İ"+Replace this use of System.out by a logger.(¨¶ÑÍşÿÿÿÿ8Ù²Øù1J$a23487df-63d7-4521-b154-e88560148537
+n	java:S106ì"+Replace this use of System.out by a logger.(Çé—Ş8Û²Øù1J$457a64b2-35e3-4775-b26e-790afd15f1cd
+n	java:S106ø"+Replace this use of System.out by a logger.(–§ä8Ü²Øù1J$3edb3758-deaf-45e5-b5c5-a78d1ce4ae2a
+n	java:S106ş"+Replace this use of System.err by a logger.(ç´Òü8İ²Øù1J$cb23496d-3fd6-4ea8-a7ba-6d4b8a6cbe83
+s	java:S106ÿ"+Replace this use of System.err by a logger.(ÛÔ¢Ïşÿÿÿÿ8İ²Øù1J$9560e5a9-7398-4134-9670-f57799255611
+›
+java:S6204“"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(‚úŒ…ÿÿÿÿÿ8ß²Øù1J$a9ccdb9d-8844-4e1d-becd-5a0f01c7087d
+s	java:S106©"+Replace this use of System.out by a logger.(’ÿãÈşÿÿÿÿ8ã²Øù1J$7cf686e0-0040-4088-9c7e-6d8441f75ead
+s	java:S106­"+Replace this use of System.out by a logger.(‡ù®®ıÿÿÿÿ8ã²Øù1J$69f145fb-2dc0-4e14-b228-922b4401e96c
+n	java:S106»"+Replace this use of System.out by a logger.(‘Ì®Õ8å²Øù1J$1ec01a2d-1c4b-461a-925c-b1b1d3b8d7a1

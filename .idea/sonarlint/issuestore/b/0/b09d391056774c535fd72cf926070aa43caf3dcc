@@ -1,0 +1,6 @@
+
+’
+java:S11924"JDefine a constant instead of duplicating this literal "secretKey" 3 times.(Κ‡€ÿÿÿÿÿ8΅—‡―ω1J$709b8875-c3cc-4687-8683-5a1c9570bef4
+’
+java:S11923"JDefine a constant instead of duplicating this literal "accessKey" 3 times.(ήÒ–Ώωÿÿÿÿ8Ά—‡―ω1J$dd25d612-ff0b-4422-a9ce-42e213ecd629
+›	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(φε68¦—‡―ω1J$81116d4e-96a0-4e1c-8840-3ada1040d010

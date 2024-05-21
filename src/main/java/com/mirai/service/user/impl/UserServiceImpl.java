@@ -19,6 +19,7 @@ import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import com.mirai.models.response.UserResponseList;
 import com.mirai.service.amazonBucket.AmazonS3Service;
+import com.mirai.service.compareFaces.CompareFacesService;
 import com.mirai.service.email.EmailService;
 import com.mirai.service.user.UserService;
 import com.mirai.service.whatsApp.WhatsAppService;
@@ -53,6 +54,8 @@ public class UserServiceImpl implements UserService {
     private final Environment env;
 
     private final WhatsAppService whatsAppService;
+
+    private final CompareFacesService compareFacesService;
 
     /**
      * Saves user details.
@@ -428,5 +431,27 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         log.info("Uploaded photo for user with ID {}: {}", id, response);
         return response;
+    }
+
+    @Override
+    public CheckinResponse checkInByImage(MultipartFile image) {
+        Integer id = compareFacesService.faceCompare(image);
+        Users user =
+                userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        String resp = null;
+        Checkin checkin = checkinRepository.findById(id).orElse(null);
+        CheckinResponse checkinResponse = new CheckinResponse();
+
+        if (checkin != null && checkin.getStatus() != null) {
+            resp = "User already checked in ";
+            checkinResponse.setMessage(resp);
+            return checkinResponse;
+        }
+        checkin = UsersMapper.mapToUserCheckin(user);
+        checkinRepository.save(checkin);
+        resp = "User successfully checked in ";
+        log.info("User with ID {} checked in successfully " + id);
+        checkinResponse.setMessage(resp);
+        return checkinResponse;
     }
 }
