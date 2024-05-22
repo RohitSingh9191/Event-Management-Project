@@ -39,3 +39,5 @@ Esrc/main/java/com/mirai/service/compareFaces/CompareFacesService.java,a/b/abd6
 Qsrc/main/java/com/mirai/service/compareFaces/impl/CompareFaceToAllNewService.java,4/0/407846f522b7243816d532dbc3cde013d5e33246
 g
 7src/main/java/com/mirai/models/request/UserFilters.java,7/d/7d8ceab5d89f6cb1ac439898bdcd12676a1345ae
+l
+<src/main/java/com/mirai/models/response/CheckinResponse.java,1/9/1998170de1ee36242d2b83671890fa3a848a4545

@@ -4,4 +4,10 @@ java:S1488­"\Immediately return this expression instead of assigning it to the
 o
 java:S1125E"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8úüÆ×ù1J$a14207a9-12a4-4e8a-8466-3b5b24e74b7c
 l	java:S108Ÿ")Either remove or fill this block of code.(ëû¦¢8ˆıÆ×ù1J$bc9c6a88-4475-433b-8dd1-506f6b3ccb90
+]
+java:S4034¢":Replace this negation and "anyMatch()" with "noneMatch()".(ğí…¿ùÿÿÿÿ8™ÚÆøù1
 k	java:S108¨")Either remove or fill this block of code.(§Î:8ŠıÆ×ù1J$5b69498e-bd6c-4a8a-81da-f67bdc4525b5
+]
+java:S4034«":Replace this negation and "anyMatch()" with "noneMatch()".(ŠªûÑıÿÿÿÿ8¥ÚÆøù1
+]
+java:S4034ã":Replace this negation and "anyMatch()" with "noneMatch()".(Ò³åøÿÿÿÿ8æÚÆøù1
