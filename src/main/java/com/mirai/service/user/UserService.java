@@ -28,4 +28,6 @@ public interface UserService {
     UploadImageResponse uploadPhoto(Integer id, MultipartFile image) throws IOException;
 
     CheckinResponse checkInByImage(MultipartFile image);
+
+    UserResponse updateUser(Integer id, UserRequest userRequest);
 }

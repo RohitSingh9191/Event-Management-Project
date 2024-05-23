@@ -41,3 +41,9 @@ g
 7src/main/java/com/mirai/models/request/UserFilters.java,7/d/7d8ceab5d89f6cb1ac439898bdcd12676a1345ae
 l
 <src/main/java/com/mirai/models/response/CheckinResponse.java,1/9/1998170de1ee36242d2b83671890fa3a848a4545
+g
+7src/main/java/com/mirai/models/request/UserRequest.java,6/f/6f2b673e68f3a784aa7562ba32557bad04717538
+`
+0src/main/java/com/mirai/data/entities/Users.java,2/0/208aba1d53f41e6dc1a25280c111ac8a75735719
+g
+7src/main/java/com/mirai/controllers/AuthController.java,f/2/f2b9dd3d2a2b85ca0183225d86ca3aeae3d4cbd8

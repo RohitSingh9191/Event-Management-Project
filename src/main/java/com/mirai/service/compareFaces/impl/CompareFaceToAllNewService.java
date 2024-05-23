@@ -148,7 +148,6 @@ public class CompareFaceToAllNewService implements CompareFacesService {
             String imageName =
                     targetImageKey.substring(targetImageKey.lastIndexOf('/') + 1, targetImageKey.lastIndexOf('.'));
             int imageNumber = Integer.parseInt(imageName);
-
             System.out.println("Match found in image: " + imageNumber);
             for (CompareFacesMatch match : faceDetails) {
                 ComparedFace face = match.getFace();
@@ -170,7 +169,6 @@ public class CompareFaceToAllNewService implements CompareFacesService {
     }
 
     List<String> getKeysOfCheckInUsers() {
-
         List<String> keys = new ArrayList<>();
         List<Checkin> checkin = checkinRepository.findAll();
         for (Checkin detail : checkin) {

@@ -76,4 +76,16 @@ public class UsersMapper {
                 .imageUrl(url)
                 .build();
     }
+
+
+    public static Users mapToUpdateUser(Users user, UserRequest userRequest) {
+        user.setName(userRequest.getName());
+        user.setEmail(userRequest.getEmail());
+        user.setPhone(userRequest.getPhone());
+        user.setCompany(userRequest.getCompany());
+        user.setDesignation(user.getDesignation());
+        user.setLinkedInProfile(user.getLinkedInProfile());
+        user.setModifiedAt(new Date());
+        return user;
+    }
 }

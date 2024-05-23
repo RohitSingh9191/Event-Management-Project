@@ -433,6 +433,12 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
+    /**
+     * Checks in a user by comparing their image.
+     *
+     * @param image the image file to be compared
+     * @return a CheckinResponse containing the check-in status message
+     */
     @Override
     public CheckinResponse checkInByImage(MultipartFile image) {
         Integer id = compareFacesService.faceCompare(image);
@@ -445,6 +451,7 @@ public class UserServiceImpl implements UserService {
         if (checkin != null && checkin.getStatus() != null) {
             resp = "User already checked in ";
             checkinResponse.setMessage(resp);
+            log.info("User with ID {} has already checked in", id);
             return checkinResponse;
         }
         checkin = UsersMapper.mapToUserCheckin(user);
@@ -453,5 +460,14 @@ public class UserServiceImpl implements UserService {
         log.info("User with ID {} checked in successfully " + id);
         checkinResponse.setMessage(resp);
         return checkinResponse;
+    }
+
+    @Override
+    public UserResponse updateUser(Integer id, UserRequest userRequest) {
+        Users user =
+                userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        user= UsersMapper.mapToUpdateUser(user,userRequest);
+        userRepository.save(user);
+        return UsersMapper.mapUserToUserResponse(user);
     }
 }

@@ -7,7 +7,6 @@ import com.mirai.models.response.CheckinResponse;
 import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import com.mirai.models.response.UserResponseList;
-import com.mirai.service.compareFaces.impl.CompareFaceToAllNewService;
 import com.mirai.service.user.UserService;
 import com.mirai.service.whatsApp.WhatsAppService;
 import com.mirai.utils.ExcelExporter;
@@ -145,11 +144,24 @@ public class UserController {
                 "7880742825", "rohit", "https://s3.ap-south-1.amazonaws.com/miraievents/qr/1.png");
     }
 
-    CompareFaceToAllNewService compareFacesImp;
-
+    /**
+     * Endpoint to check in a user by comparing their image.
+     *
+     * @param image the image file to be compared
+     * @return a ResponseEntity containing the CheckinResponse
+     */
     @GetMapping("/face")
     public ResponseEntity<CheckinResponse> checkInByImage(@RequestParam("image") MultipartFile image) {
+        log.info("Received check-in request with image: {}", image.getOriginalFilename());
         CheckinResponse checkinResponse = userService.checkInByImage(image);
+        log.info("Check-in response: {}", checkinResponse);
         return new ResponseEntity<>(checkinResponse, HttpStatus.OK);
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<UserResponse> updateUser(@PathVariable("id") Integer id, @RequestBody UserRequest userRequest) {
+        UserResponse addUserResponse = userService.updateUser(id,userRequest);
+        return new ResponseEntity<>(addUserResponse, HttpStatus.CREATED);
+    }
+
 }
