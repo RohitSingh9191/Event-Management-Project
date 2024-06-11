@@ -24,10 +24,10 @@ public class UsersMapper {
                 .type(user.getType())
                 .isPolicyAccept(user.getIsPolicyAccept())
                 .status(user.getStatus())
-                .final1(user.getField1())
-                .final2(user.getField2())
-                .final3(user.getField3())
-                .final4(user.getField4())
+                .field1(user.getField1())
+                .field2(user.getField2())
+                .field3(user.getField3())
+                .field4(user.getField4())
                 .date(user.getModifiedAt())
                 .build();
     }
@@ -46,10 +46,10 @@ public class UsersMapper {
                 .status(user.getStatus() != null ? user.getStatus() : null)
                 .date(user.getModifiedAt())
                 .imageUrl(imageUrl)
-                .final1(user.getField1())
-                .final2(user.getField2())
-                .final3(user.getField3())
-                .final4(user.getField4())
+                .field1(user.getField1())
+                .field2(user.getField2())
+                .field3(user.getField3())
+                .field4(user.getField4())
                 .checkIN(checkIn)
                 .build();
     }
