@@ -38,6 +38,8 @@ public class securityConfig {
                 .permitAll()
                 .requestMatchers("/v1/**")
                 .permitAll()
+                .requestMatchers("/v1/user/**")
+                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
