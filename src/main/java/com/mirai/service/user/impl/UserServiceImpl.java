@@ -137,7 +137,13 @@ public class UserServiceImpl implements UserService {
             String url = null;
             if (user.getImage() != null)
                 url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
-            UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
+                Integer id = user.getId();
+                Boolean checkIn=false;
+               Checkin checkin= checkinRepository.getByUserId(id);
+               if(checkin != null) {
+                   checkIn = true;
+               }
+            UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url,checkIn);
             userResponseList.add(userResponse);
         }
         log.info("Mapped {} users to user response list", usersList.size());
@@ -377,7 +383,7 @@ public class UserServiceImpl implements UserService {
         String url = null;
         if (user.getImage() != null)
             url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
-        UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url);
+        UserResponse userResponse = UsersMapper.mapUserToUserResponse(user, url);
         log.info("Profile fetched successfully for user with ID: {}", id);
         return userResponse;
     }

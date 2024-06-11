@@ -159,9 +159,8 @@ public class UserController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<UserResponse> updateUser(@PathVariable("id") Integer id, @RequestBody UserRequest userRequest) {
+    public ResponseEntity<UserResponse> updateUser(@PathVariable("id ") Integer id, @RequestBody UserRequest userRequest) {
         UserResponse addUserResponse = userService.updateUser(id,userRequest);
         return new ResponseEntity<>(addUserResponse, HttpStatus.CREATED);
     }
-
 }

@@ -23,4 +23,5 @@ public class UserResponse {
     private String status;
     private Date date;
     private String imageUrl;
+    private Boolean checkIN;
 }

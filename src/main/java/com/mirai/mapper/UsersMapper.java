@@ -28,7 +28,25 @@ public class UsersMapper {
                 .build();
     }
 
-    public static UserResponse mapUserToGetAllUserResponse(Users user, String imageUrl) {
+    public static UserResponse mapUserToGetAllUserResponse(Users user, String imageUrl,Boolean checkIn) {
+        return UserResponse.builder()
+                .id(user.getId())
+                .name(user.getName())
+                .email(user.getEmail())
+                .company(user.getCompany())
+                .designation(user.getDesignation())
+                .phone(user.getPhone())
+                .linkedInProfile(user.getLinkedInProfile())
+                .type(user.getType())
+                .isPolicyAccept(user.getIsPolicyAccept())
+                .status(user.getStatus() != null ? user.getStatus() : null)
+                .date(user.getModifiedAt())
+                .imageUrl(imageUrl)
+                .checkIN(checkIn)
+                .build();
+    }
+
+    public static UserResponse mapUserToUserResponse(Users user, String imageUrl) {
         return UserResponse.builder()
                 .id(user.getId())
                 .name(user.getName())
@@ -44,7 +62,6 @@ public class UsersMapper {
                 .imageUrl(imageUrl)
                 .build();
     }
-
     public static Users mapUserRequestToUser(UserRequest userRequest, Boolean policy) {
         return Users.builder()
                 .email(userRequest.getEmail())
