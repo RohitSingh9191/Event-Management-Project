@@ -3,6 +3,7 @@ package com.mirai.service.user;
 import com.google.zxing.WriterException;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
+import com.mirai.models.response.CheckedInUserResponseList;
 import com.mirai.models.response.CheckinResponse;
 import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
@@ -18,6 +19,8 @@ public interface UserService {
     List<UserResponse> getAll();
 
     UserResponseList getAllUsers(UserFilters userFilters);
+
+    CheckedInUserResponseList getAllCheckInUsers(UserFilters userFilters);
 
     String updateUserStatus(Integer id, String status) throws WriterException, IOException;
 

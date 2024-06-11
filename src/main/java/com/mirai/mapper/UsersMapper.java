@@ -24,6 +24,10 @@ public class UsersMapper {
                 .type(user.getType())
                 .isPolicyAccept(user.getIsPolicyAccept())
                 .status(user.getStatus())
+                .final1(user.getField1())
+                .final2(user.getField2())
+                .final3(user.getField3())
+                .final4(user.getField4())
                 .date(user.getModifiedAt())
                 .build();
     }
@@ -42,6 +46,10 @@ public class UsersMapper {
                 .status(user.getStatus() != null ? user.getStatus() : null)
                 .date(user.getModifiedAt())
                 .imageUrl(imageUrl)
+                .final1(user.getField1())
+                .final2(user.getField2())
+                .final3(user.getField3())
+                .final4(user.getField4())
                 .checkIN(checkIn)
                 .build();
     }
@@ -102,6 +110,10 @@ public class UsersMapper {
         user.setCompany(userRequest.getCompany());
         user.setDesignation(user.getDesignation());
         user.setLinkedInProfile(user.getLinkedInProfile());
+        user.setField1(userRequest.getField1());
+        user.setField2(userRequest.getField2());
+        user.setField3(userRequest.getField3());
+        user.setField4(userRequest.getField4());
         user.setModifiedAt(new Date());
         return user;
     }

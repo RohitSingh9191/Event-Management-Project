@@ -54,4 +54,16 @@ public class Users {
 
     @Column(name = "ModifiedAt")
     private Date modifiedAt;
+
+    @Column(name = "Field1")
+    private String field1;
+
+    @Column(name = "Field2")
+    private String field2;
+
+    @Column(name = "Field3")
+    private String field3;
+
+    @Column(name = "Field4")
+    private String field4;
 }

@@ -14,10 +14,7 @@ import com.mirai.exception.MiraiException;
 import com.mirai.mapper.UsersMapper;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
-import com.mirai.models.response.CheckinResponse;
-import com.mirai.models.response.UploadImageResponse;
-import com.mirai.models.response.UserResponse;
-import com.mirai.models.response.UserResponseList;
+import com.mirai.models.response.*;
 import com.mirai.service.amazonBucket.AmazonS3Service;
 import com.mirai.service.compareFaces.CompareFacesService;
 import com.mirai.service.email.EmailService;
@@ -153,6 +150,32 @@ public class UserServiceImpl implements UserService {
                 .build();
     }
 
+    private CheckedInUserResponseList setAllUserToCheckedInUserListResponse(Page<Users> usersPage) {
+        log.info("Mapping users to user response list");
+        int totalCount = (int) usersPage.getTotalElements();
+        List<Users> usersList = usersPage.getContent();
+        List<UserResponse> userResponseList = new ArrayList<>();
+        for (Users user : usersList) {
+            String url = null;
+            if (user.getImage() != null)
+                url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
+            Integer id = user.getId();
+            Boolean checkIn=false;
+            Checkin checkin= checkinRepository.getByUserId(id);
+            if(checkin != null) {
+                checkIn = true;
+            }
+            UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url,checkIn);
+            userResponseList.add(userResponse);
+        }
+        log.info("Mapped {} users to user response list", usersList.size());
+return  null;
+        //        return UserResponseList.builder()
+//                .totalCount(totalCount)
+//                .userResponses(userResponseList)
+//                .build();
+    }
+
     /**
      * Checks the validation of the provided user filters.
      *
@@ -199,6 +222,16 @@ public class UserServiceImpl implements UserService {
         return setAllUserToUserListResponse(usersPage);
     }
 
+    @Override
+    public CheckedInUserResponseList getAllCheckInUsers(UserFilters userFilters) {
+        log.info("Fetching users based on filters: {}", userFilters);
+        checkValidationOfGetAllUsers(userFilters);
+        Pageable pageable = MiraiUtils.createPageable(userFilters.getLimit(), userFilters.getOffset());
+        Specification<Users> spec = UserSpecifications.searchUsers(userFilters);
+        Page<Users> usersPage = userRepository.findAll(spec, pageable);
+        log.info("Retrieved {} users based on filters: {}", usersPage.getNumberOfElements(), userFilters);
+        return setAllUserToCheckedInUserListResponse(usersPage);
+    }
     /**
      * Retrieves all users from the database.
      *

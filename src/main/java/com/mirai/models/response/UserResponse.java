@@ -24,4 +24,8 @@ public class UserResponse {
     private Date date;
     private String imageUrl;
     private Boolean checkIN;
+    private String final1;
+    private String final2;
+    private String final3;
+    private String final4;
 }

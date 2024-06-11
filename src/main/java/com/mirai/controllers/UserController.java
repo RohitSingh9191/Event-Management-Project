@@ -3,6 +3,7 @@ package com.mirai.controllers;
 import com.google.zxing.WriterException;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
+import com.mirai.models.response.CheckedInUserResponseList;
 import com.mirai.models.response.CheckinResponse;
 import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
@@ -162,5 +163,11 @@ public class UserController {
     public ResponseEntity<UserResponse> updateUser(@PathVariable("id ") Integer id, @RequestBody UserRequest userRequest) {
         UserResponse addUserResponse = userService.updateUser(id,userRequest);
         return new ResponseEntity<>(addUserResponse, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/checkedin")
+    public ResponseEntity<CheckedInUserResponseList> getCheckedInUsers(@ModelAttribute UserFilters userFilters) {
+        CheckedInUserResponseList allCheckInUsers = userService.getAllCheckInUsers(userFilters);
+        return new ResponseEntity<>(allCheckInUsers, HttpStatus.OK);
     }
 }
