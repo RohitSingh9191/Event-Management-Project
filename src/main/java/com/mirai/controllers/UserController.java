@@ -160,13 +160,14 @@ public class UserController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<UserResponse> updateUser(@PathVariable("id") Integer id, @RequestBody UserRequest userRequest) {
-        UserResponse addUserResponse = userService.updateUser(id,userRequest);
+    public ResponseEntity<UserResponse> updateUser(
+            @PathVariable("id") Integer id, @RequestBody UserRequest userRequest) {
+        UserResponse addUserResponse = userService.updateUser(id, userRequest);
         return new ResponseEntity<>(addUserResponse, HttpStatus.CREATED);
     }
 
     @GetMapping("/checkedin")
-    public ResponseEntity<CheckedInUserResponseList> getCheckedInUsers(@ModelAttribute UserFilters userFilters) {
+    public ResponseEntity<CheckedInUserResponseList> getAllCheckedInUsers(@ModelAttribute UserFilters userFilters) {
         CheckedInUserResponseList allCheckInUsers = userService.getAllCheckInUsers(userFilters);
         return new ResponseEntity<>(allCheckInUsers, HttpStatus.OK);
     }

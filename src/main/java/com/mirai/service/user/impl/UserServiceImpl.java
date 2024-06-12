@@ -134,13 +134,13 @@ public class UserServiceImpl implements UserService {
             String url = null;
             if (user.getImage() != null)
                 url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
-                Integer id = user.getId();
-                Boolean checkIn=false;
-               Checkin checkin= checkinRepository.getByUserId(id);
-               if(checkin != null) {
-                   checkIn = true;
-               }
-            UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url,checkIn);
+            Integer id = user.getId();
+            Boolean checkIn = false;
+            Checkin checkin = checkinRepository.getByUserId(id);
+            if (checkin != null) {
+                checkIn = true;
+            }
+            UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url, checkIn);
             userResponseList.add(userResponse);
         }
         log.info("Mapped {} users to user response list", usersList.size());
@@ -154,26 +154,23 @@ public class UserServiceImpl implements UserService {
         log.info("Mapping users to user response list");
         int totalCount = (int) usersPage.getTotalElements();
         List<Users> usersList = usersPage.getContent();
-        List<UserResponse> userResponseList = new ArrayList<>();
+        List<CheckedInUserResponse> userResponseList = new ArrayList<>();
         for (Users user : usersList) {
             String url = null;
             if (user.getImage() != null)
                 url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
             Integer id = user.getId();
-            Boolean checkIn=false;
-            Checkin checkin= checkinRepository.getByUserId(id);
-            if(checkin != null) {
-                checkIn = true;
+            Checkin checkin = checkinRepository.getByUserId(id);
+            if (checkin != null) {
+                CheckedInUserResponse userResponse = UsersMapper.mapUserToGetAllCheckedInUserResponse(user, url);
+                userResponseList.add(userResponse);
             }
-            UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url,checkIn);
-            userResponseList.add(userResponse);
         }
         log.info("Mapped {} users to user response list", usersList.size());
-return  null;
-        //        return UserResponseList.builder()
-//                .totalCount(totalCount)
-//                .userResponses(userResponseList)
-//                .build();
+        return CheckedInUserResponseList.builder()
+                .totalCount(userResponseList.size())
+                .checkedInUserResponses(userResponseList)
+                .build();
     }
 
     /**
@@ -505,7 +502,7 @@ return  null;
     public UserResponse updateUser(Integer id, UserRequest userRequest) {
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
-        user= UsersMapper.mapToUpdateUser(user,userRequest);
+        user = UsersMapper.mapToUpdateUser(user, userRequest);
         userRepository.save(user);
         return UsersMapper.mapUserToUserResponse(user);
     }

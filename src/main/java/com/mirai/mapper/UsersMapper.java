@@ -4,6 +4,7 @@ import com.mirai.constants.UserStatus;
 import com.mirai.data.entities.Checkin;
 import com.mirai.data.entities.Users;
 import com.mirai.models.request.UserRequest;
+import com.mirai.models.response.CheckedInUserResponse;
 import com.mirai.models.response.UploadImageResponse;
 import com.mirai.models.response.UserResponse;
 import java.util.Date;
@@ -32,7 +33,7 @@ public class UsersMapper {
                 .build();
     }
 
-    public static UserResponse mapUserToGetAllUserResponse(Users user, String imageUrl,Boolean checkIn) {
+    public static UserResponse mapUserToGetAllUserResponse(Users user, String imageUrl, Boolean checkIn) {
         return UserResponse.builder()
                 .id(user.getId())
                 .name(user.getName())
@@ -54,6 +55,20 @@ public class UsersMapper {
                 .build();
     }
 
+    public static CheckedInUserResponse mapUserToGetAllCheckedInUserResponse(Users user, String imageUrl) {
+        return CheckedInUserResponse.builder()
+                .id(user.getId())
+                .name(user.getName())
+                .company(user.getCompany())
+                .designation(user.getDesignation())
+                .imageUrl(imageUrl)
+                .field1(user.getField1())
+                .field2(user.getField2())
+                .field3(user.getField3())
+                .field4(user.getField4())
+                .build();
+    }
+
     public static UserResponse mapUserToUserResponse(Users user, String imageUrl) {
         return UserResponse.builder()
                 .id(user.getId())
@@ -70,6 +85,7 @@ public class UsersMapper {
                 .imageUrl(imageUrl)
                 .build();
     }
+
     public static Users mapUserRequestToUser(UserRequest userRequest, Boolean policy) {
         return Users.builder()
                 .email(userRequest.getEmail())
@@ -101,7 +117,6 @@ public class UsersMapper {
                 .imageUrl(url)
                 .build();
     }
-
 
     public static Users mapToUpdateUser(Users user, UserRequest userRequest) {
         user.setName(userRequest.getName());

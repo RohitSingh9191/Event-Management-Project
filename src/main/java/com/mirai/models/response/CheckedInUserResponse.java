@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -21,5 +19,4 @@ public class CheckedInUserResponse {
     private String field2;
     private String field3;
     private String field4;
-
 }

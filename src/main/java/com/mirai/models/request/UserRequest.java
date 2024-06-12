@@ -32,5 +32,4 @@ public class UserRequest {
     private String field3;
 
     private String field4;
-
 }
