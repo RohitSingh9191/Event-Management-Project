@@ -96,7 +96,7 @@ public class CompareFacesImp {
                 log.error("InvalidParameterException occurred for target image key: {}", targetImageKey, e);
             }
         }
-        return -1; // Or any other value to indicate failure
+        return -1;
     }
 
     private List<String> listKeysInBucket(AmazonS3 s3Client, String bucketName, String prefix) {

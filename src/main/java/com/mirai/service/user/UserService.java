@@ -20,7 +20,7 @@ public interface UserService {
 
     UserResponseList getAllUsers(UserFilters userFilters);
 
-    CheckedInUserResponseList getAllCheckInUsers(UserFilters userFilters);
+    CheckedInUserResponseList getAllCheckInUsers();
 
     String updateUserStatus(Integer id, String status) throws WriterException, IOException;
 

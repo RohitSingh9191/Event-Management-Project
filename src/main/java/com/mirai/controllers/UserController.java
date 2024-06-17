@@ -139,12 +139,6 @@ public class UserController {
         return new ResponseEntity<>(uploadImageResponse, HttpStatus.CREATED);
     }
 
-    @PostMapping("/msg/wp")
-    public void addUseswd() {
-        whatsAppService.sendQrWhatsAppMessage(
-                "7880742825", "rohit", "https://s3.ap-south-1.amazonaws.com/miraievents/qr/1.png");
-    }
-
     /**
      * Endpoint to check in a user by comparing their image.
      *
@@ -166,9 +160,15 @@ public class UserController {
         return new ResponseEntity<>(addUserResponse, HttpStatus.CREATED);
     }
 
+    /**
+     * Retrieves all users who are checked in based on the provided filters.
+     *
+     * @return a response entity containing the list of checked-in users and HTTP status
+     */
     @GetMapping("/checkedin")
-    public ResponseEntity<CheckedInUserResponseList> getAllCheckedInUsers(@ModelAttribute UserFilters userFilters) {
-        CheckedInUserResponseList allCheckInUsers = userService.getAllCheckInUsers(userFilters);
+    public ResponseEntity<CheckedInUserResponseList> getAllCheckedInUsers() {
+        log.info("Received request to get all checked-in users with filters: {}");
+        CheckedInUserResponseList allCheckInUsers = userService.getAllCheckInUsers();
         return new ResponseEntity<>(allCheckInUsers, HttpStatus.OK);
     }
 }

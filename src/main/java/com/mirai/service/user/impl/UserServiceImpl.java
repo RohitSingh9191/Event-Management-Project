@@ -67,8 +67,8 @@ public class UserServiceImpl implements UserService {
             return userAddByAdmin(userRequest);
         } else {
             String userEmail = userRequest.getEmail();
-            Users users = userRepository.findByEmail(userEmail);
-            if (users != null) {
+            Users users = userRepository.findByEmailAndStatusNot(userEmail, "INACTIVE");
+            if (users != null && !users.getStatus().equalsIgnoreCase(UserStatus.INACTIVE.name())) {
                 users.setModifiedAt(new Date());
                 Users savedUser = userRepository.save(users);
                 if (savedUser != null) {
@@ -108,7 +108,7 @@ public class UserServiceImpl implements UserService {
     public UserResponse userAddByAdmin(UserRequest userRequest) {
         String userEmail = userRequest.getEmail();
         log.info("Attempting to add user with email: {}", userEmail);
-        Users users = userRepository.findByEmail(userEmail);
+        Users users = userRepository.findByEmailAndStatusNot(userEmail, "INACTIVE");
         if (users != null) {
             throw new MiraiException(ApplicationErrorCode.EMAIL_ALREADY_EXISTS);
         }
@@ -150,10 +150,9 @@ public class UserServiceImpl implements UserService {
                 .build();
     }
 
-    private CheckedInUserResponseList setAllUserToCheckedInUserListResponse(Page<Users> usersPage) {
+    private CheckedInUserResponseList setAllUserToCheckedInUserListResponse(List<Users> usersPage) {
         log.info("Mapping users to user response list");
-        int totalCount = (int) usersPage.getTotalElements();
-        List<Users> usersList = usersPage.getContent();
+        List<Users> usersList = usersPage;
         List<CheckedInUserResponse> userResponseList = new ArrayList<>();
         for (Users user : usersList) {
             String url = null;
@@ -219,16 +218,17 @@ public class UserServiceImpl implements UserService {
         return setAllUserToUserListResponse(usersPage);
     }
 
+    /**
+     * Retrieves all checked-in users based on the provided filters.
+     *
+     * * @return a response list containing the checked-in users
+     */
     @Override
-    public CheckedInUserResponseList getAllCheckInUsers(UserFilters userFilters) {
-        log.info("Fetching users based on filters: {}", userFilters);
-        checkValidationOfGetAllUsers(userFilters);
-        Pageable pageable = MiraiUtils.createPageable(userFilters.getLimit(), userFilters.getOffset());
-        Specification<Users> spec = UserSpecifications.searchUsers(userFilters);
-        Page<Users> usersPage = userRepository.findAll(spec, pageable);
-        log.info("Retrieved {} users based on filters: {}", usersPage.getNumberOfElements(), userFilters);
+    public CheckedInUserResponseList getAllCheckInUsers() {
+        List<Users> usersPage = userRepository.findAll();
         return setAllUserToCheckedInUserListResponse(usersPage);
     }
+
     /**
      * Retrieves all users from the database.
      *
@@ -431,7 +431,7 @@ public class UserServiceImpl implements UserService {
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         String resp = null;
-        Checkin checkin = checkinRepository.findById(id).orElse(null);
+        Checkin checkin = checkinRepository.getByUserId(id);
         CheckinResponse checkinResponse = new CheckinResponse();
 
         if (checkin != null && checkin.getStatus() != null) {
@@ -477,22 +477,23 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public CheckinResponse checkInByImage(MultipartFile image) {
+
         Integer id = compareFacesService.faceCompare(image);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         String resp = null;
-        Checkin checkin = checkinRepository.findById(id).orElse(null);
+        Checkin checkin = checkinRepository.getByUserId(id);
         CheckinResponse checkinResponse = new CheckinResponse();
 
         if (checkin != null && checkin.getStatus() != null) {
-            resp = "User already checked in ";
+            resp = "User " + user.getName() + " is already checked in ";
             checkinResponse.setMessage(resp);
             log.info("User with ID {} has already checked in", id);
             return checkinResponse;
         }
         checkin = UsersMapper.mapToUserCheckin(user);
         checkinRepository.save(checkin);
-        resp = "User successfully checked in ";
+        resp = "User " + user.getName() + " is successfully checked in ";
         log.info("User with ID {} checked in successfully " + id);
         checkinResponse.setMessage(resp);
         return checkinResponse;

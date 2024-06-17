@@ -123,8 +123,8 @@ public class UsersMapper {
         user.setEmail(userRequest.getEmail());
         user.setPhone(userRequest.getPhone());
         user.setCompany(userRequest.getCompany());
-        user.setDesignation(user.getDesignation());
-        user.setLinkedInProfile(user.getLinkedInProfile());
+        user.setDesignation(userRequest.getDesignation());
+        user.setLinkedInProfile(userRequest.getLinkedInProfile());
         user.setField1(userRequest.getField1());
         user.setField2(userRequest.getField2());
         user.setField3(userRequest.getField3());

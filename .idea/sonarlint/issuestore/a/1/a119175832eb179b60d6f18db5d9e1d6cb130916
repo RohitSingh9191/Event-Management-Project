@@ -1,0 +1,15 @@
+
+¥
+java:S1488Ñ"\Immediately return this expression instead of assigning it to the temporary variable "resp".(ƒ‰íÁüÿÿÿÿ8ÊÇ¶†2J$93ac7af1-7bd6-49b8-ba75-3438e12f2bc9
+”
+java:S1192ˆ"KDefine a constant instead of duplicating this literal "bucketName" 3 times.(‰¡áøÿÿÿÿ8ÊÇ¶†2J$96b92d08-11e1-4576-b232-4588e3982389
+o
+java:S1125B"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8ÚÇ¶†2J$ecd74644-a262-4291-92ce-2145e9ff49c4
+l	java:S108¸")Either remove or fill this block of code.(ëû¦¢8‰È¶†2J$bc951f15-2238-4ce2-9947-f4ef90e5cef9
+ƒ
+java:S4034»":Replace this negation and "anyMatch()" with "noneMatch()".(ğí…¿ùÿÿÿÿ8‰È¶†2J$e9d84a1f-10f6-40bd-9839-f43efd78c5ee
+k	java:S108Á")Either remove or fill this block of code.(§Î:8‰È¶†2J$c4f1deea-40b6-4254-98af-ce5abf46f267
+ƒ
+java:S4034Ä":Replace this negation and "anyMatch()" with "noneMatch()".(ŠªûÑıÿÿÿÿ8‰È¶†2J$7a06a054-a7ae-4678-ad93-9b7529e63072
+ƒ
+java:S4034‡":Replace this negation and "anyMatch()" with "noneMatch()".(Ò³åøÿÿÿÿ8¸È¶†2J$7eff892e-95e8-4b35-8e2e-bcdb11f03bce

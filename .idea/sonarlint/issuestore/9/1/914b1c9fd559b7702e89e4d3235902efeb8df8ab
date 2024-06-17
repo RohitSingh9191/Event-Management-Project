@@ -1,0 +1,16 @@
+
+Œ	java:S117C"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«»žµJ$91a0a240-23e8-4397-a985-1ab5e8e2d41b
+‘	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’–±ÅúÿÿÿÿJ$4654391d-39ee-4296-9f07-b72289d354f4
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜÇîƒùÿÿÿÿJ$b37c9928-20ee-42e0-9426-4d79a65c5051
+k	java:S106%"+Replace this use of System.out by a logger.(¬´Ê ùÿÿÿÿJ$cbd408ff-abce-43f7-9ea7-97d208f20fa3
+k	java:S106;"+Replace this use of System.out by a logger.(óÅ–žøÿÿÿÿJ$8de3f146-c2ca-437e-a4cb-b4673f34dc68
+k	java:S106<"+Replace this use of System.out by a logger.(¨¶ÑÍþÿÿÿÿJ$044bd9ae-441a-433e-8cb2-842e8b752655
+f	java:S106K"+Replace this use of System.out by a logger.(Çé—ÞJ$cddf119b-ef5f-4b40-8cc2-41778164e74c
+f	java:S106W"+Replace this use of System.out by a logger.(–§äJ$fab8ab97-3dd0-4cfa-ad79-2c90a88e5a74
+f	java:S106]"+Replace this use of System.err by a logger.(ç´ÒüJ$227e5609-b288-4a70-b788-05efe647a6a8
+k	java:S106^"+Replace this use of System.err by a logger.(ÛÔ¢ÏþÿÿÿÿJ$bcfa531a-f838-42e3-a6f8-dbbbc1cd8f72
+»
+java:S6204r"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(‚úŒ…ÿÿÿÿÿJ$08e93717-e142-4af7-b5c7-bb01fc6c8d57
+l	java:S106ˆ"+Replace this use of System.out by a logger.(’ÿãÈþÿÿÿÿJ$a49264fa-62a8-4f40-beb9-2bc2f6a01959
+l	java:S106Œ"+Replace this use of System.out by a logger.(‡ù®®ýÿÿÿÿJ$a918b32c-1aef-4bf1-a094-a8d0d339fb53
+g	java:S106š"+Replace this use of System.out by a logger.(‘Ì®ÕJ$c8e0ba33-f5b8-49c1-ae8d-3f82ad1f9dc9
