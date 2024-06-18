@@ -30,7 +30,7 @@ public interface UserService {
 
     UploadImageResponse uploadPhoto(Integer id, MultipartFile image) throws IOException;
 
-    CheckinResponse checkInByImage(MultipartFile image);
+    CheckinResponse checkInByImage(MultipartFile image, Boolean createIndexing);
 
     UserResponse updateUser(Integer id, UserRequest userRequest);
 }

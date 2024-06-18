@@ -1,0 +1,23 @@
+
+K
+java:S5411˜"(Use a primitive boolean expression here.(†û¤şÿÿÿÿ8Å÷ØÏ‚2
+g
+java:S1192S"KDefine a constant instead of duplicating this literal "modifiedAt" 4 times.(Áâ8Ñ÷ØÏ‚2
+e
+java:S1192–"GDefine a constant instead of duplicating this literal "userId" 3 times.(ÁöøÑ8Ñ÷ØÏ‚2
+d
+java:S1192—"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8Ñ÷ØÏ‚2
+k
+java:S1192¥"HDefine a constant instead of duplicating this literal "company" 4 times.(ã’¥³øÿÿÿÿ8Ñ÷ØÏ‚2
+o
+java:S1192²"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8Ñ÷ØÏ‚2
+i
+java:S1192‰"FDefine a constant instead of duplicating this literal "email" 4 times.(Ü˜ĞÑùÿÿÿÿ8Ñ÷ØÏ‚2
+d
+java:S1192"GDefine a constant instead of duplicating this literal "status" 3 times.(ˆ¡œ8Ñ÷ØÏ‚2
+W
+java:S1118":Add a private constructor to hide the implicit public one.(ñ‰¼ú8Ñ÷ØÏ‚2
+n
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 72 to the 15 allowed.(õıíc8Ñ÷ØÏ‚2
+ã
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 164 to 64, Complexity from 55 to 14, Nesting Level from 3 to 2, Number of Variables from 65 to 6.(õıíc8§ûØÏ‚2

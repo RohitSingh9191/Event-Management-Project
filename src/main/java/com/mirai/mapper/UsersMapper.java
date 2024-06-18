@@ -51,7 +51,7 @@ public class UsersMapper {
                 .field2(user.getField2())
                 .field3(user.getField3())
                 .field4(user.getField4())
-                .checkIN(checkIn)
+                .checkIn(checkIn)
                 .build();
     }
 

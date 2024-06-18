@@ -146,9 +146,11 @@ public class UserController {
      * @return a ResponseEntity containing the CheckinResponse
      */
     @GetMapping("/face")
-    public ResponseEntity<CheckinResponse> checkInByImage(@RequestParam("image") MultipartFile image) {
+    public ResponseEntity<CheckinResponse> checkInByImage(
+            @RequestParam("image") MultipartFile image,
+            @RequestParam(value = "createIndexing", required = false) Boolean createIndexing) {
         log.info("Received check-in request with image: {}", image.getOriginalFilename());
-        CheckinResponse checkinResponse = userService.checkInByImage(image);
+        CheckinResponse checkinResponse = userService.checkInByImage(image, createIndexing);
         log.info("Check-in response: {}", checkinResponse);
         return new ResponseEntity<>(checkinResponse, HttpStatus.OK);
     }

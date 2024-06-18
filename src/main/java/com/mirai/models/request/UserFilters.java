@@ -17,4 +17,5 @@ public class UserFilters {
     private String status;
     private String limit;
     private String offset;
+    private Boolean checkIn;
 }

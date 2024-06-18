@@ -22,9 +22,11 @@ public class CompareFaceService implements CompareFacesService {
     private final Environment env;
     private final RekognitionCollectionService rekognitionCollectionService;
 
-    public Integer faceCompare(MultipartFile sourceImageFile) {
+    public Integer faceCompare(MultipartFile sourceImageFile, Boolean createIndexing) {
 
-        //  rekognitionCollectionService.createCollection();
+        if (createIndexing != null && createIndexing == true) {
+            rekognitionCollectionService.createCollection();
+        }
 
         String accessKey = env.getProperty("accessKey");
         String secretKey = env.getProperty("secretKey");

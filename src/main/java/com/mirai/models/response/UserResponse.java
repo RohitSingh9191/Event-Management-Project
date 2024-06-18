@@ -23,7 +23,7 @@ public class UserResponse {
     private String status;
     private Date date;
     private String imageUrl;
-    private Boolean checkIN;
+    private Boolean checkIn;
     private String field1;
     private String field2;
     private String field3;

@@ -359,6 +359,8 @@ public class UserServiceImpl implements UserService {
             log.info("Rejection email sent successfully to {}", user.getEmail());
         } else if (UserStatus.INACTIVE.name().equalsIgnoreCase(status)) {
             user.setStatus(UserStatus.INACTIVE.name());
+            Checkin checkin = checkinRepository.getByUserId(id);
+            if (checkin != null) checkinRepository.delete(checkin);
             resp = "User deleted by id " + id;
         } else if (UserStatus.PENDING.name().equalsIgnoreCase(status)) {
             user.setStatus(UserStatus.PENDING.name());
@@ -476,9 +478,9 @@ public class UserServiceImpl implements UserService {
      * @return a CheckinResponse containing the check-in status message
      */
     @Override
-    public CheckinResponse checkInByImage(MultipartFile image) {
+    public CheckinResponse checkInByImage(MultipartFile image, Boolean createIndexing) {
 
-        Integer id = compareFacesService.faceCompare(image);
+        Integer id = compareFacesService.faceCompare(image, createIndexing);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         String resp = null;

@@ -2,8 +2,11 @@ package com.mirai.data.specifications;
 
 import com.mirai.constants.PolicyEnum;
 import com.mirai.constants.UserStatus;
+import com.mirai.data.entities.Checkin;
 import com.mirai.data.entities.Users;
 import com.mirai.models.request.UserFilters;
+import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.Subquery;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.jpa.domain.Specification;
 
@@ -66,6 +69,12 @@ public class UserSpecifications {
         String status = userFilters.getStatus();
         if (status != null && !status.isEmpty()) {
             spec = spec.and(UserSpecifications.withStatus(status.toUpperCase()));
+        }
+
+        // checkIn
+        Boolean checkIn = userFilters.getCheckIn();
+        if (checkIn != null) {
+            spec = spec.and(UserSpecifications.withCheckIn(checkIn));
         }
 
         String sortBy = null;
@@ -259,5 +268,24 @@ public class UserSpecifications {
             policy = null;
         }
         return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("isPolicyAccept"), policy);
+    }
+
+    private static Specification<Users> withCheckIn(Boolean checkIn) {
+        log.info("Filtering users by check-in: {}", checkIn);
+        return (root, query, criteriaBuilder) -> {
+            Subquery<Integer> subquery = query.subquery(Integer.class);
+            Root<Checkin> checkinRoot = subquery.from(Checkin.class);
+            subquery.select(checkinRoot.get("userId"));
+
+            if (checkIn) {
+                // Users who have checked in
+                subquery.where(criteriaBuilder.equal(checkinRoot.get("userId"), root.get("id")));
+                return criteriaBuilder.exists(subquery);
+            } else {
+                // Users who have not checked in
+                subquery.where(criteriaBuilder.equal(checkinRoot.get("userId"), root.get("id")));
+                return criteriaBuilder.not(criteriaBuilder.exists(subquery));
+            }
+        };
     }
 }
