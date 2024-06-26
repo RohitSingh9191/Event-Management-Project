@@ -1,0 +1,14 @@
+
+¥
+java:S1488Ó"\Immediately return this expression instead of assigning it to the temporary variable "resp".(ƒ‰íÁüÿÿÿÿ8Šû¸™…2J$9eade1b2-8c33-439f-bbf7-a2b32cd4fec0
+ 
+java:S1488“"\Immediately return this expression instead of assigning it to the temporary variable "resp".(Ò§ºĞ8Šû¸™…2J$9291849d-355e-4ead-928c-54490fe8b29e
+”
+java:S1192ˆ"KDefine a constant instead of duplicating this literal "bucketName" 3 times.(‰¡áøÿÿÿÿ8Šû¸™…2J$075019b1-2a64-414e-b243-e534457a15f9
+¥
+java:S1192è"\Define a constant instead of duplicating this literal "Email send successfully at " 3 times.(Æş¡õşÿÿÿÿ8Šû¸™…2J$e2f78f8b-1113-4fd6-8152-3b447a85fe04
+o
+java:S1125B"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8šû¸™…2J$740dc379-2fe7-4f41-9635-9933fe9fb291
+l	java:S108¸")Either remove or fill this block of code.(ëû¦¢8šû¸™…2J$4b89c851-883b-41c6-8217-a38796e52d23
+k	java:S108Ã")Either remove or fill this block of code.(§Î:8ªû¸™…2J$0ba038e3-b3ff-4a31-878a-1969c9e3b176
+n	java:S106š"+Replace this use of System.out by a logger.(Ø¼¢ƒ8½û¸™…2J$5f4645c1-b6db-40bf-8df0-0ca6af3eaa66

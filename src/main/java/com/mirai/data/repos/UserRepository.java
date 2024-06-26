@@ -13,4 +13,7 @@ public interface UserRepository extends JpaRepository<Users, Integer> {
     Page<Users> findAll(Specification<Users> spec, Pageable pageable);
 
     Users findByEmailAndStatusNot(String email, String status);
+
+    Users findByStatusLike(String status);
+
 }

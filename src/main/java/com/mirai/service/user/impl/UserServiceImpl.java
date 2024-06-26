@@ -531,4 +531,11 @@ public class UserServiceImpl implements UserService {
         String resp = "Email send successfully at " + user.getEmail();
         return resp;
     }
+
+    @Override
+    public String resendConfirmationMsgToAll() {
+        Users user= userRepository.findByStatusLike("CONFIRMED");
+        System.out.println(user);
+        return "";
+    }
 }

@@ -35,4 +35,6 @@ public interface UserService {
     UserResponse updateUser(Integer id, UserRequest userRequest);
 
     String resendConfirmationMsg(Integer id) throws IOException, WriterException;
+
+    String resendConfirmationMsgToAll();
 }

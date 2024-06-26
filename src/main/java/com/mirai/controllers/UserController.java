@@ -181,4 +181,10 @@ public class UserController {
         log.info("User with ID {} confirmed successfully.", id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @PostMapping("/resendtoall")
+    public ResponseEntity resendConfirmationMsgToAll() throws IOException, WriterException {
+        String response = userService.resendConfirmationMsgToAll();
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }
