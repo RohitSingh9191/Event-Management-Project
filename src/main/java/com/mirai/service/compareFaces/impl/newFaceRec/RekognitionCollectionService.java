@@ -102,7 +102,6 @@ public class RekognitionCollectionService {
                 for (S3ObjectSummary objectSummary : result.getObjectSummaries()) {
                     String key = objectSummary.getKey();
 
-                    // Skip directories or non-image files if needed
                     if (!key.endsWith(".jpg") && !key.endsWith(".jpeg") && !key.endsWith(".png")) {
                         log.info("Skipping non-image file: {}", key);
                         continue;
@@ -110,7 +109,7 @@ public class RekognitionCollectionService {
 
                     Image image = new Image()
                             .withS3Object(new S3Object().withBucket(bucketName).withName(key));
-                    String externalImageId = key.substring(key.lastIndexOf('/') + 1); // This extracts '1.png'
+                    String externalImageId = key.substring(key.lastIndexOf('/') + 1);
                     IndexFacesRequest indexFacesRequest = new IndexFacesRequest()
                             .withCollectionId(collectionId)
                             .withImage(image)

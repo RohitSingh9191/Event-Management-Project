@@ -37,7 +37,7 @@
 // @Service
 // @AllArgsConstructor
 // @Slf4j
-// public class CompareFaceToAllNewService implements CompareFacesService {
+// public class CompareFaceToAllNewServic implements CompareFacesService {
 //
 //    private final Environment env;
 //    private final CheckinRepository checkinRepository;

@@ -33,4 +33,6 @@ public interface UserService {
     CheckinResponse checkInByImage(MultipartFile image, Boolean createIndexing);
 
     UserResponse updateUser(Integer id, UserRequest userRequest);
+
+    String resendConfirmationMsg(Integer id) throws IOException, WriterException;
 }

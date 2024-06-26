@@ -173,4 +173,12 @@ public class UserController {
         CheckedInUserResponseList allCheckInUsers = userService.getAllCheckInUsers();
         return new ResponseEntity<>(allCheckInUsers, HttpStatus.OK);
     }
+
+    @PostMapping("/resend/{id}")
+    public ResponseEntity resendConfirmationMsg(@PathVariable("id") Integer id) throws IOException, WriterException {
+        log.info("Confirming user with ID: {}", id);
+        String response = userService.resendConfirmationMsg(id);
+        log.info("User with ID {} confirmed successfully.", id);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

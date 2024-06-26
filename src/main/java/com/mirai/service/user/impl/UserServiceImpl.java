@@ -183,10 +183,12 @@ public class UserServiceImpl implements UserService {
         String type = userFilters.getType();
         if (type == null || type.isEmpty()) {
         } else {
-            if (!Arrays.stream(RoleEnum.values())
-                    .anyMatch(enumConstant -> enumConstant.name().equalsIgnoreCase(type)))
-                log.error("Invalid user type: {}", type);
-            throw new MiraiException(ApplicationErrorCode.INVALID_ROLE_TYPE);
+            if (Arrays.stream(RoleEnum.values())
+                    .anyMatch(enumConstant -> enumConstant.name().equalsIgnoreCase(type))) {
+                log.info("Type {} is valid", type);
+            } else {
+                throw new MiraiException(ApplicationErrorCode.INVALID_ROLE_TYPE);
+            }
         }
 
         String policyType = userFilters.getPolicyType();
@@ -415,7 +417,11 @@ public class UserServiceImpl implements UserService {
         String url = null;
         if (user.getImage() != null)
             url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
-        UserResponse userResponse = UsersMapper.mapUserToUserResponse(user, url);
+
+        String qrName=id+".jpg";
+        String  qrUrl = amazonS3Service.publicLinkOfImage(qrName, env.getProperty("qrbucketName"));
+
+        UserResponse userResponse = UsersMapper.mapUserToUserDesbordResponse(user, url,qrUrl);
         log.info("Profile fetched successfully for user with ID: {}", id);
         return userResponse;
     }
@@ -508,5 +514,21 @@ public class UserServiceImpl implements UserService {
         user = UsersMapper.mapToUpdateUser(user, userRequest);
         userRepository.save(user);
         return UsersMapper.mapUserToUserResponse(user);
+    }
+
+    @Override
+    public String resendConfirmationMsg(Integer id) throws IOException, WriterException {
+        Users user =
+                userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        user.setStatus(UserStatus.CONFIRMED.name());
+        String link = "https://api.mirai.events/miraiapp/user/" + id;
+        byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 200, 200);
+        String url = amazonS3Service.uploadQRCodeToS3(qrCodeImage, String.valueOf(id));
+        whatsAppService.sendQrWhatsAppMessage("91" + user.getPhone(), user.getName(), url);
+        emailService.sendEmailWithQRCode(
+                user, "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
+        log.info("Confirmation email sent successfully to {}", user.getEmail());
+        String resp = "Email send successfully at " + user.getEmail();
+        return resp;
     }
 }

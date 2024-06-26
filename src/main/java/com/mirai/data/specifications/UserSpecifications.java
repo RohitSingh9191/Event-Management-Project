@@ -278,11 +278,9 @@ public class UserSpecifications {
             subquery.select(checkinRoot.get("userId"));
 
             if (checkIn) {
-                // Users who have checked in
                 subquery.where(criteriaBuilder.equal(checkinRoot.get("userId"), root.get("id")));
                 return criteriaBuilder.exists(subquery);
             } else {
-                // Users who have not checked in
                 subquery.where(criteriaBuilder.equal(checkinRoot.get("userId"), root.get("id")));
                 return criteriaBuilder.not(criteriaBuilder.exists(subquery));
             }

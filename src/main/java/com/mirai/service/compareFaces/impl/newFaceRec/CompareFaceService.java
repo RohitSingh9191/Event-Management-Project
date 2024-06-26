@@ -24,7 +24,7 @@ public class CompareFaceService implements CompareFacesService {
 
     public Integer faceCompare(MultipartFile sourceImageFile, Boolean createIndexing) {
 
-        if (createIndexing != null && createIndexing == true) {
+        if (createIndexing != null && createIndexing) {
             rekognitionCollectionService.createCollection();
         }
 
@@ -64,7 +64,6 @@ public class CompareFaceService implements CompareFacesService {
                 FaceMatch faceMatch = searchFacesByImageResult.getFaceMatches().get(0);
                 String externalImageId = faceMatch.getFace().getExternalImageId();
                 log.info("Face matched with similarity: {}%", faceMatch.getSimilarity());
-                log.info("Original Image Name (External Image ID): {}", externalImageId);
                 String imageName = externalImageId.substring(
                         externalImageId.lastIndexOf('/') + 1, externalImageId.lastIndexOf('.'));
                 int imageNumber = Integer.parseInt(imageName);
