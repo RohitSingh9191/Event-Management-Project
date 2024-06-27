@@ -12,6 +12,5 @@ public interface EmailService {
 
     void sendRejectionEmail(Users user);
 
-    void sendReminderMail(Users users, String subject, byte[] qrCodeImage) ;
-
+    void sendReminderMail(Users users, String subject, byte[] qrCodeImage);
 }

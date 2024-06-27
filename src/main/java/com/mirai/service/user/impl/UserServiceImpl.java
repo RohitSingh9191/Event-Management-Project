@@ -418,10 +418,10 @@ public class UserServiceImpl implements UserService {
         if (user.getImage() != null)
             url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
 
-        String qrName=id+".jpg";
-        String  qrUrl = amazonS3Service.publicLinkOfImage(qrName, env.getProperty("qrbucketName"));
+        String qrName = id + ".jpg";
+        String qrUrl = amazonS3Service.publicLinkOfImage(qrName, env.getProperty("qrbucketName"));
 
-        UserResponse userResponse = UsersMapper.mapUserToUserDesbordResponse(user, url,qrUrl);
+        UserResponse userResponse = UsersMapper.mapUserToUserDesbordResponse(user, url, qrUrl);
         log.info("Profile fetched successfully for user with ID: {}", id);
         return userResponse;
     }
@@ -524,7 +524,7 @@ public class UserServiceImpl implements UserService {
         String link = "https://api.mirai.events/miraiapp/user/" + id;
         byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 200, 200);
         String url = amazonS3Service.uploadQRCodeToS3(qrCodeImage, String.valueOf(id));
-     //   whatsAppService.sendQrWhatsAppMessage("91" + user.getPhone(), user.getName(), url);
+        whatsAppService.sendReminder("91" + user.getPhone(), user.getName(), url);
 
         emailService.sendReminderMail(user, " Only 2 days to go!", qrCodeImage);
         log.info("Confirmation email sent successfully to {}", user.getEmail());
@@ -534,14 +534,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String resendConfirmationMsgToAll() throws IOException, WriterException {
-       List<Users> user= userRepository.findByStatus("CONFIRMED");
-        for(Users data:user){
+        List<Users> user = userRepository.findByStatus("CONFIRMED");
+        for (Users data : user) {
             String link = "https://api.mirai.events/miraiapp/user/" + data.getId();
             byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 200, 200);
             String url = amazonS3Service.uploadQRCodeToS3(qrCodeImage, String.valueOf(data.getId()));
-         //   whatsAppService.sendQrWhatsAppMessage("91" + data.getPhone(), data.getName(), url);
+            whatsAppService.sendReminder("91" + data.getPhone(), data.getName(), url);
             emailService.sendReminderMail(data, " Only 2 days to go!", qrCodeImage);
-
         }
         return "Mail successfully send to all";
     }

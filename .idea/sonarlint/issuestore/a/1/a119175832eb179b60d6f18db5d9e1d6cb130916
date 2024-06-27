@@ -1,27 +1,17 @@
 
 ¥
-java:S1488Ó"\Immediately return this expression instead of assigning it to the temporary variable "resp".(ƒ‰íÁüÿÿÿÿ8ôï•›…2J$c1a76ec8-e186-44b0-b478-a5161286861d
+java:S1488Ó"\Immediately return this expression instead of assigning it to the temporary variable "resp".(ƒ‰íÁüÿÿÿÿ8ôï•›…2J$0b55e8ac-8f8d-47c1-962a-3a0e74a9c078
  
-java:S1488“"\Immediately return this expression instead of assigning it to the temporary variable "resp".(¿ŠøÛ8÷˜ç¿…2J$31a59b64-cb0d-4e2c-a4fb-763711ad7149
+java:S1488“"\Immediately return this expression instead of assigning it to the temporary variable "resp".(¿ŠøÛ8ç·Ç…2J$60e411af-a080-49f3-8ebd-35b330be1b07
 ”
-java:S1192ˆ"KDefine a constant instead of duplicating this literal "bucketName" 3 times.(‰¡áøÿÿÿÿ8“ğ•›…2J$c0ad4cca-cee2-426b-b41a-48aee17c6150
+java:S1192ˆ"KDefine a constant instead of duplicating this literal "bucketName" 3 times.(‰¡áøÿÿÿÿ8“ğ•›…2J$9360e438-7cb0-470c-9d31-2f238e34e9b9
 ±
-java:S1192ô"hDefine a constant instead of duplicating this literal "https://api.mirai.events/miraiapp/user/" 3 times.(ËÌ…ìüÿÿÿÿ8 Ì—›…2J$e427e19d-63bb-4976-9679-ac2e125464ec
+java:S1192ô"hDefine a constant instead of duplicating this literal "https://api.mirai.events/miraiapp/user/" 3 times.(ËÌ…ìüÿÿÿÿ8 Ì—›…2J$03ff9364-1518-4a2c-9fed-327e3d0b8f50
 o
-java:S1125B"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8³ğ•›…2J$e147bfaf-e77a-4453-b97f-1ff97a2b72ad
-l	java:S108¸")Either remove or fill this block of code.(ëû¦¢8ñ•›…2J$218859ea-f798-4556-bbaa-aa55a4b09fd5
-k	java:S108Ã")Either remove or fill this block of code.(§Î:8—ñ•›…2J$be0766d7-d575-4e60-9ae7-4932bd044fab
+java:S1125B"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8³ğ•›…2J$4d7a8980-1842-42e0-98ba-af73ce492f6e
+l	java:S108¸")Either remove or fill this block of code.(ëû¦¢8ñ•›…2J$2e9d3b03-ebe2-42f8-a7ce-d7b21275b063
+k	java:S108Ã")Either remove or fill this block of code.(§Î:8—ñ•›…2J$5f51c533-bdee-4679-8af0-1294b611470a
 ƒ
-java:S4034Æ":Replace this negation and "anyMatch()" with "noneMatch()".(ŠªûÑıÿÿÿÿ8—ñ•›…2J$302cb07e-9254-4986-afcc-1a39fc00654d
+java:S4034Æ":Replace this negation and "anyMatch()" with "noneMatch()".(ŠªûÑıÿÿÿÿ8—ñ•›…2J$ebde6cdc-d84a-454c-b458-c805b8420783
 ƒ
-java:S4034‹":Replace this negation and "anyMatch()" with "noneMatch()".(Ò³åøÿÿÿÿ8ãñ•›…2J$62d2840e-7687-4985-bc6a-37c041c9d3d2
-{
-java:S1854"7Remove this useless assignment to local variable "url".(®êÉ 8”ŒŒÀ…2J$07ebad08-9a89-41eb-8917-ce834a0517a3
-l
-java:S1481"(Remove this unused "url" local variable.(®êÉ 8šŒŒÀ…2J$484e599b-0d63-4517-b815-51b573bfb86e
-	java:S125"<This block of commented-out lines of code should be removed.(†î•ç8ŒŒÀ…2J$e1c87ebc-5dcc-4d94-b842-ac510a5f4653
-U
-java:S1854"7Remove this useless assignment to local variable "url".(Ò¥Š§8ææ×Ä…2
-F
-java:S1481"(Remove this unused "url" local variable.(Ò¥Š§8íæ×Ä…2
-^	java:S125"<This block of commented-out lines of code should be removed.(Ê£¾†üÿÿÿÿ8íæ×Ä…2
+java:S4034‹":Replace this negation and "anyMatch()" with "noneMatch()".(Ò³åøÿÿÿÿ8ãñ•›…2J$116cdeb9-3d54-4b69-98db-84f514d1f7ab

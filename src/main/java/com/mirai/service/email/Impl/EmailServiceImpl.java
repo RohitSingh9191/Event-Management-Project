@@ -78,7 +78,6 @@ public class EmailServiceImpl implements EmailService {
         }
     }
 
-
     public void sendEmailWithQRCode(Users users, String subject, String text, byte[] qrCodeImage) {
         String number = env.getProperty("phoneNumber");
         String fromUser = env.getProperty("spring.mail.username");
@@ -173,7 +172,6 @@ public class EmailServiceImpl implements EmailService {
                     + "Show your QR code at the registration desk!<br><br>"
                     + "Best regards,<br>"
                     + "Team MIRAI™24<br><br>";
-
 
             // HTML content with embedded image
             String htmlContent = "<html><body><p>" + content + "</p><img src=\"cid:qrCode\"></body></html>";

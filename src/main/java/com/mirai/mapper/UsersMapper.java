@@ -69,7 +69,7 @@ public class UsersMapper {
                 .build();
     }
 
-    public static UserResponse mapUserToUserDesbordResponse(Users user, String imageUrl,String qrUrl) {
+    public static UserResponse mapUserToUserDesbordResponse(Users user, String imageUrl, String qrUrl) {
         return UserResponse.builder()
                 .id(user.getId())
                 .name(user.getName())
