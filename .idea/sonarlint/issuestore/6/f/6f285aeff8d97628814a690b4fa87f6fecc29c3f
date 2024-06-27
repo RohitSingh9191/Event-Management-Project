@@ -1,0 +1,19 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºĞ¸ÜJ$fddb12df-eebf-491e-b535-11175ceb29b7
+‚
+java:S1192&"FDefine a constant instead of duplicating this literal "value" 3 times.(™¡J$4c2efae8-d711-46d1-a677-68e8c1fef2e7
+|
+java:S1854:"@Remove this useless assignment to local variable "responseBody".(¡‰ÛJ$666cde2d-bec4-4ca9-9b85-393cf6b9f0d3
+k	java:S1062"+Replace this use of System.out by a logger.(š’–ƒûÿÿÿÿJ$4ded96b0-456a-480c-b6ea-f76846fef108
+k	java:S1063"+Replace this use of System.out by a logger.(š×ØÕüÿÿÿÿJ$98876fde-29ff-4d76-aa82-de527fa6487a
+f	java:S1066"+Replace this use of System.out by a logger.(ÃÁ‹ÀJ$0326c566-bf66-400f-984d-5f194be65865
+f	java:S1067"+Replace this use of System.out by a logger.(úŞŸêJ$9911901d-2c07-4797-b483-300c16150242
+m
+java:S1481:"1Remove this unused "responseBody" local variable.(¡‰ÛJ$a0c26367-8bbd-4d5b-80ad-ef12cd573f21
+k	java:S106b"+Replace this use of System.out by a logger.(š’–ƒûÿÿÿÿJ$b5913542-d21a-4303-98f3-a1e6c0925d40
+k	java:S106c"+Replace this use of System.out by a logger.(š×ØÕüÿÿÿÿJ$c025cb5b-1f22-43c5-a9f6-a63f68c3264c
+f	java:S106i"+Replace this use of System.out by a logger.(ÃÁ‹ÀJ$8482d64a-b3a6-4146-95a5-597db91c80a0
+f	java:S106j"+Replace this use of System.out by a logger.(úŞŸêJ$5103cee6-b126-457e-8c37-c4a5eef55ef8
+f	java:S106n"+Replace this use of System.out by a logger.(‡†²•J$522ff956-49b1-4361-a9a5-160083581016
+k	java:S106p"+Replace this use of System.err by a logger.(ÃÃŒşÿÿÿÿÿJ$4cc8b50b-1911-4093-acd0-e57439e98404
+f	java:S106s"+Replace this use of System.err by a logger.(øé¼J$97091cbe-042d-4ee3-9e1a-61114e7791d0

@@ -1,0 +1,30 @@
+
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•Ë±ˆÿÿÿÿÿ8¤Ş·Ã…2J$e3aa5752-bb04-47ad-ba34-0b17d39df3ee
+Ñ
+java:S4449\"Annotate the parameter with @javax.annotation.Nullable in method 'setFrom' declaration, or make sure that null can not be passed as argument.(şƒ÷á8¤Ş·Ã…2J$cb48b0dd-4fa7-49b3-b532-69e931459bca
+Ò
+java:S4449£"Annotate the parameter with @javax.annotation.Nullable in method 'setFrom' declaration, or make sure that null can not be passed as argument.(şƒ÷á8¤Ş·Ã…2J$9b2ae237-3826-476f-ba7f-6c5d1d0a78d7
+	java:S112{"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8´Ş·Ã…2J$e9f21a20-ea1d-4022-a283-c12797faf2d8
+	java:S112¿"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8´Ş·Ã…2J$8ce7fa68-728a-4dfa-9e94-dec8d83ac205
+˜
+java:S1192"UDefine a constant instead of duplicating this literal "spring.mail.username" 5 times.(–˜¼¦8´Ş·Ã…2J$cac53e32-2b18-484c-b026-ce76fd878c31
+¡
+java:S1192."YDefine a constant instead of duplicating this literal "Email sent successfully." 3 times.(õÀ¸Œşÿÿÿÿ8´Ş·Ã…2J$0aa84315-589e-4d9d-8eb8-79e167784c83
+”
+java:S1192"LDefine a constant instead of duplicating this literal "phoneNumber" 3 times.(óÕüïøÿÿÿÿ8´Ş·Ã…2J$c7aaf973-76c2-4ce2-b9d8-5549cfbbd28a
+Ÿ
+java:S11920"WDefine a constant instead of duplicating this literal "Failed to send email: " 3 times.(¿ğÁŠúÿÿÿÿ8´Ş·Ã…2J$df4ea381-c676-4039-9d76-b58680c3f067
+r	java:S106."+Replace this use of System.out by a logger.(õÀ¸Œşÿÿÿÿ8óŞ·Ã…2J$ec861f87-f3dc-4111-9a77-ff6806b13724
+r	java:S1060"+Replace this use of System.err by a logger.(¿ğÁŠúÿÿÿÿ8ƒß·Ã…2J$36b88fac-6329-4844-8375-88ed9fe33c67
+r	java:S106J"+Replace this use of System.out by a logger.(õÀ¸Œşÿÿÿÿ8’ß·Ã…2J$4081ff6c-a551-40ef-83aa-efd80300719b
+r	java:S106L"+Replace this use of System.err by a logger.(¿ğÁŠúÿÿÿÿ8¢ß·Ã…2J$729dc640-15fa-453f-9ae1-9b2e97c6d57a
+r	java:S106w"+Replace this use of System.out by a logger.(‡ˆÉèøÿÿÿÿ8±ß·Ã…2J$05caaf85-ced1-4344-a804-7799e1908216
+m	java:S106y"+Replace this use of System.err by a logger.(ä‘µü8±ß·Ã…2J$9ff9ad6a-2ead-4730-a9de-5d9665d3eaa0
+s	java:S106’"+Replace this use of System.out by a logger.(õÀ¸Œşÿÿÿÿ8±ß·Ã…2J$fbecc5c9-50bd-4bc3-9431-356c7565dbbc
+s	java:S106”"+Replace this use of System.err by a logger.(¿ğÁŠúÿÿÿÿ8±ß·Ã…2J$31584bce-2d99-4fd6-9b01-1626981488d7
+ƒ
+java:S1854š":Remove this useless assignment to local variable "number".(óÕüïøÿÿÿÿ8±ß·Ã…2J$1a6665c0-1663-41d4-ab50-9e12ef8ab3f9
+t
+java:S1481š"+Remove this unused "number" local variable.(óÕüïøÿÿÿÿ8±ß·Ã…2J$e3f755a3-f88e-4033-ae04-791b4bd2dfe8
+s	java:S106»"+Replace this use of System.out by a logger.(‡ˆÉèøÿÿÿÿ8Áß·Ã…2J$26f96ff4-459a-43bc-a6aa-5873f775b7ba
+n	java:S106½"+Replace this use of System.err by a logger.(ä‘µü8Ñß·Ã…2J$1cc25033-eccb-489e-89e6-12a028a98330

@@ -524,18 +524,25 @@ public class UserServiceImpl implements UserService {
         String link = "https://api.mirai.events/miraiapp/user/" + id;
         byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 200, 200);
         String url = amazonS3Service.uploadQRCodeToS3(qrCodeImage, String.valueOf(id));
-        whatsAppService.sendQrWhatsAppMessage("91" + user.getPhone(), user.getName(), url);
-        emailService.sendEmailWithQRCode(
-                user, "Confirmation Email", "Hi, Please find the QR code attached.", qrCodeImage);
+     //   whatsAppService.sendQrWhatsAppMessage("91" + user.getPhone(), user.getName(), url);
+
+        emailService.sendReminderMail(user, " Only 2 days to go!", qrCodeImage);
         log.info("Confirmation email sent successfully to {}", user.getEmail());
-        String resp = "Email send successfully at " + user.getEmail();
+        String resp = "Mail send successfully at " + user.getEmail();
         return resp;
     }
 
     @Override
-    public String resendConfirmationMsgToAll() {
-        Users user= userRepository.findByStatusLike("CONFIRMED");
-        System.out.println(user);
-        return "";
+    public String resendConfirmationMsgToAll() throws IOException, WriterException {
+       List<Users> user= userRepository.findByStatus("CONFIRMED");
+        for(Users data:user){
+            String link = "https://api.mirai.events/miraiapp/user/" + data.getId();
+            byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 200, 200);
+            String url = amazonS3Service.uploadQRCodeToS3(qrCodeImage, String.valueOf(data.getId()));
+         //   whatsAppService.sendQrWhatsAppMessage("91" + data.getPhone(), data.getName(), url);
+            emailService.sendReminderMail(data, " Only 2 days to go!", qrCodeImage);
+
+        }
+        return "Mail successfully send to all";
     }
 }

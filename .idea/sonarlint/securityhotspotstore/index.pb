@@ -11,3 +11,15 @@ a
 1src/main/java/com/mirai/constants/UserStatus.java,3\8\389ebb1fe5918c9bac8431d6f802bd9f91c70be4
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+g
+7src/main/java/com/mirai/models/request/UserRequest.java,6\f\6f2b673e68f3a784aa7562ba32557bad04717538
+m
+=src/main/java/com/mirai/service/whatsApp/WhatsAppService.java,5\1\5150fce04678be7c19c7245594b1496b7513380e
+v
+Fsrc/main/java/com/mirai/service/whatsApp/impl/WhatsAppServiceImpl.java,6\f\6f285aeff8d97628814a690b4fa87f6fecc29c3f
+g
+7src/main/java/com/mirai/service/email/EmailService.java,b\7\b7dee40f2432ebb3890e85b6d86b1cfad3c56495
+p
+@src/main/java/com/mirai/service/email/Impl/EmailServiceImpl.java,2\7\271c3ddd0ce7fc107339ef2dae1eb0769b600a45
+k
+;src/main/java/com/mirai/exception/ApplicationErrorCode.java,e\6\e61b98ba4b97cd744943bddf64608f9eafe11a59
