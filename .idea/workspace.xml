@@ -5,23 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07b24d1a-e530-48de-9a91-644544d55104" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/5150fce04678be7c19c7245594b1496b7513380e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/5150fce04678be7c19c7245594b1496b7513380e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mirai/models/response/ConfirmedUserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mirai/models/response/ConfirmedUserResponseList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mirai/models/response/SpeakerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mirai/models/response/SpeakerResponseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/251eb4076ebc6577c4a60cba6f523475f4a97c30" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/251eb4076ebc6577c4a60cba6f523475f4a97c30" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f285aeff8d97628814a690b4fa87f6fecc29c3f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f285aeff8d97628814a690b4fa87f6fecc29c3f" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a119175832eb179b60d6f18db5d9e1d6cb130916" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a119175832eb179b60d6f18db5d9e1d6cb130916" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/data/repos/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/data/repos/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/mapper/UsersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/email/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/email/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/email/Impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/email/Impl/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/whatsApp/WhatsAppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/whatsApp/WhatsAppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/whatsApp/impl/WhatsAppServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/whatsApp/impl/WhatsAppServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/email/Impl/EmailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/service/email/Impl/EmailServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/data/repos/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/data/repos/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/mapper/UsersMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/mapper/UsersMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/service/user/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/user/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/service/user/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/whatsApp/WhatsAppService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/service/whatsApp/WhatsAppService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/whatsApp/impl/WhatsAppServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/service/whatsApp/impl/WhatsAppServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.mirai.MiraiApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.mirai.MiraiApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.mirai.MiraiApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.mirai.MiraiApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +154,8 @@
       <workItem from="1719382530196" duration="963000" />
       <workItem from="1719384742335" duration="279000" />
       <workItem from="1719385094026" duration="1489000" />
-      <workItem from="1719425057697" duration="7911000" />
+      <workItem from="1719425057697" duration="8686000" />
+      <workItem from="1719549298400" duration="4579000" />
     </task>
     <servers />
   </component>

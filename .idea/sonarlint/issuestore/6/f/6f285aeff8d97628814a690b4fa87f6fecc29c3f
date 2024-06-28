@@ -2,28 +2,28 @@
 •	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºĞ¸ÜJ$4d846727-8c90-4c8a-8972-b26cdf869897
 —
 java:S11923"ODefine a constant instead of duplicating this literal "Request Body: " 3 times.(š×ØÕüÿÿÿÿ8›ÜÁÆ…2J$d831e976-259c-4f2b-bac5-67988fe00abc
-‘
-java:S1192."NDefine a constant instead of duplicating this literal "Authorization" 3 times.(ª·šæ8›ÜÁÆ…2J$c9016a8b-b496-4a69-a9b9-dfbb7a86cae9
-‘
-java:S1192"NDefine a constant instead of duplicating this literal "template_name" 3 times.(¾ò†®8›ÜÁÆ…2J$a45ac7b7-41bb-4032-b79e-84b068088a17
-š
-java:S11926"WDefine a constant instead of duplicating this literal "Response Status Code: " 3 times.(ÃÁ‹À8›ÜÁÆ…2J$7851edac-74a4-40c9-ab86-31b69307103f
-
-java:S1192-"HDefine a constant instead of duplicating this literal "wpToken" 3 times.(§˜ïùÿÿÿÿ8›ÜÁÆ…2J$0c950a63-dde2-4fb9-8db1-55311af51bf8
-“
-java:S11927"PDefine a constant instead of duplicating this literal "Response Body: " 3 times.(úŞŸê8›ÜÁÆ…2J$28b8586c-639e-472b-8a07-fad92c33e24f
 Õ
 java:S1192"‘Define a constant instead of duplicating this literal "https://live-mt-server.wati.io/315238/api/v1/sendTemplateMessage?whatsappNumber=" 3 times.(¯èËı8›ÜÁÆ…2J$d4d6d5cf-91a2-4b34-bf1f-c10511775551
 
 java:S1192("KDefine a constant instead of duplicating this literal "parameters" 3 times.(•ªæ¢8›ÜÁÆ…2J$9e0285af-7c9c-4d54-bbf5-b843d4226dc9
+–
+java:S11922"NDefine a constant instead of duplicating this literal "Request URL: " 3 times.(š’–ƒûÿÿÿÿ8 ÜÁÆ…2J$afa10126-8786-4665-930b-b2707dac98d6
+‘
+java:S1192."NDefine a constant instead of duplicating this literal "Authorization" 3 times.(ª·šæ8›ÜÁÆ…2J$c9016a8b-b496-4a69-a9b9-dfbb7a86cae9
+
+java:S1192-"HDefine a constant instead of duplicating this literal "wpToken" 3 times.(§˜ïùÿÿÿÿ8›ÜÁÆ…2J$0c950a63-dde2-4fb9-8db1-55311af51bf8
+“
+java:S11927"PDefine a constant instead of duplicating this literal "Response Body: " 3 times.(úŞŸê8›ÜÁÆ…2J$28b8586c-639e-472b-8a07-fad92c33e24f
 ‚
 java:S1192&"FDefine a constant instead of duplicating this literal "value" 5 times.(™¡J$a8bd7acb-0496-4401-9930-18aea9485e0f
+‘
+java:S1192"NDefine a constant instead of duplicating this literal "template_name" 3 times.(¾ò†®8›ÜÁÆ…2J$a45ac7b7-41bb-4032-b79e-84b068088a17
+š
+java:S11926"WDefine a constant instead of duplicating this literal "Response Status Code: " 3 times.(ÃÁ‹À8›ÜÁÆ…2J$7851edac-74a4-40c9-ab86-31b69307103f
 —
 java:S1192 "ODefine a constant instead of duplicating this literal "broadcast_name" 3 times.(æ›êªüÿÿÿÿ8›ÜÁÆ…2J$eb716ce2-ca6b-4ea7-a167-429e46cde335
 ‹
 java:S1192."HDefine a constant instead of duplicating this literal "Bearer " 3 times.(ª·šæ8 ÜÁÆ…2J$d1733862-b6d5-4124-8cba-5681301904d9
-–
-java:S11922"NDefine a constant instead of duplicating this literal "Request URL: " 3 times.(š’–ƒûÿÿÿÿ8 ÜÁÆ…2J$afa10126-8786-4665-930b-b2707dac98d6
 |
 java:S1854:"@Remove this useless assignment to local variable "responseBody".(¡‰ÛJ$7052860f-3731-4a8f-8e41-215df8a36eb7
 k	java:S1062"+Replace this use of System.out by a logger.(š’–ƒûÿÿÿÿJ$f166f20f-ea1e-4a4a-b226-b00ea9fdf7e2
@@ -39,10 +39,10 @@ f	java:S106j"+Replace this use of System.out by a logger.(úŞŸêJ$73aaebef-354d
 f	java:S106n"+Replace this use of System.out by a logger.(‡†²•J$c52cdc95-f574-48c4-b1fc-79d58ab47e9f
 k	java:S106p"+Replace this use of System.err by a logger.(ÃÃŒşÿÿÿÿÿJ$ea1e06e4-c550-4f46-8a81-6505d4326e42
 f	java:S106s"+Replace this use of System.err by a logger.(øé¼J$ec1409e2-5bdd-48d2-8959-7ddb776ef2d8
-s	java:S106š"+Replace this use of System.out by a logger.(š’–ƒûÿÿÿÿ8×İÁÆ…2J$6464e3b6-ad3c-4d06-a863-5b47b8b8198a
-s	java:S106›"+Replace this use of System.out by a logger.(š×ØÕüÿÿÿÿ8×İÁÆ…2J$caaef7d8-a6e5-4d28-8bdd-7c1c808ff969
-n	java:S106¡"+Replace this use of System.out by a logger.(ÃÁ‹À8×İÁÆ…2J$823b1538-fc87-4a68-8f6f-b204ee203688
-n	java:S106¢"+Replace this use of System.out by a logger.(úŞŸê8×İÁÆ…2J$a07ef7bd-8ec0-4395-92d9-44117180c441
-n	java:S106¦"+Replace this use of System.out by a logger.(‡†²•8×İÁÆ…2J$1d177caa-6dad-43a7-9fc9-825cac47388c
-s	java:S106¨"+Replace this use of System.err by a logger.(ÃÃŒşÿÿÿÿÿ8×İÁÆ…2J$1e0b333e-a5b5-4b87-833b-2c81a1f076c8
-n	java:S106«"+Replace this use of System.err by a logger.(øé¼8×İÁÆ…2J$0cbdf107-de1b-4b5a-b65f-0f3ae8af315a
+s	java:S106™"+Replace this use of System.out by a logger.(š’–ƒûÿÿÿÿ8×İÁÆ…2J$6464e3b6-ad3c-4d06-a863-5b47b8b8198a
+s	java:S106š"+Replace this use of System.out by a logger.(š×ØÕüÿÿÿÿ8×İÁÆ…2J$caaef7d8-a6e5-4d28-8bdd-7c1c808ff969
+n	java:S106 "+Replace this use of System.out by a logger.(ÃÁ‹À8×İÁÆ…2J$823b1538-fc87-4a68-8f6f-b204ee203688
+n	java:S106¡"+Replace this use of System.out by a logger.(úŞŸê8×İÁÆ…2J$a07ef7bd-8ec0-4395-92d9-44117180c441
+n	java:S106¥"+Replace this use of System.out by a logger.(‡†²•8×İÁÆ…2J$1d177caa-6dad-43a7-9fc9-825cac47388c
+s	java:S106§"+Replace this use of System.err by a logger.(ÃÃŒşÿÿÿÿÿ8×İÁÆ…2J$1e0b333e-a5b5-4b87-833b-2c81a1f076c8
+n	java:S106ª"+Replace this use of System.err by a logger.(øé¼8×İÁÆ…2J$0cbdf107-de1b-4b5a-b65f-0f3ae8af315a

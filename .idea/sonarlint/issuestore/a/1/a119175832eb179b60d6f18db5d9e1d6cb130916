@@ -1,17 +1,19 @@
 
 ¥
-java:S1488Ó"\Immediately return this expression instead of assigning it to the temporary variable "resp".(ƒ‰íÁüÿÿÿÿ8ôï•›…2J$0b55e8ac-8f8d-47c1-962a-3a0e74a9c078
+java:S1488Ó"\Immediately return this expression instead of assigning it to the temporary variable "resp".(ƒ‰íÁüÿÿÿÿ8Í·ğê…2J$bab8073e-3dce-4c26-98d7-c07c93d35e31
  
-java:S1488“"\Immediately return this expression instead of assigning it to the temporary variable "resp".(¿ŠøÛ8ç·Ç…2J$60e411af-a080-49f3-8ebd-35b330be1b07
+java:S1488“"\Immediately return this expression instead of assigning it to the temporary variable "resp".(¿ŠøÛ8Í·ğê…2J$04aa1c6b-b0aa-4eca-98e1-d1db8b915b33
 ”
-java:S1192ˆ"KDefine a constant instead of duplicating this literal "bucketName" 3 times.(‰¡áøÿÿÿÿ8“ğ•›…2J$9360e438-7cb0-470c-9d31-2f238e34e9b9
+java:S1192ˆ"KDefine a constant instead of duplicating this literal "bucketName" 5 times.(‰¡áøÿÿÿÿ8İ·ğê…2J$69d2cebf-7a37-4d3f-8a59-a73224454e91
+ª
+java:S1192’"fDefine a constant instead of duplicating this literal "Mapped {} users to user response list" 3 times.(¨«öê8÷Èşê…2J$a637333a-5822-4304-b156-14bed5d745e3
 ±
-java:S1192ô"hDefine a constant instead of duplicating this literal "https://api.mirai.events/miraiapp/user/" 3 times.(ËÌ…ìüÿÿÿÿ8 Ì—›…2J$03ff9364-1518-4a2c-9fed-327e3d0b8f50
+java:S1192ô"hDefine a constant instead of duplicating this literal "https://api.mirai.events/miraiapp/user/" 3 times.(ËÌ…ìüÿÿÿÿ8İ·ğê…2J$008bd2f4-9777-43f0-b043-d6e395dcb7a3
 o
-java:S1125B"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8³ğ•›…2J$4d7a8980-1842-42e0-98ba-af73ce492f6e
-l	java:S108¸")Either remove or fill this block of code.(ëû¦¢8ñ•›…2J$2e9d3b03-ebe2-42f8-a7ce-d7b21275b063
-k	java:S108Ã")Either remove or fill this block of code.(§Î:8—ñ•›…2J$5f51c533-bdee-4679-8af0-1294b611470a
+java:S1125B"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8ù·ğê…2J$463d0155-56cf-424f-93b4-f9d6ac6dde03
+l	java:S108¸")Either remove or fill this block of code.(ëû¦¢8‰¸ğê…2J$ee9cd085-c417-42b9-bc9b-8e9472d79881
+k	java:S108Ã")Either remove or fill this block of code.(§Î:8‰¸ğê…2J$af78003b-729a-44bb-a125-40c928f4467c
 ƒ
-java:S4034Æ":Replace this negation and "anyMatch()" with "noneMatch()".(ŠªûÑıÿÿÿÿ8—ñ•›…2J$ebde6cdc-d84a-454c-b458-c805b8420783
+java:S4034Æ":Replace this negation and "anyMatch()" with "noneMatch()".(ŠªûÑıÿÿÿÿ8‰¸ğê…2J$6820eebb-46ce-45f1-bd76-72e87196d446
 ƒ
-java:S4034‹":Replace this negation and "anyMatch()" with "noneMatch()".(Ò³åøÿÿÿÿ8ãñ•›…2J$116cdeb9-3d54-4b69-98db-84f514d1f7ab
+java:S4034‹":Replace this negation and "anyMatch()" with "noneMatch()".(Ò³åøÿÿÿÿ8™¸ğê…2J$d1913a9b-2ad5-4021-bfdf-67c7ff57e02e

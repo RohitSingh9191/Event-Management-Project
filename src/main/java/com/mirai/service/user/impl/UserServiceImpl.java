@@ -534,7 +534,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String resendConfirmationMsgToAll() throws IOException, WriterException {
-        List<Users> user = userRepository.findByStatus("CONFIRMED");
+        List<Users> user = userRepository.findByStatus(UserStatus.CONFIRMED.name());
         for (Users data : user) {
             String link = "https://api.mirai.events/miraiapp/user/" + data.getId();
             byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 200, 200);
@@ -543,5 +543,49 @@ public class UserServiceImpl implements UserService {
             emailService.sendReminderMail(data, " Only 2 days to go!", qrCodeImage);
         }
         return "Mail successfully send to all";
+    }
+
+    @Override
+    public SpeakerResponseList getConfirmedSpeaker() {
+        List<Users> usersList =
+                userRepository.findByStatusAndType(UserStatus.CONFIRMED.name(), RoleEnum.SPEAKER.name());
+        List<SpeakerResponse> userResponseList = new ArrayList<>();
+        for (Users user : usersList) {
+            String url = null;
+            if (user.getImage() != null)
+                url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
+            Integer id = user.getId();
+            Checkin checkin = checkinRepository.getByUserId(id);
+            if (checkin != null) {
+                SpeakerResponse userResponse = UsersMapper.mapUserToGetAllSpeakerResponse(user, url);
+                userResponseList.add(userResponse);
+            }
+        }
+        log.info("Mapped {} users to user response list", usersList.size());
+        return SpeakerResponseList.builder()
+                .totalCount(userResponseList.size())
+                .speakerResponse(userResponseList)
+                .build();
+    }
+
+    @Override
+    public ConfirmedUserResponseList getAllcomfirmedUser() {
+        List<Users> usersList = userRepository.findByStatus(UserStatus.CONFIRMED.name());
+        List<ConfirmedUserResponse> userResponseList = new ArrayList<>();
+        for (Users user : usersList) {
+            String url = null;
+            if (user.getImage() != null)
+                url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
+            Integer id = user.getId();
+            Checkin checkin = checkinRepository.getByUserId(id);
+            if (checkin != null) {
+                ConfirmedUserResponse userResponse = UsersMapper.mapUserToGetAllConfirmedUserResponse(user, url);
+                userResponseList.add(userResponse);
+            }
+        }
+        return ConfirmedUserResponseList.builder()
+                .totalCount(userResponseList.size())
+                .confirmedUserResponse(userResponseList)
+                .build();
     }
 }

@@ -3,11 +3,7 @@ package com.mirai.controllers;
 import com.google.zxing.WriterException;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
-import com.mirai.models.response.CheckedInUserResponseList;
-import com.mirai.models.response.CheckinResponse;
-import com.mirai.models.response.UploadImageResponse;
-import com.mirai.models.response.UserResponse;
-import com.mirai.models.response.UserResponseList;
+import com.mirai.models.response.*;
 import com.mirai.service.user.UserService;
 import com.mirai.service.whatsApp.WhatsAppService;
 import com.mirai.utils.ExcelExporter;
@@ -186,5 +182,17 @@ public class UserController {
     public ResponseEntity resendConfirmationMsgToAll() throws IOException, WriterException {
         String response = userService.resendConfirmationMsgToAll();
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/speaker")
+    public ResponseEntity<SpeakerResponseList> getAllConfirmedSpeaker() {
+        SpeakerResponseList userResponseList = userService.getConfirmedSpeaker();
+        return new ResponseEntity<>(userResponseList, HttpStatus.OK);
+    }
+
+    @GetMapping("/comfirmed")
+    public ResponseEntity<ConfirmedUserResponseList> getAllcomfirmedUser() {
+        ConfirmedUserResponseList userResponseList = userService.getAllcomfirmedUser();
+        return new ResponseEntity<>(userResponseList, HttpStatus.OK);
     }
 }
