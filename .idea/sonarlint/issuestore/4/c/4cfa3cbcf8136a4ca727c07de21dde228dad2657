@@ -1,0 +1,20 @@
+
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¢“¥‡úÿÿÿÿ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+p
+java:S3305"ZInject this field value directly into "securityFilterChain", the only method that uses it.(¸ßöú
+{
+java:S3305"`Inject this field value directly into "daoAuthenticationProvider", the only method that uses it.(¿ì§’ıÿÿÿÿ
+p
+java:S3305"ZInject this field value directly into "securityFilterChain", the only method that uses it.(Ïæù½
+{
+java:S3305"`Inject this field value directly into "daoAuthenticationProvider", the only method that uses it.(ÙÍ•¯üÿÿÿÿ
+T
+java:S1874""9Remove this use of "authorizeRequests"; it is deprecated.(¿Ğ±ûÿÿÿÿ

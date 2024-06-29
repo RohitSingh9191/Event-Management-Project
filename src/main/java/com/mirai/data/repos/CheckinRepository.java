@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CheckinRepository extends JpaRepository<Checkin, Integer> {
+    Checkin getByUserIdAndStatus(Integer id, String status);
+
     Checkin getByUserId(Integer id);
 }

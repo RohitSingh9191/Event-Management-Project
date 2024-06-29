@@ -22,11 +22,13 @@ public interface UserService {
 
     UserResponse getUserProfile(Integer id);
 
-    CheckinResponse userCheckin(Integer id);
+    MessageResponse userCheckin(Integer id);
+
+    MessageResponse userCheckout(Integer id);
 
     UploadImageResponse uploadPhoto(Integer id, MultipartFile image) throws IOException;
 
-    CheckinResponse checkInByImage(MultipartFile image, Boolean createIndexing);
+    MessageResponse checkInByImage(MultipartFile image, Boolean createIndexing);
 
     UserResponse updateUser(Integer id, UserRequest userRequest);
 

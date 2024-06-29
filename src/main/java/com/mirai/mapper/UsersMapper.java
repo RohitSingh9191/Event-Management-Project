@@ -1,5 +1,6 @@
 package com.mirai.mapper;
 
+import com.mirai.constants.CheckStatus;
 import com.mirai.constants.UserStatus;
 import com.mirai.data.entities.Checkin;
 import com.mirai.data.entities.Users;
@@ -133,8 +134,19 @@ public class UsersMapper {
         return Checkin.builder()
                 .userId(user.getId())
                 .checkinTime(new Date())
-                .status("CHECKED_IN")
+                .status(CheckStatus.IN.name())
                 .build();
+    }
+    public static Checkin mapToUserCheckinExist(Users user,Checkin checkin) {
+        checkin.setCheckinTime(new Date());
+        checkin.setStatus(CheckStatus.IN.name());
+        return checkin;
+    }
+
+    public static Checkin mapToUserCheckOut(Users user, Checkin checkin) {
+        checkin.setChechoutTime(new Date());
+        checkin.setStatus(CheckStatus.OUT.name());
+        return checkin;
     }
 
     public static UploadImageResponse mapToUploadPhotoResponse(String id, String url, String finalFileName) {

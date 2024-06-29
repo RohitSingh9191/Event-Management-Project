@@ -111,9 +111,9 @@ public class UserController {
      * @return ResponseEntity containing the UserResponse and HttpStatus.CREATED.
      */
     @PostMapping("/checkin/{id}")
-    public ResponseEntity<CheckinResponse> userCheckin(@PathVariable("id") Integer id) {
+    public ResponseEntity<MessageResponse> userCheckin(@PathVariable("id") Integer id) {
         log.info("Received request to check in user with ID: {}", id);
-        CheckinResponse resp = userService.userCheckin(id);
+        MessageResponse resp = userService.userCheckin(id);
         log.info("User with ID {} checked in successfully", id);
         return new ResponseEntity<>(resp, HttpStatus.CREATED);
     }
@@ -142,13 +142,13 @@ public class UserController {
      * @return a ResponseEntity containing the CheckinResponse
      */
     @GetMapping("/face")
-    public ResponseEntity<CheckinResponse> checkInByImage(
+    public ResponseEntity<MessageResponse> checkInByImage(
             @RequestParam("image") MultipartFile image,
             @RequestParam(value = "createIndexing", required = false) Boolean createIndexing) {
         log.info("Received check-in request with image: {}", image.getOriginalFilename());
-        CheckinResponse checkinResponse = userService.checkInByImage(image, createIndexing);
-        log.info("Check-in response: {}", checkinResponse);
-        return new ResponseEntity<>(checkinResponse, HttpStatus.OK);
+        MessageResponse messageResponse = userService.checkInByImage(image, createIndexing);
+        log.info("Check-in response: {}", messageResponse);
+        return new ResponseEntity<>(messageResponse, HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
@@ -194,5 +194,11 @@ public class UserController {
     public ResponseEntity<ConfirmedUserResponseList> getAllcomfirmedUser() {
         ConfirmedUserResponseList userResponseList = userService.getAllcomfirmedUser();
         return new ResponseEntity<>(userResponseList, HttpStatus.OK);
+    }
+
+    @PostMapping("/checkout/{id}")
+    public ResponseEntity<MessageResponse> userCheckout(@PathVariable("id") Integer id) {
+        MessageResponse resp = userService.userCheckout(id);
+        return new ResponseEntity<>(resp, HttpStatus.OK);
     }
 }

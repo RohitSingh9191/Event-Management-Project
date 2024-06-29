@@ -26,6 +26,9 @@ public class Checkin {
     @Column(name = "CheckinTime")
     private Date checkinTime;
 
+    @Column(name = "ChechoutTime")
+    private Date chechoutTime;
+
     @Column(name = "Status")
     private String status;
 }

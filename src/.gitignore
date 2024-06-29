@@ -13,7 +13,8 @@
 .springBeans
 .sts4-cache
 
-# Ignore target directory
+# Ignore target direct
+logs/
 target/
 
 # Exclude specific files from being ignored within target directory

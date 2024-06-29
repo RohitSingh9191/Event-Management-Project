@@ -1,6 +1,7 @@
 package com.mirai.service.user.impl;
 
 import com.google.zxing.WriterException;
+import com.mirai.constants.CheckStatus;
 import com.mirai.constants.PolicyEnum;
 import com.mirai.constants.RoleEnum;
 import com.mirai.constants.UserStatus;
@@ -136,7 +137,7 @@ public class UserServiceImpl implements UserService {
                 url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
             Integer id = user.getId();
             Boolean checkIn = false;
-            Checkin checkin = checkinRepository.getByUserId(id);
+            Checkin checkin = checkinRepository.getByUserIdAndStatus(id, CheckStatus.IN.name());
             if (checkin != null) {
                 checkIn = true;
             }
@@ -159,7 +160,7 @@ public class UserServiceImpl implements UserService {
             if (user.getImage() != null)
                 url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
             Integer id = user.getId();
-            Checkin checkin = checkinRepository.getByUserId(id);
+            Checkin checkin = checkinRepository.getByUserIdAndStatus(id, CheckStatus.IN.name());
             if (checkin != null) {
                 CheckedInUserResponse userResponse = UsersMapper.mapUserToGetAllCheckedInUserResponse(user, url);
                 userResponseList.add(userResponse);
@@ -361,7 +362,7 @@ public class UserServiceImpl implements UserService {
             log.info("Rejection email sent successfully to {}", user.getEmail());
         } else if (UserStatus.INACTIVE.name().equalsIgnoreCase(status)) {
             user.setStatus(UserStatus.INACTIVE.name());
-            Checkin checkin = checkinRepository.getByUserId(id);
+            Checkin checkin = checkinRepository.getByUserIdAndStatus(id, CheckStatus.IN.name());
             if (checkin != null) checkinRepository.delete(checkin);
             resp = "User deleted by id " + id;
         } else if (UserStatus.PENDING.name().equalsIgnoreCase(status)) {
@@ -434,25 +435,56 @@ public class UserServiceImpl implements UserService {
      * @throws MiraiException If the user with the specified ID does not exist.
      */
     @Override
-    public CheckinResponse userCheckin(Integer id) {
+    public MessageResponse userCheckin(Integer id) {
         log.info("Checking in user with ID: {}", id);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         String resp = null;
         Checkin checkin = checkinRepository.getByUserId(id);
-        CheckinResponse checkinResponse = new CheckinResponse();
+        MessageResponse messageResponse = new MessageResponse();
 
-        if (checkin != null && checkin.getStatus() != null) {
+        if (checkin != null && checkin.getStatus().equalsIgnoreCase(CheckStatus.IN.name())) {
             resp = "User already checked in ";
-            checkinResponse.setMessage(resp);
-            return checkinResponse;
+            messageResponse.setMessage(resp);
+            return messageResponse;
         }
-        checkin = UsersMapper.mapToUserCheckin(user);
+        if(checkin==null){
+            checkin = UsersMapper.mapToUserCheckin(user);
+        }else {
+            checkin = UsersMapper.mapToUserCheckinExist(user,checkin);
+        }
         checkinRepository.save(checkin);
         resp = "User successfully checked in ";
         log.info("User with ID {} checked in successfully " + id);
-        checkinResponse.setMessage(resp);
-        return checkinResponse;
+        messageResponse.setMessage(resp);
+        return messageResponse;
+    }
+
+    @Override
+    public MessageResponse userCheckout(Integer id) {
+
+        Users user =
+                userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        String resp = null;
+        MessageResponse messageResponse = new MessageResponse();
+        Checkin checkin=checkinRepository.getByUserId(id);
+        if (checkin == null) {
+            resp = "User not check in yet";
+            messageResponse.setMessage(resp);
+            return messageResponse;
+        }
+
+        if (checkin != null && checkin.getStatus().equalsIgnoreCase(CheckStatus.OUT.name())) {
+            resp = "User already checked Out ";
+            messageResponse.setMessage(resp);
+            return messageResponse;
+        }
+        checkin = UsersMapper.mapToUserCheckOut(user, checkin);
+        checkinRepository.save(checkin);
+        resp = "User successfully check Out";
+        log.info("User with ID {} check out successfully " + id);
+        messageResponse.setMessage(resp);
+        return messageResponse;
     }
 
     /**
@@ -484,27 +516,27 @@ public class UserServiceImpl implements UserService {
      * @return a CheckinResponse containing the check-in status message
      */
     @Override
-    public CheckinResponse checkInByImage(MultipartFile image, Boolean createIndexing) {
+    public MessageResponse checkInByImage(MultipartFile image, Boolean createIndexing) {
 
         Integer id = compareFacesService.faceCompare(image, createIndexing);
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         String resp = null;
-        Checkin checkin = checkinRepository.getByUserId(id);
-        CheckinResponse checkinResponse = new CheckinResponse();
+        Checkin checkin = checkinRepository.getByUserIdAndStatus(id, CheckStatus.IN.name());
+        MessageResponse messageResponse = new MessageResponse();
 
         if (checkin != null && checkin.getStatus() != null) {
             resp = "User " + user.getName() + " is already checked in ";
-            checkinResponse.setMessage(resp);
+            messageResponse.setMessage(resp);
             log.info("User with ID {} has already checked in", id);
-            return checkinResponse;
+            return messageResponse;
         }
         checkin = UsersMapper.mapToUserCheckin(user);
         checkinRepository.save(checkin);
         resp = "User " + user.getName() + " is successfully checked in ";
         log.info("User with ID {} checked in successfully " + id);
-        checkinResponse.setMessage(resp);
-        return checkinResponse;
+        messageResponse.setMessage(resp);
+        return messageResponse;
     }
 
     @Override
@@ -554,12 +586,8 @@ public class UserServiceImpl implements UserService {
             String url = null;
             if (user.getImage() != null)
                 url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
-            Integer id = user.getId();
-            Checkin checkin = checkinRepository.getByUserId(id);
-            if (checkin != null) {
-                SpeakerResponse userResponse = UsersMapper.mapUserToGetAllSpeakerResponse(user, url);
-                userResponseList.add(userResponse);
-            }
+            SpeakerResponse userResponse = UsersMapper.mapUserToGetAllSpeakerResponse(user, url);
+            userResponseList.add(userResponse);
         }
         log.info("Mapped {} users to user response list", usersList.size());
         return SpeakerResponseList.builder()
@@ -576,12 +604,8 @@ public class UserServiceImpl implements UserService {
             String url = null;
             if (user.getImage() != null)
                 url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
-            Integer id = user.getId();
-            Checkin checkin = checkinRepository.getByUserId(id);
-            if (checkin != null) {
-                ConfirmedUserResponse userResponse = UsersMapper.mapUserToGetAllConfirmedUserResponse(user, url);
-                userResponseList.add(userResponse);
-            }
+            ConfirmedUserResponse userResponse = UsersMapper.mapUserToGetAllConfirmedUserResponse(user, url);
+            userResponseList.add(userResponse);
         }
         return ConfirmedUserResponseList.builder()
                 .totalCount(userResponseList.size())

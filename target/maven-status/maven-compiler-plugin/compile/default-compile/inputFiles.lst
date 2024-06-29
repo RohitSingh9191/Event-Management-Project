@@ -1,6 +1,7 @@
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\compareFaces\impl\newFaceRec\CompareFaceService.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\user\UserService.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\user\impl\UserServiceImpl.java
+C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\SpeakerResponse.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\email\EmailService.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\mapper\AuthMapper.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\UserResponseList.java
@@ -11,10 +12,12 @@ C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\Log
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\UploadImageResponse.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\UserResponse.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\data\specifications\UserSpecifications.java
+C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\ConfirmedUserResponseList.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\whatsApp\impl\WhatsAppServiceImpl.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\data\repos\UserRepository.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\data\repos\UserAuthRepository.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\CheckedInUserResponse.java
+C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\ConfirmedUserResponse.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\utils\MiraiUtils.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\constants\UserStatus.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\constants\PolicyEnum.java
@@ -28,6 +31,7 @@ C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\security\JwtHelper.
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\compareFaces\impl\newFaceRec\RekognitionCollectionService.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\whatsApp\WhatsAppService.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\compareFaces\impl\CompareFaceToAllNewService.java
+C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\SpeakerResponseList.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\amazonBucket\AmazonS3Service.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\constants\RoleEnum.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\mapper\UsersMapper.java
