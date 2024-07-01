@@ -96,7 +96,7 @@ public class UsersMapper {
                 .build();
     }
 
-    public static UserResponse mapUserToUserDesbordResponse(Users user, String imageUrl, String qrUrl) {
+    public static UserResponse mapUserToUserDesbordResponse(Users user, String imageUrl, String qrUrl, boolean checkIn) {
         return UserResponse.builder()
                 .id(user.getId())
                 .name(user.getName())
@@ -111,6 +111,7 @@ public class UsersMapper {
                 .date(user.getModifiedAt())
                 .imageUrl(imageUrl)
                 .qrUrl(qrUrl)
+                .checkIn(checkIn)
                 .build();
     }
 
@@ -137,7 +138,8 @@ public class UsersMapper {
                 .status(CheckStatus.IN.name())
                 .build();
     }
-    public static Checkin mapToUserCheckinExist(Users user,Checkin checkin) {
+
+    public static Checkin mapToUserCheckinExist(Users user, Checkin checkin) {
         checkin.setCheckinTime(new Date());
         checkin.setStatus(CheckStatus.IN.name());
         return checkin;

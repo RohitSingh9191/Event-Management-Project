@@ -368,6 +368,9 @@ public class UserServiceImpl implements UserService {
         } else if (UserStatus.PENDING.name().equalsIgnoreCase(status)) {
             user.setStatus(UserStatus.PENDING.name());
             resp = "User status update to " + "Pending with id " + id;
+        } else if (UserStatus.DECLINED.name().equalsIgnoreCase(status)) {
+            user.setStatus(UserStatus.DECLINED.name());
+            resp = "User status update to " + "Declined with id " + id;
         } else {
             user.setStatus(UserStatus.CONFIRMED.name());
             String link = "https://api.mirai.events/miraiapp/user/" + id;
@@ -421,8 +424,12 @@ public class UserServiceImpl implements UserService {
 
         String qrName = id + ".jpg";
         String qrUrl = amazonS3Service.publicLinkOfImage(qrName, env.getProperty("qrbucketName"));
-
-        UserResponse userResponse = UsersMapper.mapUserToUserDesbordResponse(user, url, qrUrl);
+        Boolean checkIn = false;
+        Checkin checkin = checkinRepository.getByUserIdAndStatus(id, CheckStatus.IN.name());
+        if (checkin != null) {
+            checkIn = true;
+        }
+        UserResponse userResponse = UsersMapper.mapUserToUserDesbordResponse(user, url, qrUrl,checkIn);
         log.info("Profile fetched successfully for user with ID: {}", id);
         return userResponse;
     }
@@ -448,10 +455,10 @@ public class UserServiceImpl implements UserService {
             messageResponse.setMessage(resp);
             return messageResponse;
         }
-        if(checkin==null){
+        if (checkin == null) {
             checkin = UsersMapper.mapToUserCheckin(user);
-        }else {
-            checkin = UsersMapper.mapToUserCheckinExist(user,checkin);
+        } else {
+            checkin = UsersMapper.mapToUserCheckinExist(user, checkin);
         }
         checkinRepository.save(checkin);
         resp = "User successfully checked in ";
@@ -467,7 +474,7 @@ public class UserServiceImpl implements UserService {
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         String resp = null;
         MessageResponse messageResponse = new MessageResponse();
-        Checkin checkin=checkinRepository.getByUserId(id);
+        Checkin checkin = checkinRepository.getByUserId(id);
         if (checkin == null) {
             resp = "User not check in yet";
             messageResponse.setMessage(resp);
@@ -558,7 +565,7 @@ public class UserServiceImpl implements UserService {
         String url = amazonS3Service.uploadQRCodeToS3(qrCodeImage, String.valueOf(id));
         whatsAppService.sendReminder("91" + user.getPhone(), user.getName(), url);
 
-        emailService.sendReminderMail(user, " Only 2 days to go!", qrCodeImage);
+        emailService.sendReminderMail(user, qrCodeImage);
         log.info("Confirmation email sent successfully to {}", user.getEmail());
         String resp = "Mail send successfully at " + user.getEmail();
         return resp;
@@ -572,7 +579,7 @@ public class UserServiceImpl implements UserService {
             byte[] qrCodeImage = MiraiUtils.generateQRCodeImage(link, 200, 200);
             String url = amazonS3Service.uploadQRCodeToS3(qrCodeImage, String.valueOf(data.getId()));
             whatsAppService.sendReminder("91" + data.getPhone(), data.getName(), url);
-            emailService.sendReminderMail(data, " Only 2 days to go!", qrCodeImage);
+            emailService.sendReminderMail(data, qrCodeImage);
         }
         return "Mail successfully send to all";
     }

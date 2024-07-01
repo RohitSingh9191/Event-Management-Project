@@ -4,6 +4,8 @@ import com.mirai.data.entities.Users;
 import com.mirai.service.email.EmailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ByteArrayResource;
@@ -149,10 +151,12 @@ public class EmailServiceImpl implements EmailService {
         }
     }
 
-    public void sendReminderMail(Users users, String subject, byte[] qrCodeImage) {
-        String number = env.getProperty("phoneNumber");
+    public void sendReminderMail(Users users, byte[] qrCodeImage) {
         String fromUser = env.getProperty("spring.mail.username");
-
+        LocalDate targetDate = LocalDate.of(2024, 7, 5);
+        LocalDate currentDate = LocalDate.now();
+        long day = ChronoUnit.DAYS.between(currentDate, targetDate);
+        String subject = "Only " + day + " days to go!";
         try {
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -161,7 +165,6 @@ public class EmailServiceImpl implements EmailService {
             helper.setSubject(subject);
             helper.setFrom(fromUser);
 
-            // Constructing the email content
             String content = "Dear " + users.getName() + ",<br><br>"
                     + "We are excited to host you at the upcoming MIRAI™24, please find details below:<br>"
                     + "<b>·</b> Date: 5th July 2024</span><br>"

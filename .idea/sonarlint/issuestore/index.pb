@@ -29,8 +29,6 @@ _
 /src/main/java/com/mirai/mapper/UsersMapper.java,4\b\4b8d0613e8e2f02c7adb627a80032f579c6d7acd
 _
 /src/main/java/com/mirai/constants/RoleEnum.java,d\9\d95db452aadc8ef5e86261297c6068181847532a
-l
-<src/main/java/com/mirai/models/response/CheckinResponse.java,1\9\1998170de1ee36242d2b83671890fa3a848a4545
 v
 Fsrc/main/java/com/mirai/models/response/CheckedInUserResponseList.java,e\a\ea72d304a70d4cf15d7621d1d8bab1f969f5fc91
 r
@@ -71,3 +69,5 @@ i
 9src/main/java/com/mirai/data/repos/CheckinRepository.java,1\e\1eb5bd48d36334f65813f6231c261dd35958d393
 b
 2src/main/java/com/mirai/constants/CheckStatus.java,b\c\bcbe498e8925f01f804550aaf356a0057e9b293c
+s
+Csrc/main/java/com/mirai/data/specifications/UserSpecifications.java,b\4\b4cb154f8175ef6e7c7394138d6fe2472b059439

@@ -2,28 +2,28 @@
 •	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºĞ¸ÜJ$4d846727-8c90-4c8a-8972-b26cdf869897
 —
 java:S11923"ODefine a constant instead of duplicating this literal "Request Body: " 3 times.(š×ØÕüÿÿÿÿ8›ÜÁÆ…2J$d831e976-259c-4f2b-bac5-67988fe00abc
-Õ
-java:S1192"‘Define a constant instead of duplicating this literal "https://live-mt-server.wati.io/315238/api/v1/sendTemplateMessage?whatsappNumber=" 3 times.(¯èËı8›ÜÁÆ…2J$d4d6d5cf-91a2-4b34-bf1f-c10511775551
-
-java:S1192("KDefine a constant instead of duplicating this literal "parameters" 3 times.(•ªæ¢8›ÜÁÆ…2J$9e0285af-7c9c-4d54-bbf5-b843d4226dc9
-–
-java:S11922"NDefine a constant instead of duplicating this literal "Request URL: " 3 times.(š’–ƒûÿÿÿÿ8 ÜÁÆ…2J$afa10126-8786-4665-930b-b2707dac98d6
 ‘
 java:S1192."NDefine a constant instead of duplicating this literal "Authorization" 3 times.(ª·šæ8›ÜÁÆ…2J$c9016a8b-b496-4a69-a9b9-dfbb7a86cae9
-
-java:S1192-"HDefine a constant instead of duplicating this literal "wpToken" 3 times.(§˜ïùÿÿÿÿ8›ÜÁÆ…2J$0c950a63-dde2-4fb9-8db1-55311af51bf8
-“
-java:S11927"PDefine a constant instead of duplicating this literal "Response Body: " 3 times.(úŞŸê8›ÜÁÆ…2J$28b8586c-639e-472b-8a07-fad92c33e24f
-‚
-java:S1192&"FDefine a constant instead of duplicating this literal "value" 5 times.(™¡J$a8bd7acb-0496-4401-9930-18aea9485e0f
 ‘
 java:S1192"NDefine a constant instead of duplicating this literal "template_name" 3 times.(¾ò†®8›ÜÁÆ…2J$a45ac7b7-41bb-4032-b79e-84b068088a17
 š
 java:S11926"WDefine a constant instead of duplicating this literal "Response Status Code: " 3 times.(ÃÁ‹À8›ÜÁÆ…2J$7851edac-74a4-40c9-ab86-31b69307103f
+
+java:S1192-"HDefine a constant instead of duplicating this literal "wpToken" 3 times.(§˜ïùÿÿÿÿ8›ÜÁÆ…2J$0c950a63-dde2-4fb9-8db1-55311af51bf8
+“
+java:S11927"PDefine a constant instead of duplicating this literal "Response Body: " 3 times.(úŞŸê8›ÜÁÆ…2J$28b8586c-639e-472b-8a07-fad92c33e24f
+Õ
+java:S1192"‘Define a constant instead of duplicating this literal "https://live-mt-server.wati.io/315238/api/v1/sendTemplateMessage?whatsappNumber=" 3 times.(¯èËı8›ÜÁÆ…2J$d4d6d5cf-91a2-4b34-bf1f-c10511775551
+
+java:S1192("KDefine a constant instead of duplicating this literal "parameters" 3 times.(•ªæ¢8›ÜÁÆ…2J$9e0285af-7c9c-4d54-bbf5-b843d4226dc9
+‚
+java:S1192&"FDefine a constant instead of duplicating this literal "value" 5 times.(™¡J$a8bd7acb-0496-4401-9930-18aea9485e0f
 —
 java:S1192 "ODefine a constant instead of duplicating this literal "broadcast_name" 3 times.(æ›êªüÿÿÿÿ8›ÜÁÆ…2J$eb716ce2-ca6b-4ea7-a167-429e46cde335
 ‹
 java:S1192."HDefine a constant instead of duplicating this literal "Bearer " 3 times.(ª·šæ8 ÜÁÆ…2J$d1733862-b6d5-4124-8cba-5681301904d9
+–
+java:S11922"NDefine a constant instead of duplicating this literal "Request URL: " 3 times.(š’–ƒûÿÿÿÿ8 ÜÁÆ…2J$afa10126-8786-4665-930b-b2707dac98d6
 |
 java:S1854:"@Remove this useless assignment to local variable "responseBody".(¡‰ÛJ$7052860f-3731-4a8f-8e41-215df8a36eb7
 k	java:S1062"+Replace this use of System.out by a logger.(š’–ƒûÿÿÿÿJ$f166f20f-ea1e-4a4a-b226-b00ea9fdf7e2
