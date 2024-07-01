@@ -136,10 +136,17 @@ public class UserServiceImpl implements UserService {
             if (user.getImage() != null)
                 url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
             Integer id = user.getId();
-            Boolean checkIn = false;
-            Checkin checkin = checkinRepository.getByUserIdAndStatus(id, CheckStatus.IN.name());
+            Boolean checkIn = null;
+            Checkin checkin = checkinRepository.getByUserId(id);
+
             if (checkin != null) {
-                checkIn = true;
+               String status = checkin.getStatus();
+               if(status.equalsIgnoreCase(CheckStatus.IN.name())){
+                   checkIn=true;
+               } else if (status.equalsIgnoreCase(CheckStatus.OUT.name())) {
+                   checkIn=false;
+               }
+
             }
             UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url, checkIn);
             userResponseList.add(userResponse);
@@ -429,7 +436,7 @@ public class UserServiceImpl implements UserService {
         if (checkin != null) {
             checkIn = true;
         }
-        UserResponse userResponse = UsersMapper.mapUserToUserDesbordResponse(user, url, qrUrl,checkIn);
+        UserResponse userResponse = UsersMapper.mapUserToUserDesbordResponse(user, url, qrUrl, checkIn);
         log.info("Profile fetched successfully for user with ID: {}", id);
         return userResponse;
     }

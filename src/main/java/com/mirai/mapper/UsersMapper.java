@@ -96,7 +96,8 @@ public class UsersMapper {
                 .build();
     }
 
-    public static UserResponse mapUserToUserDesbordResponse(Users user, String imageUrl, String qrUrl, boolean checkIn) {
+    public static UserResponse mapUserToUserDesbordResponse(
+            Users user, String imageUrl, String qrUrl, boolean checkIn) {
         return UserResponse.builder()
                 .id(user.getId())
                 .name(user.getName())
