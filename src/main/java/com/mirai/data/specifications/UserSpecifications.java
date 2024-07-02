@@ -1,5 +1,6 @@
 package com.mirai.data.specifications;
 
+import com.mirai.constants.CheckStatus;
 import com.mirai.constants.PolicyEnum;
 import com.mirai.constants.UserStatus;
 import com.mirai.data.entities.Checkin;
@@ -72,7 +73,7 @@ public class UserSpecifications {
         }
 
         // checkIn
-        Boolean checkIn = userFilters.getCheckIn();
+        String checkIn = userFilters.getCheckIn();
         if (checkIn != null) {
             spec = spec.and(UserSpecifications.withCheckIn(checkIn));
         }
@@ -270,20 +271,28 @@ public class UserSpecifications {
         return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("isPolicyAccept"), policy);
     }
 
-    private static Specification<Users> withCheckIn(Boolean checkIn) {
+    private static Specification<Users> withCheckIn(String checkIn) {
         log.info("Filtering users by check-in: {}", checkIn);
         return (root, query, criteriaBuilder) -> {
             Subquery<Integer> subquery = query.subquery(Integer.class);
             Root<Checkin> checkinRoot = subquery.from(Checkin.class);
             subquery.select(checkinRoot.get("userId"));
 
-            if (checkIn) {
-                subquery.where(criteriaBuilder.equal(checkinRoot.get("userId"), root.get("id")));
+            if (checkIn.equalsIgnoreCase(CheckStatus.IN.name())) {
+                subquery.where(criteriaBuilder.and(
+                        criteriaBuilder.equal(checkinRoot.get("userId"), root.get("id")),
+                        criteriaBuilder.equal(checkinRoot.get("status"), CheckStatus.IN.name())));
                 return criteriaBuilder.exists(subquery);
-            } else {
+            } else if (checkIn.equalsIgnoreCase(CheckStatus.OUT.name())) {
+                subquery.where(criteriaBuilder.and(
+                        criteriaBuilder.equal(checkinRoot.get("userId"), root.get("id")),
+                        criteriaBuilder.equal(checkinRoot.get("status"), CheckStatus.OUT.name())));
+                return criteriaBuilder.exists(subquery);
+            } else if (checkIn.equalsIgnoreCase(CheckStatus.NOTIN.name())) {
                 subquery.where(criteriaBuilder.equal(checkinRoot.get("userId"), root.get("id")));
                 return criteriaBuilder.not(criteriaBuilder.exists(subquery));
             }
+            return null;
         };
     }
 }

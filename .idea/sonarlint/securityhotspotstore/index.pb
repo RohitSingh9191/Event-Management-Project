@@ -71,3 +71,5 @@ b
 2src/main/java/com/mirai/constants/CheckStatus.java,b\c\bcbe498e8925f01f804550aaf356a0057e9b293c
 s
 Csrc/main/java/com/mirai/data/specifications/UserSpecifications.java,b\4\b4cb154f8175ef6e7c7394138d6fe2472b059439
+g
+7src/main/java/com/mirai/models/request/UserFilters.java,7\d\7d8ceab5d89f6cb1ac439898bdcd12676a1345ae

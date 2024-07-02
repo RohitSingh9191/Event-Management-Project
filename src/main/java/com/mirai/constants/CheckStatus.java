@@ -2,5 +2,6 @@ package com.mirai.constants;
 
 public enum CheckStatus {
     IN,
-    OUT
+    OUT,
+    NOTIN
 }

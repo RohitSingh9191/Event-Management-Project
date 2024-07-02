@@ -6,10 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="07b24d1a-e530-48de-9a91-644544d55104" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a119175832eb179b60d6f18db5d9e1d6cb130916" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a119175832eb179b60d6f18db5d9e1d6cb130916" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4cb154f8175ef6e7c7394138d6fe2472b059439" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4cb154f8175ef6e7c7394138d6fe2472b059439" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/constants/UserStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/constants/UserStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/mapper/UsersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/constants/CheckStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/constants/CheckStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/data/specifications/UserSpecifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/data/specifications/UserSpecifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/models/request/UserFilters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/models/request/UserFilters.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirai/service/user/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/constants/CheckStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/constants/CheckStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/data/specifications/UserSpecifications.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/data/specifications/UserSpecifications.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/models/request/UserFilters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/models/request/UserFilters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mirai/service/user/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mirai/service/user/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT.war.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/constants/CheckStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/constants/CheckStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/constants/UserStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/constants/UserStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/specifications/UserSpecifications.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/data/specifications/UserSpecifications.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/mapper/UsersMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/mapper/UsersMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/UserFilters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/models/request/UserFilters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/user/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mirai-0.0.1-SNAPSHOT/WEB-INF/classes/com/mirai/service/user/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotless-index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.mirai.MiraiApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.mirai.MiraiApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.mirai.MiraiApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.mirai.MiraiApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,8 +115,8 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean package" />
       <command value="mvn spotless:apply" />
+      <command value="mvn clean package" />
     </option>
   </component>
   <component name="RunManager" selected="Application.MiraiApplication">

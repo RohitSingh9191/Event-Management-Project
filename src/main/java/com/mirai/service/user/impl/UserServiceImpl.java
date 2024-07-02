@@ -140,13 +140,12 @@ public class UserServiceImpl implements UserService {
             Checkin checkin = checkinRepository.getByUserId(id);
 
             if (checkin != null) {
-               String status = checkin.getStatus();
-               if(status.equalsIgnoreCase(CheckStatus.IN.name())){
-                   checkIn=true;
-               } else if (status.equalsIgnoreCase(CheckStatus.OUT.name())) {
-                   checkIn=false;
-               }
-
+                String status = checkin.getStatus();
+                if (status.equalsIgnoreCase(CheckStatus.IN.name())) {
+                    checkIn = true;
+                } else if (status.equalsIgnoreCase(CheckStatus.OUT.name())) {
+                    checkIn = false;
+                }
             }
             UserResponse userResponse = UsersMapper.mapUserToGetAllUserResponse(user, url, checkIn);
             userResponseList.add(userResponse);
