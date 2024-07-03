@@ -1,5 +1,6 @@
 package com.mirai.models.response;
 
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +16,10 @@ public class CheckedInUserResponse {
     private String company;
     private String designation;
     private String imageUrl;
+    private String phone;
+    private String status;
+    private Date checkIn;
+    private Date checkOut;
     private String field1;
     private String field2;
     private String field3;

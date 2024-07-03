@@ -54,13 +54,18 @@ public class UsersMapper {
                 .build();
     }
 
-    public static CheckedInUserResponse mapUserToGetAllCheckedInUserResponse(Users user, String imageUrl) {
+    public static CheckedInUserResponse mapUserToGetAllCheckedInUserResponse(
+            Users user, String imageUrl, Checkin checkin) {
         return CheckedInUserResponse.builder()
                 .id(user.getId())
                 .name(user.getName())
                 .company(user.getCompany())
                 .designation(user.getDesignation())
                 .imageUrl(imageUrl)
+                .phone(user.getPhone())
+                .status(checkin.getStatus())
+                .checkIn(checkin.getCheckinTime() != null ? checkin.getCheckinTime() : null)
+                .checkOut(checkin.getChechoutTime() != null ? checkin.getChechoutTime() : null)
                 .field1(user.getField1())
                 .field2(user.getField2())
                 .field3(user.getField3())

@@ -34,6 +34,7 @@ C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\whatsApp\Wh
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\constants\CheckStatus.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\compareFaces\impl\CompareFaceToAllNewService.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\response\SpeakerResponseList.java
+C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\request\CheckInFilters.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\amazonBucket\AmazonS3Service.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\constants\RoleEnum.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\mapper\UsersMapper.java

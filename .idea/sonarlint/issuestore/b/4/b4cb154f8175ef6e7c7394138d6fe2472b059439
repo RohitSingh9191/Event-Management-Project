@@ -1,21 +1,26 @@
 
+o
+java:S1192µ"LDefine a constant instead of duplicating this literal "checkinTime" 4 times.(œŠşÁùÿÿÿÿ8¬èå¹‡2
 
-java:S1192T"KDefine a constant instead of duplicating this literal "modifiedAt" 4 times.(Áâ8¼›„é†2J$03e6b2c9-6147-4c08-905f-9bbd20f4a456
+java:S1192U"KDefine a constant instead of duplicating this literal "modifiedAt" 4 times.(Áâ8ƒ¢¶¹‡2J$a207887b-2aa7-4840-86c5-4a1f7c6acf41
+Œ
+java:S1192˜"HDefine a constant instead of duplicating this literal "userId" 10 times.(ÁöøÑ8ƒ¢¶¹‡2J$08462053-d115-4c5a-bf87-3a852d52e2e9
 Š
-java:S1192˜"FDefine a constant instead of duplicating this literal "phone" 4 times.(‡üİß8¼›„é†2J$30303ef7-c5fd-48b5-aa0e-02f9e79422d6
-•
-java:S1192³"LDefine a constant instead of duplicating this literal "designation" 4 times.(£²¼Íÿÿÿÿÿ8¼›„é†2J$35eee202-bd5a-4bb8-87f9-a05a439b8a73
-Š
-java:S1192"GDefine a constant instead of duplicating this literal "status" 5 times.(ˆ¡œ8¼›„é†2J$4f61a5b3-627a-445f-88d0-37f0de1a7998
+java:S1192™"FDefine a constant instead of duplicating this literal "phone" 6 times.(‡üİß8ƒ¢¶¹‡2J$74db2256-e328-45bc-8cb3-f633b039c5ef
 ‘
-java:S1192¦"HDefine a constant instead of duplicating this literal "company" 4 times.(ã’¥³øÿÿÿÿ8¼›„é†2J$dba21ab7-6e21-4b12-b0d1-37e463cc9e20
+java:S1192§"HDefine a constant instead of duplicating this literal "company" 6 times.(ã’¥³øÿÿÿÿ8„¢¶¹‡2J$687eff04-8712-4ca6-8f82-49bcffe8ccab
+•
+java:S1192´"LDefine a constant instead of duplicating this literal "designation" 6 times.(£²¼Íÿÿÿÿÿ8„¢¶¹‡2J$10ebc002-325b-4c56-86da-b6aba1f0964c
 
-java:S1192Š"FDefine a constant instead of duplicating this literal "email" 4 times.(Ü˜ĞÑùÿÿÿÿ8¼›„é†2J$f46b1d53-a444-46b2-b549-88d56c9aad95
-‹
-java:S1192—"GDefine a constant instead of duplicating this literal "userId" 4 times.(ÁöøÑ8¼›„é†2J$55d90578-4381-46e9-9429-ebb7c5a5cb6e
+java:S1192‹"FDefine a constant instead of duplicating this literal "email" 6 times.(Ü˜ĞÑùÿÿÿÿ8„¢¶¹‡2J$7c82333a-1fa2-4c26-9bc5-2b12c35603d3
+Š
+java:S1192"GDefine a constant instead of duplicating this literal "status" 6 times.(ˆ¡œ8„¢¶¹‡2J$1965d04a-cd6d-4bb4-9a20-020e55d3ad2f
 }
-java:S1118":Add a private constructor to hide the implicit public one.(ñ‰¼ú8¼›„é†2J$7c4bb03d-6685-4ace-ac06-7c8b490eb5a7
+java:S1118":Add a private constructor to hide the implicit public one.(ñ‰¼ú8„¢¶¹‡2J$ea11b5d1-0d53-4478-8163-e3081a90a211
 ”
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 72 to the 15 allowed.(õıíc8¼›„é†2J$8e56acd4-00ed-4ad1-a8cf-6bd51b304d27
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 72 to the 15 allowed.(õıíc8…¢¶¹‡2J$a0da3c54-8f6d-4a09-b7c5-5b159e6361c2
+	java:S125¬"<This block of commented-out lines of code should be removed.(²î• 8ã¢¶¹‡2J$f49aa441-33de-4e8b-8e6d-877515f8edeb
+p
+java:S3776Ò"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(Ã ¿Œ8Úèå¹‡2
 ‰
-java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 164 to 64, Complexity from 55 to 14, Nesting Level from 3 to 2, Number of Variables from 65 to 6.(õıíc8Û›„é†2J$bdd68f33-3f0b-443c-a520-848485d526ca
+java:S6541"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 164 to 64, Complexity from 55 to 14, Nesting Level from 3 to 2, Number of Variables from 65 to 6.(õıíc8ô¢¶¹‡2J$23df4b38-70be-4eaa-8af4-7b4cf0d54483

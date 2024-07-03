@@ -5,6 +5,7 @@ import com.mirai.constants.PolicyEnum;
 import com.mirai.constants.UserStatus;
 import com.mirai.data.entities.Checkin;
 import com.mirai.data.entities.Users;
+import com.mirai.models.request.CheckInFilters;
 import com.mirai.models.request.UserFilters;
 import jakarta.persistence.criteria.Root;
 import jakarta.persistence.criteria.Subquery;
@@ -295,4 +296,241 @@ public class UserSpecifications {
             return null;
         };
     }
+
+//    public static Specification<Users> searchCheckUsers(CheckInFilters CheckInFilters) {
+//        Specification<Users> spec = Specification.where(null);
+//
+//
+//        // Name
+//        String name = CheckInFilters.getName();
+//        if (name != null && !name.isEmpty()) {
+//            spec = spec.and(UserSpecifications.withName(name));
+//        }
+//
+//
+//        // checkIn
+//        String checkIn = CheckInFilters.getCheckIn();
+//        if (checkIn != null) {
+//            spec = spec.and(UserSpecifications.withCheckIn(checkIn));
+//        }
+//
+//        String sortBy = null;
+//        String orderBy = null;
+//        if (CheckInFilters.getSortBy() == null || CheckInFilters.getSortBy().isEmpty()) {
+//            sortBy = "modifiedAt";
+//        } else {
+//            sortBy = CheckInFilters.getSortBy();
+//        }
+//
+//        if (CheckInFilters.getOrderBy() == null || CheckInFilters.getOrderBy().isEmpty()) {
+//            orderBy = "desc";
+//
+//        } else {
+//            orderBy = CheckInFilters.getOrderBy();
+//        }
+//
+//        if (sortBy != null && sortBy.equalsIgnoreCase("checkIn")) {
+//            if (orderBy.equalsIgnoreCase("desc")) {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.desc(root.get("checkIn")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            } else {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.asc(root.get("checkIn")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            }
+//        }
+//
+//        if (sortBy != null && sortBy.equalsIgnoreCase("name")) {
+//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.desc(root.get("name")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            } else {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.asc(root.get("name")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            }
+//        }
+//
+//        if (sortBy != null && sortBy.equalsIgnoreCase("id")) {
+//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.desc(root.get("id")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            } else {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.asc(root.get("id")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            }
+//        }
+//
+//
+//        if (sortBy != null && sortBy.equalsIgnoreCase("phone")) {
+//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.desc(root.get("phone")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            } else {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.asc(root.get("phone")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            }
+//        }
+//
+//        if (sortBy != null && sortBy.equalsIgnoreCase("company")) {
+//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.desc(root.get("company")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            } else {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.asc(root.get("company")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            }
+//        }
+//        if (sortBy != null && sortBy.equalsIgnoreCase("designation")) {
+//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.desc(root.get("designation")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            } else {
+//                spec = spec.and((root, query, criteriaBuilder) -> {
+//                    query.orderBy(criteriaBuilder.asc(root.get("designation")));
+//                    return criteriaBuilder.conjunction();
+//                });
+//            }
+//        }
+//        log.info("Specification created successfully");
+//        return spec;
+//    }
+
+    public static Specification<Checkin> searchCheckins(CheckInFilters checkInFilters) {
+        Specification<Checkin> spec = Specification.where(null);
+
+        boolean hasFilters = false;
+
+        // Name filter using subquery
+        if (checkInFilters.getName() != null && !checkInFilters.getName().isEmpty()) {
+            spec = spec.and(withUserName(checkInFilters.getName()));
+            hasFilters = true;
+        }
+
+        // Check-in status filter
+        if (checkInFilters.getCheckIn() != null && !checkInFilters.getCheckIn().isEmpty()) {
+            spec = spec.and(withCheckInStatus(checkInFilters.getCheckIn()));
+            hasFilters = true;
+        }
+
+        // Sorting logic
+        String sortBy = checkInFilters.getSortBy() != null ? checkInFilters.getSortBy() : "checkinTime";
+        String orderBy = checkInFilters.getOrderBy() != null ? checkInFilters.getOrderBy() : "desc";
+
+        spec = spec.and(orderByField(sortBy, orderBy));
+
+        // If no filters are provided, match all records
+        if (!hasFilters) {
+            spec = spec.and((root, query, criteriaBuilder) -> criteriaBuilder.conjunction());
+        }
+
+        log.info("Specification for Checkin created successfully");
+        return spec;
+    }
+
+    private static Specification<Checkin> withUserName(String name) {
+        return (root, query, criteriaBuilder) -> {
+            Subquery<Integer> subquery = query.subquery(Integer.class);
+            Root<Users> userRoot = subquery.from(Users.class);
+            subquery.select(userRoot.get("id"));
+            String namePattern = "%" + name.toLowerCase() + "%";
+            subquery.where(criteriaBuilder.like(criteriaBuilder.lower(userRoot.get("name")), namePattern));
+            return criteriaBuilder.in(root.get("userId")).value(subquery);
+        };
+    }
+
+    private static Specification<Checkin> withCheckInStatus(String checkInStatus) {
+        return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("status"), checkInStatus);
+    }
+
+    private static Specification<Checkin> orderByField(String sortBy, String orderBy) {
+        return (root, query, criteriaBuilder) -> {
+            if (sortBy.equalsIgnoreCase("checkinTime")) {
+                if (orderBy.equalsIgnoreCase("desc")) {
+                    query.orderBy(criteriaBuilder.desc(root.get("checkinTime")));
+                } else {
+                    query.orderBy(criteriaBuilder.asc(root.get("checkinTime")));
+                }
+            } else if (sortBy.equalsIgnoreCase("name")) {
+                Subquery<String> subquery = query.subquery(String.class);
+                Root<Users> userRoot = subquery.from(Users.class);
+                subquery.select(userRoot.get("name"));
+                subquery.where(criteriaBuilder.equal(userRoot.get("id"), root.get("userId")));
+                if (orderBy.equalsIgnoreCase("desc")) {
+                    query.orderBy(criteriaBuilder.desc(subquery.getSelection()));
+                } else {
+                    query.orderBy(criteriaBuilder.asc(subquery.getSelection()));
+                }
+            } else if (sortBy.equalsIgnoreCase("email")) {
+                Subquery<String> subquery = query.subquery(String.class);
+                Root<Users> userRoot = subquery.from(Users.class);
+                subquery.select(userRoot.get("email"));
+                subquery.where(criteriaBuilder.equal(userRoot.get("id"), root.get("userId")));
+                if (orderBy.equalsIgnoreCase("desc")) {
+                    query.orderBy(criteriaBuilder.desc(subquery.getSelection()));
+                } else {
+                    query.orderBy(criteriaBuilder.asc(subquery.getSelection()));
+                }
+            } else if (sortBy.equalsIgnoreCase("phone")) {
+                Subquery<String> subquery = query.subquery(String.class);
+                Root<Users> userRoot = subquery.from(Users.class);
+                subquery.select(userRoot.get("phone"));
+                subquery.where(criteriaBuilder.equal(userRoot.get("id"), root.get("userId")));
+                if (orderBy.equalsIgnoreCase("desc")) {
+                    query.orderBy(criteriaBuilder.desc(subquery.getSelection()));
+                } else {
+                    query.orderBy(criteriaBuilder.asc(subquery.getSelection()));
+                }
+            } else if (sortBy.equalsIgnoreCase("company")) {
+                Subquery<String> subquery = query.subquery(String.class);
+                Root<Users> userRoot = subquery.from(Users.class);
+                subquery.select(userRoot.get("company"));
+                subquery.where(criteriaBuilder.equal(userRoot.get("id"), root.get("userId")));
+                if (orderBy.equalsIgnoreCase("desc")) {
+                    query.orderBy(criteriaBuilder.desc(subquery.getSelection()));
+                } else {
+                    query.orderBy(criteriaBuilder.asc(subquery.getSelection()));
+                }
+            } else if (sortBy.equalsIgnoreCase("designation")) {
+                Subquery<String> subquery = query.subquery(String.class);
+                Root<Users> userRoot = subquery.from(Users.class);
+                subquery.select(userRoot.get("designation"));
+                subquery.where(criteriaBuilder.equal(userRoot.get("id"), root.get("userId")));
+                if (orderBy.equalsIgnoreCase("desc")) {
+                    query.orderBy(criteriaBuilder.desc(subquery.getSelection()));
+                } else {
+                    query.orderBy(criteriaBuilder.asc(subquery.getSelection()));
+                }
+            } else if (sortBy.equalsIgnoreCase("id")) {
+                if (orderBy.equalsIgnoreCase("desc")) {
+                    query.orderBy(criteriaBuilder.desc(root.get("id")));
+                } else {
+                    query.orderBy(criteriaBuilder.asc(root.get("id")));
+                }
+            }
+
+            return criteriaBuilder.conjunction();
+        };
+    }
+
 }

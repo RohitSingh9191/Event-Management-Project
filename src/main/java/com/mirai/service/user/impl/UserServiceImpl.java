@@ -13,6 +13,7 @@ import com.mirai.data.specifications.UserSpecifications;
 import com.mirai.exception.ApplicationErrorCode;
 import com.mirai.exception.MiraiException;
 import com.mirai.mapper.UsersMapper;
+import com.mirai.models.request.CheckInFilters;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
 import com.mirai.models.response.*;
@@ -166,9 +167,10 @@ public class UserServiceImpl implements UserService {
             if (user.getImage() != null)
                 url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
             Integer id = user.getId();
-            Checkin checkin = checkinRepository.getByUserIdAndStatus(id, CheckStatus.IN.name());
+            Checkin checkin = checkinRepository.getByUserId(id);
             if (checkin != null) {
-                CheckedInUserResponse userResponse = UsersMapper.mapUserToGetAllCheckedInUserResponse(user, url);
+                CheckedInUserResponse userResponse =
+                        UsersMapper.mapUserToGetAllCheckedInUserResponse(user, url, checkin);
                 userResponseList.add(userResponse);
             }
         }
@@ -475,7 +477,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public MessageResponse userCheckout(Integer id) {
-
         Users user =
                 userRepository.findById(id).orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
         String resp = null;
@@ -486,7 +487,6 @@ public class UserServiceImpl implements UserService {
             messageResponse.setMessage(resp);
             return messageResponse;
         }
-
         if (checkin != null && checkin.getStatus().equalsIgnoreCase(CheckStatus.OUT.name())) {
             resp = "User already checked Out ";
             messageResponse.setMessage(resp);
@@ -623,6 +623,41 @@ public class UserServiceImpl implements UserService {
         return ConfirmedUserResponseList.builder()
                 .totalCount(userResponseList.size())
                 .confirmedUserResponse(userResponseList)
+                .build();
+    }
+
+    @Override
+    public CheckedInUserResponseList getAllCheckUsers(CheckInFilters checkInFilters) {
+        Pageable pageable = MiraiUtils.createPageable(checkInFilters.getLimit(), checkInFilters.getOffset());
+
+        Specification<Checkin> spec = UserSpecifications.searchCheckins(checkInFilters);
+        Page<Checkin> checkPages = checkinRepository.findAll(spec, pageable);
+        List<Checkin> checkUser=checkPages.stream().toList();
+        return setAllCheckedInUserToUserListResponse(checkUser);
+    }
+
+
+    private CheckedInUserResponseList setAllCheckedInUserToUserListResponse(List<Checkin> usersPage) {
+        log.info("Mapping users to user response list");
+        List<Checkin> usersList = usersPage;
+        List<CheckedInUserResponse> userResponseList = new ArrayList<>();
+        for (Checkin checkin : usersList) {
+            String url = null;
+            Users user=userRepository.findById(checkin.getUserId()).orElse(null);
+            if(user!=null){
+                if (user.getImage() != null)
+                    url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
+                if (checkin != null) {
+                    CheckedInUserResponse userResponse =
+                            UsersMapper.mapUserToGetAllCheckedInUserResponse(user, url, checkin);
+                    userResponseList.add(userResponse);
+                }
+            }
+        }
+        log.info("Mapped {} users to user response list", usersList.size());
+        return CheckedInUserResponseList.builder()
+                .totalCount(userResponseList.size())
+                .checkedInUserResponses(userResponseList)
                 .build();
     }
 }

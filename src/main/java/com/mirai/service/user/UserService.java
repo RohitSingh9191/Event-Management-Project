@@ -1,6 +1,7 @@
 package com.mirai.service.user;
 
 import com.google.zxing.WriterException;
+import com.mirai.models.request.CheckInFilters;
 import com.mirai.models.request.UserFilters;
 import com.mirai.models.request.UserRequest;
 import com.mirai.models.response.*;
@@ -39,4 +40,6 @@ public interface UserService {
     SpeakerResponseList getConfirmedSpeaker();
 
     ConfirmedUserResponseList getAllcomfirmedUser();
+
+    CheckedInUserResponseList getAllCheckUsers(CheckInFilters checkInFilters);
 }

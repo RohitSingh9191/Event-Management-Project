@@ -56,7 +56,6 @@ public class WhatsAppServiceImpl implements WhatsAppService {
 
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
             String responseBody = responseEntity.getBody();
-
         } else {
             // Handle error
         }

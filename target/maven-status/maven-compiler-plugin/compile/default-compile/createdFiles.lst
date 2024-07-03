@@ -1,5 +1,6 @@
 com\mirai\models\request\UploadImageRequest.class
 com\mirai\models\response\UserResponse$UserResponseBuilder.class
+com\mirai\models\request\CheckInFilters.class
 com\mirai\models\response\CheckedInUserResponseList.class
 com\mirai\MiraiApplication.class
 com\mirai\models\request\UploadImageRequest$UploadImageRequestBuilder.class
