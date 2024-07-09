@@ -65,7 +65,7 @@ public class UsersMapper {
                 .phone(user.getPhone())
                 .status(checkin.getStatus())
                 .checkIn(checkin.getCheckinTime() != null ? checkin.getCheckinTime() : null)
-                .checkOut(checkin.getChechoutTime() != null ? checkin.getChechoutTime() : null)
+                .checkOut(checkin.getCheckoutTime() != null ? checkin.getCheckoutTime() : null)
                 .field1(user.getField1())
                 .field2(user.getField2())
                 .field3(user.getField3())
@@ -152,7 +152,7 @@ public class UsersMapper {
     }
 
     public static Checkin mapToUserCheckOut(Users user, Checkin checkin) {
-        checkin.setChechoutTime(new Date());
+        checkin.setCheckoutTime(new Date());
         checkin.setStatus(CheckStatus.OUT.name());
         return checkin;
     }

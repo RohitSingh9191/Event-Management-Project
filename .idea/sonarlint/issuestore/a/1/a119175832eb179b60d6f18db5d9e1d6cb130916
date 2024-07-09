@@ -1,21 +1,21 @@
 
 ¥
-java:S1488Ü"\Immediately return this expression instead of assigning it to the temporary variable "resp".(ƒ‰íÁüÿÿÿÿ8¶Â…º‡2J$61666be6-b650-4a34-b7ed-b20647cc4159
+java:S1488Ü"\Immediately return this expression instead of assigning it to the temporary variable "resp".(ƒ‰íÁüÿÿÿÿ8¶Â…º‡2J$f7d6fda1-dc2c-4f8a-b644-0771a8ade26f
  
-java:S1488À"\Immediately return this expression instead of assigning it to the temporary variable "resp".(¿ŠøÛ8·Â…º‡2J$25a41290-46a8-423d-89c2-b7dae1aa9cd3
+java:S1488À"\Immediately return this expression instead of assigning it to the temporary variable "resp".(¿ŠøÛ8·Â…º‡2J$14f858b7-eb05-45f0-8285-9f9ec9a6879f
 ”
-java:S1192Š"KDefine a constant instead of duplicating this literal "bucketName" 6 times.(‰¡áøÿÿÿÿ8¼Â…º‡2J$9966070c-b345-490d-b00d-7851dd668374
+java:S1192Š"KDefine a constant instead of duplicating this literal "bucketName" 6 times.(‰¡áøÿÿÿÿ8¼Â…º‡2J$4ad1a1b0-a5ee-4365-9607-d0e805a237de
 ¨
-java:S1192ƒ"dDefine a constant instead of duplicating this literal "Mapping users to user response list" 3 times.(˜Ñ©š8„†º‡2J$5cca7683-496a-4e71-ad51-0605f351c822
+java:S1192ƒ"dDefine a constant instead of duplicating this literal "Mapping users to user response list" 3 times.(˜Ñ©š8„†º‡2J$170e72f7-74f7-4ccb-b9eb-eb08ebee7a49
 ª
-java:S1192š"fDefine a constant instead of duplicating this literal "Mapped {} users to user response list" 4 times.(¨«öê8¼Â…º‡2J$b1bc00e0-0910-4504-bbb1-9685af79b33d
+java:S1192š"fDefine a constant instead of duplicating this literal "Mapped {} users to user response list" 4 times.(¨«öê8¼Â…º‡2J$b71c1f88-104b-4ae4-9000-6c459aecf86b
 ±
-java:S1192€"hDefine a constant instead of duplicating this literal "https://api.mirai.events/miraiapp/user/" 3 times.(ËÌ…ìüÿÿÿÿ8¼Â…º‡2J$fd59e04f-9849-49d3-ad86-cf0253f1296c
+java:S1192€"hDefine a constant instead of duplicating this literal "https://api.mirai.events/miraiapp/user/" 3 times.(ËÌ…ìüÿÿÿÿ8¼Â…º‡2J$10dbe82c-46d2-46bf-bee9-5b35ccc9b79a
 o
-java:S1125D"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8ÄÂ…º‡2J$9b82301d-a47e-43ea-bcf3-413d5e36daf6
-l	java:S108Á")Either remove or fill this block of code.(ëû¦¢8ÌÂ…º‡2J$667ac525-6874-48dd-aea4-368e8c9c77f5
-k	java:S108Ì")Either remove or fill this block of code.(§Î:8ÍÂ…º‡2J$649b8249-de87-47fe-8cb0-d1b71e9b93cb
+java:S1125D"'Remove the unnecessary boolean literal.(³±Êüÿÿÿÿ8ÄÂ…º‡2J$944f072e-e496-4573-ac50-84bbe9533e15
+l	java:S108Á")Either remove or fill this block of code.(ëû¦¢8ÌÂ…º‡2J$3db8bf3a-9d80-498e-b78c-4de18a71cb97
+k	java:S108Ì")Either remove or fill this block of code.(§Î:8ÍÂ…º‡2J$acf768cb-d34d-4c98-ab3a-8d1b5f5161fd
 ƒ
-java:S4034Ï":Replace this negation and "anyMatch()" with "noneMatch()".(ŠªûÑıÿÿÿÿ8ÍÂ…º‡2J$02214132-e124-4e89-8573-8a62b16631c1
+java:S4034Ï":Replace this negation and "anyMatch()" with "noneMatch()".(ŠªûÑıÿÿÿÿ8ÍÂ…º‡2J$bd20a915-edbf-4417-98dc-5dd7ce5a23fd
 ƒ
-java:S4034—":Replace this negation and "anyMatch()" with "noneMatch()".(Ò³åøÿÿÿÿ8ÙÂ…º‡2J$a1477cc7-bb1e-4f4e-8dcb-db161e6071f3
+java:S4034—":Replace this negation and "anyMatch()" with "noneMatch()".(Ò³åøÿÿÿÿ8ÙÂ…º‡2J$835826d9-a1ab-44b4-8683-257d9be6fa63

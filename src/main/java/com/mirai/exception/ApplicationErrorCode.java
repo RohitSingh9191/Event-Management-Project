@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 public enum ApplicationErrorCode implements ErrorCode {
     EMAIL_ALREADY_EXISTS(100001, "EMAIL_ALREADY_EXISTS", "Email id already exists", HttpStatus.CONFLICT),
     USERNAME_NOT_VALID(100002, "USERNAME_NOT_VALID", "username or password not valid", HttpStatus.BAD_REQUEST),
+    PASSWORD_NOT_VALID(100009, "PASSWORD_NOT_VALID", "username or password not valid", HttpStatus.BAD_REQUEST),
+
     INVALID_EMAIL(100003, "INVALID_EMAIL", "Invalid Email", HttpStatus.BAD_REQUEST),
     INVALID_ROLE_TYPE(100004, "INVALID_ROLE_TYPE", "Role does not match", HttpStatus.BAD_REQUEST),
     INVALID_POLICY_TYPE(100005, "INVALID_POLICY_TYPE", "Policy does not match", HttpStatus.BAD_REQUEST),

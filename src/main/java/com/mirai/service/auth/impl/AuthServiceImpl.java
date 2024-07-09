@@ -1,5 +1,6 @@
 package com.mirai.service.auth.impl;
 
+import com.mirai.config.JwtHelper;
 import com.mirai.data.entities.UserAuth;
 import com.mirai.data.repos.UserAuthRepository;
 import com.mirai.exception.ApplicationErrorCode;
@@ -9,16 +10,12 @@ import com.mirai.models.request.JWTRequest;
 import com.mirai.models.request.UserAuthRequest;
 import com.mirai.models.response.AuthResponse;
 import com.mirai.models.response.JWTResponse;
-import com.mirai.security.JwtHelper;
 import com.mirai.service.auth.AuthService;
+import com.mirai.utils.JwtTokenUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,30 +24,33 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 @Slf4j
 public class AuthServiceImpl implements AuthService {
-
-    private JwtHelper helper;
-    private AuthenticationManager manager;
-    private UserDetailsService userDetailsService;
     private UserAuthRepository userAuthRepository;
     private PasswordEncoder passwordEncoder;
+    private final JwtTokenUtils jwtTokenUtils;
+    private final HttpServletRequest httpServletRequest;
+    private final JwtHelper jwtHelper;
 
     @Override
     public JWTResponse adminlogin(JWTRequest request) {
         this.doAuthenticate(request.getEmail(), request.getPassword());
-        UserDetails userDetails = loadUserByUsername(request.getEmail());
-        String token = this.helper.generateToken(userDetails);
-
+        UserAuth userDetails = loadUserByUsername(request.getEmail());
+        String generatedToken = generateToken(userDetails);
         JWTResponse response = JWTResponse.builder()
-                .jwtToken(token)
+                .jwtToken(generatedToken)
                 .username(userDetails.getUsername())
                 .build();
         return response;
     }
 
-    private UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    private UserAuth loadUserByUsername(String username) throws UsernameNotFoundException {
         UserAuth user =
                 userAuthRepository.findByEmail(username).orElseThrow(() -> new RuntimeException("User not Found...."));
         return user;
+    }
+
+    private String generateToken(UserAuth user) {
+        String roleName = user.getEmail();
+        return jwtTokenUtils.generateToken(user.getUserid(), roleName);
     }
 
     /**
@@ -59,12 +59,12 @@ public class AuthServiceImpl implements AuthService {
      * @param password User password.
      */
     private void doAuthenticate(String email, String password) {
-        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(email, password);
-        try {
-            manager.authenticate(authentication);
-        } catch (BadCredentialsException e) {
-            throw new MiraiException(ApplicationErrorCode.USERNAME_NOT_VALID);
+       UserAuth userAuth = userAuthRepository.findByEmail(email).orElseThrow(()->new MiraiException(ApplicationErrorCode.USERNAME_NOT_VALID));
+
+        if (!passwordEncoder.matches(password, userAuth.getPassword())) {
+            throw new MiraiException(ApplicationErrorCode.PASSWORD_NOT_VALID);
         }
+
     }
 
     /**
@@ -88,5 +88,21 @@ public class AuthServiceImpl implements AuthService {
         userAuth = userAuthRepository.save(userAuth);
         log.info("User created successfully with email: '{}'", user.getEmail());
         return AuthMapper.mapAuthResponse(userAuth);
+    }
+
+    @Override
+    public UserAuth getById(String id) {
+        UserAuth userAuth = userAuthRepository
+                .findById(id)
+                .orElseThrow(() -> new MiraiException(ApplicationErrorCode.USER_NOT_EXIST));
+        return userAuth;
+    }
+
+    public void logout() {
+        String userId = jwtHelper.getUserId();
+        log.info("Logging out user with ID: {}", userId);
+        String token = httpServletRequest.getHeader("Authorization");
+        jwtTokenUtils.invalidateToken(token);
+        log.info("Logout successful for user with ID: {}", userId);
     }
 }

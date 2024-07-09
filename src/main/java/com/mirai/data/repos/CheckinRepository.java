@@ -1,7 +1,6 @@
 package com.mirai.data.repos;
 
 import com.mirai.data.entities.Checkin;
-import com.mirai.data.entities.Users;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -15,7 +14,4 @@ public interface CheckinRepository extends JpaRepository<Checkin, Integer> {
     Checkin getByUserId(Integer id);
 
     Page<Checkin> findAll(Specification<Checkin> spec, Pageable pageable);
-
-
-
 }

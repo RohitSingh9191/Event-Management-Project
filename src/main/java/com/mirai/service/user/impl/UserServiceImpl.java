@@ -632,19 +632,20 @@ public class UserServiceImpl implements UserService {
 
         Specification<Checkin> spec = UserSpecifications.searchCheckins(checkInFilters);
         Page<Checkin> checkPages = checkinRepository.findAll(spec, pageable);
-        List<Checkin> checkUser=checkPages.stream().toList();
-        return setAllCheckedInUserToUserListResponse(checkUser);
+        List<Checkin> checkUser = checkPages.stream().toList();
+        int totalCount = (int) checkPages.getTotalElements();
+        return setAllCheckedInUserToUserListResponse(checkUser, totalCount);
     }
 
-
-    private CheckedInUserResponseList setAllCheckedInUserToUserListResponse(List<Checkin> usersPage) {
+    private CheckedInUserResponseList setAllCheckedInUserToUserListResponse(
+            List<Checkin> usersPage, Integer totalCount) {
         log.info("Mapping users to user response list");
         List<Checkin> usersList = usersPage;
         List<CheckedInUserResponse> userResponseList = new ArrayList<>();
         for (Checkin checkin : usersList) {
             String url = null;
-            Users user=userRepository.findById(checkin.getUserId()).orElse(null);
-            if(user!=null){
+            Users user = userRepository.findById(checkin.getUserId()).orElse(null);
+            if (user != null) {
                 if (user.getImage() != null)
                     url = amazonS3Service.publicLinkOfImage(user.getImage(), env.getProperty("bucketName"));
                 if (checkin != null) {
@@ -656,7 +657,7 @@ public class UserServiceImpl implements UserService {
         }
         log.info("Mapped {} users to user response list", usersList.size());
         return CheckedInUserResponseList.builder()
-                .totalCount(userResponseList.size())
+                .totalCount(totalCount)
                 .checkedInUserResponses(userResponseList)
                 .build();
     }

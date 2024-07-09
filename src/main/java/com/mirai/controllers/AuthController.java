@@ -56,4 +56,11 @@ public class AuthController {
         log.info("Created user successfully. Response: {}", authResponse);
         return new ResponseEntity<>(authResponse, HttpStatus.CREATED);
     }
+
+    @PostMapping("/logout")
+    public void logout() {
+        log.info("Received request to logout");
+        authService.logout();
+    }
+
 }

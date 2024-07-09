@@ -1,5 +1,6 @@
 package com.mirai.service.auth;
 
+import com.mirai.data.entities.UserAuth;
 import com.mirai.models.request.JWTRequest;
 import com.mirai.models.request.UserAuthRequest;
 import com.mirai.models.response.AuthResponse;
@@ -9,4 +10,8 @@ public interface AuthService {
     JWTResponse adminlogin(JWTRequest request);
 
     AuthResponse createUser(UserAuthRequest user);
+
+    UserAuth getById(String id);
+
+    void  logout();
 }

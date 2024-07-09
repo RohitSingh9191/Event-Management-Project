@@ -297,124 +297,124 @@ public class UserSpecifications {
         };
     }
 
-//    public static Specification<Users> searchCheckUsers(CheckInFilters CheckInFilters) {
-//        Specification<Users> spec = Specification.where(null);
-//
-//
-//        // Name
-//        String name = CheckInFilters.getName();
-//        if (name != null && !name.isEmpty()) {
-//            spec = spec.and(UserSpecifications.withName(name));
-//        }
-//
-//
-//        // checkIn
-//        String checkIn = CheckInFilters.getCheckIn();
-//        if (checkIn != null) {
-//            spec = spec.and(UserSpecifications.withCheckIn(checkIn));
-//        }
-//
-//        String sortBy = null;
-//        String orderBy = null;
-//        if (CheckInFilters.getSortBy() == null || CheckInFilters.getSortBy().isEmpty()) {
-//            sortBy = "modifiedAt";
-//        } else {
-//            sortBy = CheckInFilters.getSortBy();
-//        }
-//
-//        if (CheckInFilters.getOrderBy() == null || CheckInFilters.getOrderBy().isEmpty()) {
-//            orderBy = "desc";
-//
-//        } else {
-//            orderBy = CheckInFilters.getOrderBy();
-//        }
-//
-//        if (sortBy != null && sortBy.equalsIgnoreCase("checkIn")) {
-//            if (orderBy.equalsIgnoreCase("desc")) {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.desc(root.get("checkIn")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            } else {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.asc(root.get("checkIn")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            }
-//        }
-//
-//        if (sortBy != null && sortBy.equalsIgnoreCase("name")) {
-//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.desc(root.get("name")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            } else {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.asc(root.get("name")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            }
-//        }
-//
-//        if (sortBy != null && sortBy.equalsIgnoreCase("id")) {
-//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.desc(root.get("id")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            } else {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.asc(root.get("id")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            }
-//        }
-//
-//
-//        if (sortBy != null && sortBy.equalsIgnoreCase("phone")) {
-//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.desc(root.get("phone")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            } else {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.asc(root.get("phone")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            }
-//        }
-//
-//        if (sortBy != null && sortBy.equalsIgnoreCase("company")) {
-//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.desc(root.get("company")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            } else {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.asc(root.get("company")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            }
-//        }
-//        if (sortBy != null && sortBy.equalsIgnoreCase("designation")) {
-//            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.desc(root.get("designation")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            } else {
-//                spec = spec.and((root, query, criteriaBuilder) -> {
-//                    query.orderBy(criteriaBuilder.asc(root.get("designation")));
-//                    return criteriaBuilder.conjunction();
-//                });
-//            }
-//        }
-//        log.info("Specification created successfully");
-//        return spec;
-//    }
+    //    public static Specification<Users> searchCheckUsers(CheckInFilters CheckInFilters) {
+    //        Specification<Users> spec = Specification.where(null);
+    //
+    //
+    //        // Name
+    //        String name = CheckInFilters.getName();
+    //        if (name != null && !name.isEmpty()) {
+    //            spec = spec.and(UserSpecifications.withName(name));
+    //        }
+    //
+    //
+    //        // checkIn
+    //        String checkIn = CheckInFilters.getCheckIn();
+    //        if (checkIn != null) {
+    //            spec = spec.and(UserSpecifications.withCheckIn(checkIn));
+    //        }
+    //
+    //        String sortBy = null;
+    //        String orderBy = null;
+    //        if (CheckInFilters.getSortBy() == null || CheckInFilters.getSortBy().isEmpty()) {
+    //            sortBy = "modifiedAt";
+    //        } else {
+    //            sortBy = CheckInFilters.getSortBy();
+    //        }
+    //
+    //        if (CheckInFilters.getOrderBy() == null || CheckInFilters.getOrderBy().isEmpty()) {
+    //            orderBy = "desc";
+    //
+    //        } else {
+    //            orderBy = CheckInFilters.getOrderBy();
+    //        }
+    //
+    //        if (sortBy != null && sortBy.equalsIgnoreCase("checkIn")) {
+    //            if (orderBy.equalsIgnoreCase("desc")) {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.desc(root.get("checkIn")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            } else {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.asc(root.get("checkIn")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            }
+    //        }
+    //
+    //        if (sortBy != null && sortBy.equalsIgnoreCase("name")) {
+    //            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.desc(root.get("name")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            } else {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.asc(root.get("name")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            }
+    //        }
+    //
+    //        if (sortBy != null && sortBy.equalsIgnoreCase("id")) {
+    //            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.desc(root.get("id")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            } else {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.asc(root.get("id")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            }
+    //        }
+    //
+    //
+    //        if (sortBy != null && sortBy.equalsIgnoreCase("phone")) {
+    //            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.desc(root.get("phone")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            } else {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.asc(root.get("phone")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            }
+    //        }
+    //
+    //        if (sortBy != null && sortBy.equalsIgnoreCase("company")) {
+    //            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.desc(root.get("company")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            } else {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.asc(root.get("company")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            }
+    //        }
+    //        if (sortBy != null && sortBy.equalsIgnoreCase("designation")) {
+    //            if (orderBy != null && orderBy.equalsIgnoreCase("desc")) {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.desc(root.get("designation")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            } else {
+    //                spec = spec.and((root, query, criteriaBuilder) -> {
+    //                    query.orderBy(criteriaBuilder.asc(root.get("designation")));
+    //                    return criteriaBuilder.conjunction();
+    //                });
+    //            }
+    //        }
+    //        log.info("Specification created successfully");
+    //        return spec;
+    //    }
 
     public static Specification<Checkin> searchCheckins(CheckInFilters checkInFilters) {
         Specification<Checkin> spec = Specification.where(null);
@@ -532,5 +532,4 @@ public class UserSpecifications {
             return criteriaBuilder.conjunction();
         };
     }
-
 }
