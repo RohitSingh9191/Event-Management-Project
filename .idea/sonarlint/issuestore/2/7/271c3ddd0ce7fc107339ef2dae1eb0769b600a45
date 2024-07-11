@@ -1,24 +1,29 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•Ë±ˆÿÿÿÿÿ8¤Ş·Ã…2J$93e84b59-19ab-436d-8e8c-8b77ef54ddf9
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•Ë±ˆÿÿÿÿÿ8¤Ş·Ã…2J$fe54909f-561e-4085-a4f0-5d361c15992d
 Ñ
-java:S4449]"Annotate the parameter with @javax.annotation.Nullable in method 'setFrom' declaration, or make sure that null can not be passed as argument.(şƒ÷á8¤Ş·Ã…2J$a2fa192c-8c3e-47f0-92d4-cc2a8d684a9c
-¬
-java:S4449¦"Annotate the parameter with @javax.annotation.Nullable in method 'setFrom' declaration, or make sure that null can not be passed as argument.(şƒ÷á8æŞ›º†2
-	java:S112|"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8´Ş·Ã…2J$9b679293-bffc-4d15-a269-311824c084fa
-h	java:S112À"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8™ß›º†2
-r
-java:S1192"UDefine a constant instead of duplicating this literal "spring.mail.username" 5 times.(–˜¼¦8õß›º†2
-{
-java:S11920"YDefine a constant instead of duplicating this literal "Email sent successfully." 3 times.(õÀ¸Œşÿÿÿÿ8µà›º†2
-y
-java:S11922"WDefine a constant instead of duplicating this literal "Failed to send email: " 3 times.(¿ğÁŠúÿÿÿÿ8åà›º†2
-r	java:S1060"+Replace this use of System.out by a logger.(õÀ¸Œşÿÿÿÿ8Áß·Ã…2J$5a73ee00-81cc-41ce-a184-c43b0e747761
-r	java:S1062"+Replace this use of System.err by a logger.(¿ğÁŠúÿÿÿÿ8Ñß·Ã…2J$238ebd79-984d-4d2f-8241-6d3edab1de13
-L	java:S106L"+Replace this use of System.out by a logger.(õÀ¸Œşÿÿÿÿ8…á›º†2
-L	java:S106N"+Replace this use of System.err by a logger.(¿ğÁŠúÿÿÿÿ8Šá›º†2
-L	java:S106x"+Replace this use of System.out by a logger.(‡ˆÉèøÿÿÿÿ8á›º†2
-G	java:S106z"+Replace this use of System.err by a logger.(ä‘µü8á›º†2
-M	java:S106“"+Replace this use of System.out by a logger.(õÀ¸Œşÿÿÿÿ8á›º†2
-M	java:S106•"+Replace this use of System.err by a logger.(¿ğÁŠúÿÿÿÿ8á›º†2
-M	java:S106¼"+Replace this use of System.out by a logger.(‡ˆÉèøÿÿÿÿ8á›º†2
-H	java:S106¾"+Replace this use of System.err by a logger.(ä‘µü8á›º†2
+java:S4449]"Annotate the parameter with @javax.annotation.Nullable in method 'setFrom' declaration, or make sure that null can not be passed as argument.(şƒ÷á8¤Ş·Ã…2J$2993eb98-21cd-406a-b198-3b61b490cf6b
+Ò
+java:S4449¦"Annotate the parameter with @javax.annotation.Nullable in method 'setFrom' declaration, or make sure that null can not be passed as argument.(şƒ÷á8æŞ›º†2J$88347e25-05e7-4346-a5bf-bfa39c3ecdfa
+	java:S112|"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8´Ş·Ã…2J$5763e955-e13d-493b-9644-3dfaeb985665
+	java:S112À"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8™ß›º†2J$bde14843-2f22-46bb-b769-c501dafbfdfb
+˜
+java:S1192"UDefine a constant instead of duplicating this literal "spring.mail.username" 5 times.(–˜¼¦8õß›º†2J$b0ddb9e4-e0b8-471d-b11f-6d5637b961a8
+¡
+java:S11920"YDefine a constant instead of duplicating this literal "Email sent successfully." 3 times.(õÀ¸Œşÿÿÿÿ8µà›º†2J$b07902b9-d299-4852-ac0b-efce998d1162
+Ÿ
+java:S11922"WDefine a constant instead of duplicating this literal "Failed to send email: " 3 times.(¿ğÁŠúÿÿÿÿ8åà›º†2J$77e77f76-a630-4dc7-bce6-03e60ad66100
+r	java:S1060"+Replace this use of System.out by a logger.(õÀ¸Œşÿÿÿÿ8Áß·Ã…2J$20e15396-d4dd-4ab2-a293-9ab98787a037
+~	java:S125/"<This block of commented-out lines of code should be removed.(¾‡ìÜ8ê•Ò×‰2J$5c268494-06b4-48fa-8ee0-bcb774aed44c
+r	java:S1062"+Replace this use of System.err by a logger.(¿ğÁŠúÿÿÿÿ8Ñß·Ã…2J$4f27eae6-463d-46d7-a8b5-726fb22a2a08
+r	java:S106L"+Replace this use of System.out by a logger.(õÀ¸Œşÿÿÿÿ8…á›º†2J$44464a76-019d-4094-b802-1a747ccd2d54
+~	java:S125K"<This block of commented-out lines of code should be removed.(¾‡ìÜ8ÄëÒ×‰2J$ffd5a528-598f-4014-a150-1482b1687e52
+r	java:S106N"+Replace this use of System.err by a logger.(¿ğÁŠúÿÿÿÿ8Šá›º†2J$63650740-5dc5-4b63-b986-b5b7f0267f04
+r	java:S106x"+Replace this use of System.out by a logger.(‡ˆÉèøÿÿÿÿ8á›º†2J$21f33ddf-2389-402e-8fcd-67e537469153
+ƒ	java:S125w"<This block of commented-out lines of code should be removed.(ü§ìüÿÿÿÿ8Ñ¤Ñ×‰2J$b00f568a-da16-4bf4-8585-f4ec596d2e2c
+m	java:S106z"+Replace this use of System.err by a logger.(ä‘µü8á›º†2J$264c81a6-fd7a-4e98-9365-6dca2e11ef11
+s	java:S106“"+Replace this use of System.out by a logger.(õÀ¸Œşÿÿÿÿ8á›º†2J$a8828cd8-0c32-4444-8793-5d1ea262a78d
+Y	java:S125’"<This block of commented-out lines of code should be removed.(¾‡ìÜ8¬‰Ó×‰2
+s	java:S106•"+Replace this use of System.err by a logger.(¿ğÁŠúÿÿÿÿ8á›º†2J$6db27a3b-34e6-4102-b887-3e74698364d3
+s	java:S106¼"+Replace this use of System.out by a logger.(‡ˆÉèøÿÿÿÿ8á›º†2J$a7f354fd-04f2-4f95-891a-e9efde824a2b
+„	java:S125»"<This block of commented-out lines of code should be removed.(ü§ìüÿÿÿÿ8™ÃÒ×‰2J$1a64f026-44db-4ff4-b375-fd7c84738249
+n	java:S106¾"+Replace this use of System.err by a logger.(ä‘µü8á›º†2J$9abcb63f-6d43-4fb4-b5f1-88aeb1ad1f16
