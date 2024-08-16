@@ -72,7 +72,7 @@ public class JwtTokenUtils implements Serializable {
     }
 
     public void invalidateToken(String token) {
-      //  token = token.substring(7);
+        //  token = token.substring(7);
         invalidatedTokens.add(token);
     }
 }

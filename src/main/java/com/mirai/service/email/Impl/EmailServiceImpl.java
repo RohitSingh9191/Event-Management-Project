@@ -44,7 +44,7 @@ public class EmailServiceImpl implements EmailService {
         simpleMailMessage.setCc(toCC);
         simpleMailMessage.setText(sendMessage);
         try {
-         //   javaMailSender.send(simpleMailMessage);
+               javaMailSender.send(simpleMailMessage);
             System.out.println("Email sent successfully.");
         } catch (Exception e) {
             System.err.println("Failed to send email: " + e.getMessage());
@@ -72,7 +72,7 @@ public class EmailServiceImpl implements EmailService {
         simpleMailMessage.setCc(toCC);
         simpleMailMessage.setText(sendMessage);
         try {
-          //  javaMailSender.send(simpleMailMessage);
+              javaMailSender.send(simpleMailMessage);
             System.out.println("Email sent successfully.");
         } catch (Exception e) {
             System.err.println("Failed to send email: " + e.getMessage());
@@ -116,7 +116,7 @@ public class EmailServiceImpl implements EmailService {
             ByteArrayResource qrCodeResource = new ByteArrayResource(qrCodeImage);
             helper.addInline("qrCode", qrCodeResource, "image/png");
 
-           // javaMailSender.send(message);
+             javaMailSender.send(message);
             System.out.println("Email with QR code sent successfully.");
         } catch (MessagingException e) {
             System.err.println("Failed to send email with QR code: " + e.getMessage());
@@ -143,7 +143,7 @@ public class EmailServiceImpl implements EmailService {
         simpleMailMessage.setCc(toCC);
         simpleMailMessage.setText(sendMessage);
         try {
-           // javaMailSender.send(simpleMailMessage);
+             javaMailSender.send(simpleMailMessage);
             System.out.println("Email sent successfully.");
         } catch (Exception e) {
             System.err.println("Failed to send email: " + e.getMessage());
@@ -184,7 +184,7 @@ public class EmailServiceImpl implements EmailService {
             ByteArrayResource qrCodeResource = new ByteArrayResource(qrCodeImage);
             helper.addInline("qrCode", qrCodeResource, "image/png");
 
-           // javaMailSender.send(message);
+             javaMailSender.send(message);
             System.out.println("Email with QR code sent successfully.");
         } catch (MessagingException e) {
             System.err.println("Failed to send email with QR code: " + e.getMessage());

@@ -49,6 +49,7 @@ C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\controllers\UserCon
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\auth\impl\AuthServiceImpl.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\service\email\Impl\EmailServiceImpl.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\exception\ErrorCode.java
+C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\config\SecurityConfig.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\data\entities\Users.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\MiraiApplication.java
 C:\Users\DELL\Desktop\MIRAI\miraiapi\src\main\java\com\mirai\models\request\JWTRequest.java

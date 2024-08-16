@@ -59,12 +59,13 @@ public class AuthServiceImpl implements AuthService {
      * @param password User password.
      */
     private void doAuthenticate(String email, String password) {
-       UserAuth userAuth = userAuthRepository.findByEmail(email).orElseThrow(()->new MiraiException(ApplicationErrorCode.USERNAME_NOT_VALID));
+        UserAuth userAuth = userAuthRepository
+                .findByEmail(email)
+                .orElseThrow(() -> new MiraiException(ApplicationErrorCode.USERNAME_NOT_VALID));
 
         if (!passwordEncoder.matches(password, userAuth.getPassword())) {
             throw new MiraiException(ApplicationErrorCode.PASSWORD_NOT_VALID);
         }
-
     }
 
     /**

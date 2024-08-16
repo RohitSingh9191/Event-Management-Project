@@ -51,8 +51,8 @@ public class WhatsAppServiceImpl implements WhatsAppService {
         System.out.println("Request Body: " + requestBody);
         // Send POST request
 
-        ResponseEntity<String> responseEntity=null;
-       // responseEntity = restTemplate.postForEntity(url, requestEntity, String.class);
+        ResponseEntity<String> responseEntity = null;
+        // responseEntity = restTemplate.postForEntity(url, requestEntity, String.class);
         System.out.println("Response Status Code: " + responseEntity.getStatusCode());
         System.out.println("Response Body: " + responseEntity.getBody());
 
@@ -101,8 +101,8 @@ public class WhatsAppServiceImpl implements WhatsAppService {
         // Send POST request
         try {
             // Send POST request
-            ResponseEntity<String> responseEntity =null;
-//            restTemplate.postForEntity(url, requestEntity, String.class);
+            ResponseEntity<String> responseEntity = null;
+            //            restTemplate.postForEntity(url, requestEntity, String.class);
 
             System.out.println("Response Status Code: " + responseEntity.getStatusCode());
             System.out.println("Response Body: " + responseEntity.getBody());
@@ -157,8 +157,8 @@ public class WhatsAppServiceImpl implements WhatsAppService {
         // Send POST request
         try {
             // Send POST request
-            ResponseEntity<String> responseEntity =null;
-//            restTemplate.postForEntity(url, requestEntity, String.class);
+            ResponseEntity<String> responseEntity = null;
+            //            restTemplate.postForEntity(url, requestEntity, String.class);
 
             System.out.println("Response Status Code: " + responseEntity.getStatusCode());
             System.out.println("Response Body: " + responseEntity.getBody());

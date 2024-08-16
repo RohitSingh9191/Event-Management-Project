@@ -63,3 +63,7 @@ k
 ;src/main/java/com/mirai/exception/ApplicationErrorCode.java,e\6\e61b98ba4b97cd744943bddf64608f9eafe11a59
 g
 7src/main/java/com/mirai/service/email/EmailService.java,b\7\b7dee40f2432ebb3890e85b6d86b1cfad3c56495
+g
+7src/main/java/com/mirai/models/request/UserRequest.java,6\f\6f2b673e68f3a784aa7562ba32557bad04717538
+l
+<src/main/java/com/mirai/models/response/MessageResponse.java,1\3\13f2cf10f45724ff2ec8168e9cd63c7a02a56498

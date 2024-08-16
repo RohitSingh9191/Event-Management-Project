@@ -63,6 +63,7 @@ com\mirai\models\response\CheckedInUserResponse$CheckedInUserResponseBuilder.cla
 com\mirai\models\response\SpeakerResponse.class
 com\mirai\models\response\AuthResponse.class
 com\mirai\service\amazonBucket\impl\AmazonS3ServiceImpl.class
+com\mirai\config\SecurityConfig.class
 com\mirai\exception\ApplicationErrorCode.class
 com\mirai\service\compareFaces\impl\newFaceRec\CompareFaceService.class
 com\mirai\models\response\MessageResponse$MessageResponseBuilder.class

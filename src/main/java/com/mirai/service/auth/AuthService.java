@@ -13,5 +13,5 @@ public interface AuthService {
 
     UserAuth getById(String id);
 
-    void  logout();
+    void logout();
 }
