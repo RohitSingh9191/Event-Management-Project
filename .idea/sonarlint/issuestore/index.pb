@@ -67,3 +67,7 @@ g
 7src/main/java/com/mirai/models/request/UserRequest.java,6\f\6f2b673e68f3a784aa7562ba32557bad04717538
 l
 <src/main/java/com/mirai/models/response/MessageResponse.java,1\3\13f2cf10f45724ff2ec8168e9cd63c7a02a56498
+q
+Asrc/main/java/com/mirai/service/amazonBucket/AmazonS3Service.java,4\9\492d04705288773ddf946fa92c994c3def0bd096
+z
+Jsrc/main/java/com/mirai/service/amazonBucket/impl/AmazonS3ServiceImpl.java,b\0\b09d391056774c535fd72cf926070aa43caf3dcc

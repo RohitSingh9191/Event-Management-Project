@@ -27,7 +27,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
-@AllArgsConstructor
+@lombok.AllArgsConstructor
 @Slf4j
 public class AmazonS3ServiceImpl implements AmazonS3Service {
 
